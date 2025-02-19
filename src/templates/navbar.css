@@ -1,0 +1,12 @@
+.navbar{
+    background-color: #00C02C;
+}
+
+.custom-dropdown{
+    background-color: #00C02C;
+}
+
+.custom-dropdown .dropdown-item:hover{
+    background-color: #00C02C;
+}
+
