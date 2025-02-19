@@ -41,7 +41,7 @@
     width: auto;
     transition: transform 0.3s ease-in-out;
     margin-right: 30px;
-    mix-blend-mode: normal;
+    mix-blend-mode: multiply;
 }
 
 .footer-logo img:hover {
