@@ -4,10 +4,14 @@
     border-radius: 20px;
     text-align: center;
     width: 350px;
-    margin: auto;
+    height: 150px;
+    margin: 10px;
     color: white;
 }
-
+.text-light-date{
+    font-size: 15px;
+    margin-top: -10px;
+}
 .team{
     display: flex;
     flex-direction: column;
@@ -31,4 +35,10 @@
     font-size: 17px;
     border: 1px solid black;
     margin-top: -20px;
+}
+
+.text-light-line{
+    font-size: 25px;
+    margin-top: -25px;
+    font-weight: bold;
 }
