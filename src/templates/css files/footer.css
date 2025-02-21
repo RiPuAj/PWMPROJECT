@@ -1,0 +1,50 @@
+.custom-footer {
+    background-color: #00C02C;
+    color: white;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-text {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    margin-right: 30px;
+}
+
+
+.footer-right .footer-text:hover {
+    color: #105721;
+    cursor: pointer;
+}
+
+.footer-right {
+    text-align: right;
+    font-style: italic;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+    margin-right: 30px;
+    mix-blend-mode: multiply;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1);
+}
+
