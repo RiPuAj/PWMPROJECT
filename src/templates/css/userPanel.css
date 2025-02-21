@@ -67,17 +67,17 @@ body {
     border-bottom: 2px solid black;
 }
 
-.sidebar ul li a {
+.sidebar ul a {
     text-decoration: none;
     color: white;
     display: block;
 }
 
-.sidebar ul li a:hover{
+.sidebar ul a:hover{
     color: #7fff7f;
 }
 
-.sidebar ul li a.active {
+.sidebar ul a.active {
     color: #02571e;
 }
 
