@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Torneo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/crearTorneo.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="form-container">
+        <form>
+            <div class="input mb-3">
+                <label for="nombreTorneo" class="form-label">Nombre del torneo</label>
+                <input type="text" class="form-control" id="nombreTorneo" placeholder="Nombre">
+            </div>
+            <div class="input mb-3">
+                <label for="tipoTorneo" class="form-label">Tipo de torneo</label>
+                <select class="form-select" id="tipoTorneo">
+                    <option selected>Seleccionar</option>
+                    <option value="liga">Liga</option>
+                    <option value="eliminacion">Eliminación</option>
+                </select>
+            </div>
+            <div class="input mb-3">
+                <label for="lugar" class="form-label">Lugar</label>
+                <input type="text" class="form-control" id="lugar" placeholder="Lugar">
+            </div>
+            <div class="input mb-3">
+                <label for="fechain" class="form-label">Fecha de inicio</label>
+                <input type="text" class="form-control" id="fechain" placeholder="Fecha">
+            </div>
+            <div class="input mb-3">
+                <label for="njugadores" class="form-label">Número de jugadores</label>
+                <input type="text" class="form-control" id="njugadores" placeholder="Número">
+            </div>
+            <div class="input mb-3">
+                <label for="tasa" class="form-label">Tasa de ingreso</label>
+                <input type="text" class="form-control" id="tasa" placeholder="Tasa">
+            </div>
+            <div class="input mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" rows="5" placeholder="Descripción"></textarea>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="guardar" class="btn btn-dark me-2">Guardar</button>
+                <button type="cancelar" class="btn btn-danger">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
