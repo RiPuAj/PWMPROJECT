@@ -36,3 +36,6 @@
     cursor: pointer;
     margin-left: 20px;
 }
+.btn-primary:hover{
+    background: #0056b3;
+}

@@ -17,7 +17,7 @@ body {
     max-width: 800px;
     height: 500px;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     overflow: hidden;
 }
 
@@ -28,7 +28,7 @@ body {
     background: #00C02C;
     color: white;
     padding: 15px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
 }
 
 .profile-header .profile-img {
@@ -50,7 +50,7 @@ body {
     width: 250px;
     background: #00C02C;
     color: white;
-    border-right: 1px solid black;
+    border-right: 2px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -64,17 +64,21 @@ body {
 .sidebar ul li {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
 }
 
-.sidebar ul li a {
+.sidebar ul a {
     text-decoration: none;
     color: white;
     display: block;
 }
 
-.sidebar ul li a.active {
+.sidebar ul a:hover{
     color: #7fff7f;
+}
+
+.sidebar ul a.active {
+    color: #02571e;
 }
 
 .content {
