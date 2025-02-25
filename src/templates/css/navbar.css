@@ -10,3 +10,14 @@
     background-color: #00C02C;
 }
 
+.header-logo{
+    height: 2em;
+    width: auto;
+    mix-blend-mode: multiply;
+}
+
+.header-logo:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
