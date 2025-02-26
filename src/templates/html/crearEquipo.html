@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Equipo</title>
+    <link rel="stylesheet" href="../css/crearForm.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="form-group">
+        <label for="nequipo">Nombre del equipo</label>
+        <input type="text" id="nequipo" class="form-control" placeholder="Nombre">
+    </div>
+
+    <div class="form-group">
+        <label>Nombre de los integrantes</label>
+        <div class="tag-container form-control" id="tag-container">
+            <input type="text" id="tag-input" class="tag-input" placeholder="Escribe un nombre y presiona Enter">
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button type="guardar" class="btn btn-dark me-2">Guardar</button>
+        <button type="cancelar" class="btn btn-danger">Cancelar</button>
+    </div>
+</div>
+
+</body>
+</html>
