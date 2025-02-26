@@ -4,7 +4,7 @@
     padding: 10px 0;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .footer-content {
@@ -16,6 +16,7 @@
 .footer-left {
     display: flex;
     align-items: center;
+    margin-left: 1.5em;
 }
 
 .footer-text {
@@ -36,15 +37,4 @@
     font-style: italic;
 }
 
-.footer-logo img {
-    height: 40px;
-    width: auto;
-    transition: transform 0.3s ease-in-out;
-    margin-right: 30px;
-    mix-blend-mode: multiply;
-}
-
-.footer-logo img:hover {
-    transform: scale(1.1);
-}
 
