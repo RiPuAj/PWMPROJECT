@@ -41,7 +41,11 @@
   </div>
 
 <script>
-  xLuIncludeFile();
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(() => {
+      xLuIncludeFile();
+    }, 100);
+  });
 </script>
 </body>
 </html>
