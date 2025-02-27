@@ -30,3 +30,8 @@
     margin-right: 15px;
     font-size: 12px;
 }
+
+.card-container-title-right:hover {
+    color: #7FFF7F;
+    cursor: pointer;
+}
