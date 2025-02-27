@@ -1,0 +1,27 @@
+.tournament-creation-form{
+    background-color: #00C02C;
+    padding: 1em;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    border: black solid 1px;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dropdown-item-sel:hover {
+    background-color: black;
+}
