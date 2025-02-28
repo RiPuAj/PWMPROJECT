@@ -6,6 +6,13 @@
     width: 60%;
 }
 
+.team-creation-form{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
 .form-group {
     margin-bottom: 15px;
 }

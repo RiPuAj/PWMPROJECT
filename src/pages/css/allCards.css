@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: 3rem;
 }
 .all-cards-title{
     display: flex;
