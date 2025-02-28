@@ -1,5 +1,5 @@
 # TournaMaker™
-#### Por: Nicolás Marcelo Batista, Javier Pulido Riveo,José Manuel Díaz Hernández
+#### Por: Nicolás Marcelo Batista, Javier Pulido Rivero, José Manuel Díaz Hernández
 
 TournaMaker es una plataforma online diseñada para la organización de torneos de fútbol, facilitando su creación, su gestión y su difusión.
 

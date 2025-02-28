@@ -17,6 +17,12 @@
     padding: 10px;
 }
 
+.team-shield{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
