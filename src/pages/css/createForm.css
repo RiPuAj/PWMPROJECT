@@ -42,3 +42,14 @@
     border: 1px solid black;
     color: black;
 }
+
+.shield-input{
+    background-color: whitesmoke;
+
+}
+
+.team-shield{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
