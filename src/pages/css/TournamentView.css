@@ -1,0 +1,49 @@
+.torneo-container{
+    padding: 75px;
+}
+
+.torneo-info h1{
+    font-size: 20px;
+    text-align: center;
+}
+
+.torneo-info h2{
+    font-size: 18px;
+    text-align: center;
+}
+
+.torneo-info .torneo-logo img{
+    width: 20%;
+    height: auto;
+}
+
+.torneo-info .torneo-logo{
+    text-align: center;
+    align-content: center;
+    margin: auto;
+}
+
+.partidos-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.partidos-section {
+    margin-top: 25px;
+    width: 48%;
+    text-align: left;
+}
+
+.partidos-section h3 {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.partidos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
