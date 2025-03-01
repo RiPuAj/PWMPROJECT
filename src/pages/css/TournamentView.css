@@ -1,5 +1,10 @@
 .torneo-container{
-    padding: 75px;
+    background-color: #00C02C;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 150px;
+    display: flex;
+    flex-direction: column;
 }
 
 .torneo-info h1{
@@ -13,7 +18,7 @@
 }
 
 .torneo-info .torneo-logo img{
-    width: 20%;
+    width: 10%;
     height: auto;
 }
 
@@ -29,17 +34,16 @@
 }
 
 .partidos-section {
-    margin-top: 25px;
-    width: 48%;
+    width: auto;
     text-align: left;
 }
 
 .partidos-section h3 {
-    padding: 10px;
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 15px;
     text-align: left;
+    padding: 10px;
 }
 
 .partidos {

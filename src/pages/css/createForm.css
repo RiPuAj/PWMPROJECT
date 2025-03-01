@@ -32,3 +32,10 @@
 .dropdown-item-sel:hover {
     background-color: black;
 }
+
+.form-create-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+}
