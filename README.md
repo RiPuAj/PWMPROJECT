@@ -20,7 +20,7 @@ https://github.com/RiPuAj/PWMPROJECT/blob/main/src/Correspondencia%20Mockups.pdf
 - footer.html -> Usos: Todos
 - match.html -> Usos: TournamentView.html
 - navbar.html -> Usos: Todos
-- teamCard.html -> Usos: Por ahora ninguno
+- teamCard.html -> Usos: Pendiente de implementación en el panel de usuario (requiere JavaScript)
 - userPanel.html -> Usos: userPage.html
 
 # Listado de páginas:
