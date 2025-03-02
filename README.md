@@ -40,3 +40,6 @@ https://github.com/RiPuAj/PWMPROJECT/blob/main/src/Correspondencia%20Mockups.pdf
 # Enlace a Figma: 
 https://www.figma.com/design/bo4PL3hybOccCFsOnNXUnW/PwmProject?node-id=0-1&p=f&t=6CPyBecwSgfvQMSm-0
 
+# Enlace a Trello:
+https://trello.com/b/Ic27nmOT/mise-en-place-personal-productivity-system
+
