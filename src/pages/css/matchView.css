@@ -1,38 +1,79 @@
-.detalle-partido {
+main{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    margin-top: 20vh;
 }
 
-.container {
-    background: #00C02C;
-    padding: 20px;
+.panel{
+    border: 1px solid black;
+    background-color: #00C02C;
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-button {
-    background: #000;
-    color: white;
-    padding: 10px;
-    border: none;
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: -15px;
+}
+
+.team ul li::before {
+    content: "•";
+    position: absolute;
+    left: -25px;
+    color: black;
+    font-size: 1.2em;
+}
+
+.image{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.panel-header{
+    text-align: center;
+}
+
+.teams-and-counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counter{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+
+.counter button {
+    margin: 0 15px;
+    padding: 10px 15px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
 }
 
-button:hover {
-    background: #444;
+.match-status {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    text-align: center;
 }
-
-.jugadores{
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-

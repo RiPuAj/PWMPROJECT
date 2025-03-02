@@ -1,61 +1,68 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalles del Partido</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../templates/css/navbar.css" />
-  <link rel="stylesheet" href="../../templates/css/footer.css" />
+    <meta charset="UTF-8">
+    <title>Visualización de Partido</title>
+
+  <script src="../js/xlu-include-file.js"></script>
+  <link rel="stylesheet" href="../../templates/css/navbar.css">
+  <link rel="stylesheet" href="../../templates/css/footer.css">
   <link rel="stylesheet" href="../css/matchView.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/xlu-include-file.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-<header>
-  <nav xlu-include-file="../../templates/html/navbar.html"></nav>
-</header>
+    <header id="main_header" xlu-include-file="../../templates/html/navbar.html"></header>
 
-<main class="detalle-partido">
-  <div class="container">
-    <div class="info-partido">
-      <p>Hora:--:--</p>
-      <div class="match-card" xlu-include-file="../../templates/html/match.html"></div>
-      <p>Estado: <span id="estado">No ha empezado</span></p>
-      <button id="cambiar-estado">Iniciar partido</button>
-    </div>
+    <main>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Fecha del Partido</h3>
+            <span>Hora</span>
+          </div>
+          <div class="teams-and-counter">
+            <div class="team">
+              <img class="image" src="/src/resources/images/default-featured-image.jpg" alt="Escudo equipo 1">
+              <h3>Equipo 1</h3>
+              <ul>
+                <li>Jugador1</li>
+                <li>Jugador2</li>
+                <li>Jugador3</li>
+                <li>Jugador4</li>
+                <li>Jugador5</li>
+              </ul>
+            </div>
+            <div class="counter-container">
+              <div class="counter">
+                <button>-</button>
+                <h2>—</h2>
+                <button>-</button>
+              </div>
+              <p class="match-status">▸ Sin jugar</p>
+            </div>
+            <div class="team">
+              <img class="image" src="/src/resources/images/default-featured-image.jpg" alt="Escudo equipo 1">
+              <h3>Equipo 2</h3>
+              <ul>
+                <li>Jugador1</li>
+                <li>Jugador2</li>
+                <li>Jugador3</li>
+                <li>Jugador4</li>
+                <li>Jugador5</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </main>
 
-    <div class="jugadores">
-      <span class="jugadores-E1">Jugador 1</span>
-      <span class="jugadores-E1">Jugador 2</span>
-      <span class="jugadores-E1">Jugador 3</span>
-      <span class="jugadores-E1">Jugador 4</span>
-      <span class="jugadores-E2">Jugador 5</span>
-      <span class="jugadores-E2">Jugador 6</span>
-      <span class="jugadores-E2">Jugador 7</span>
-      <span class="jugadores-E2">Jugador 8</span>
-    </div>
-  </div>
-</main>
+    <footer id="main_footer" class="fixed-bottom" xlu-include-file="../../templates/html/footer.html"></footer>
 
-<footer>
-  <footer id="main_footer" class="fixed-bottom" xlu-include-file="../../templates/html/footer.html"></footer>
-</footer>
-
-<script>
-  xLuIncludeFile();
-  const estadoSpan = document.getElementById('estado');
-  const botonEstado = document.getElementById('cambiar-estado');
-
-  botonEstado.addEventListener('click', () => {
-    if (estadoSpan.textContent === 'No ha empezado') {
-      estadoSpan.textContent = 'Jugando';
-      botonEstado.textContent = 'Finalizar partido';
-    } else if (estadoSpan.textContent === 'Jugando') {
-      estadoSpan.textContent = 'Finalizado';
-      botonEstado.style.display = 'none';
-    }
-  });
-</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(() => {
+          xLuIncludeFile();
+        }, 100);
+      });
+    </script>
 </body>
 </html>
