@@ -12,7 +12,7 @@ TournaMaker es una plataforma online diseñada para la organización de torneos 
 5. La página debe permitir que los equipos envíen solicitudes de unión a partidos/torneos
 
 # UBICACION DE LOS MOCKUPS
-CorrespondenciaMockups.pdf en /src:
+CorrespondenciaMockups.pdf en PWMPROJECT:
 https://github.com/RiPuAj/PWMPROJECT/Correspondencia%20Mockups.pdf
 
 # Listado de templates y donde se cargan:
