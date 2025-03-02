@@ -16,26 +16,26 @@ CorrespondenciaMockups.pdf en /src:
 https://github.com/RiPuAj/PWMPROJECT/blob/main/src/Correspondencia%20Mockups.pdf
 
 # Listado de templates y donde se cargan:
-card.html 
-footer.html
-match.html
-navbar.html
-teamCard.html
-userPanel.html
+- card.html 
+- footer.html
+- match.html
+- navbar.html
+- teamCard.html
+- userPanel.html
 
 # Listado de páginas:
-Página de incio de la aplicación web: index.html -> Mockup: Landing Page
-loginForm.html -> Mockup: Login
-registerForm.html -> Mockup: Register
-allTournaments.html -> Mockup: Todos los torneos
-allMatches.html -> Mockup: Todos los partidos
-creatTournamentPage.html -> Mockup: Crear Torneo
-createMatch.html -> Mockup: Crear Partido
-createTeam.html -> Mockup: CrearEquipo
-matchInfoPage.html -> Mockup: Más información
-TournamentView.html -> Mockup: Visualización Torneo
-matchView.html -> Mockup: Visualización Partido
-userPage.html -> Mockup: Perfil Usuario
+- Página de incio de la aplicación web: index.html -> Mockup: Landing Page
+- loginForm.html -> Mockup: Login
+- registerForm.html -> Mockup: Register
+- allTournaments.html -> Mockup: Todos los torneos
+- allMatches.html -> Mockup: Todos los partidos
+- creatTournamentPage.html -> Mockup: Crear Torneo
+- createMatch.html -> Mockup: Crear Partido
+- createTeam.html -> Mockup: CrearEquipo
+- matchInfoPage.html -> Mockup: Más información
+- TournamentView.html -> Mockup: Visualización Torneo
+- matchView.html -> Mockup: Visualización Partido
+- userPage.html -> Mockup: Perfil Usuario
 
 # Enlace a Figma: 
 https://www.figma.com/design/bo4PL3hybOccCFsOnNXUnW/PwmProject?node-id=0-1&p=f&t=6CPyBecwSgfvQMSm-0
