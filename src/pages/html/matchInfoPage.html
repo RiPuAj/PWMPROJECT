@@ -6,45 +6,65 @@
     <link rel="stylesheet" href="../css/matchInfo.css">
     <link rel="stylesheet" href="../../templates/css/navbar.css">
     <link rel="stylesheet" href="../../templates/css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/xlu-include-file.js"></script>
 </head>
 <body>
 <header class="fixed-top" xlu-include-file="../../templates/html/navbar.html"></header>
 
-<div class="info-container">
-  <div class="info-header">
-    <div class="info-imagen">
-      <img src="../../resources/images/default-featured-image.jpg" alt="Imagen del partido">
+<div class="container">
+    <div class="card">
+        <div class="card-header text-white text-center border">
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid rounded" src="../../resources/images/default-featured-image.jpg" alt="">
+                </div>
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <div class="row">
+                        <p><strong>Fecha:</strong> --/--/----</p>
+                    </div>
+                    <div class="row">
+                        <p><strong>Hora:</strong> 00:00</p>
+                    </div>
+                    <div class="row">
+                        <p><strong>Lugar:</strong> Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="col d-flex flex-column justify-content-center align-items-center">
+                    <div class="row">
+                        <p><strong>Jugadores:</strong> 0/0</p>
+                    </div>
+                    <div class="row">
+                        <p><strong>Tasa de Ingreso:</strong> 0€</p>
+                    </div>
+                    <div class="row">
+                        <p><strong>Premio:</strong> 0€</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"><strong>Más info:</strong></h5>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut mattis augue...
+            </p>
+        </div>
+
+        <div class="card-footer text-center">
+            <div class="col">
+                <p><strong>Organizador:</strong> <i class="fa fa-user"></i> Username</p>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">Solicitar unirme</button>
+            </div>
+        </div>
     </div>
-
-    <div class="info-data">
-      <p><strong>Fecha:</strong> --/--/----</p>
-      <p><strong>Hora:</strong> 00:00</p>
-      <p><strong>Tasa de Ingreso:</strong> 0€</p>
-    </div>
-
-    <div class="info-data">
-      <p><strong>Lugar:</strong> Lorem Ipsum</p>
-      <p><strong>Jugadores:</strong> 0/0</p>
-      <p><strong>Premio:</strong> 0€</p>
-    </div>
-
-  </div>
-
-  <div class="info-body">
-    <h2>Más info:</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum purus eget lorem rhoncus fermentum. Duis ut dapibus quam. Nullam quis arcu in nulla ultrices mollis. Sed ultrices tempus ante, id tempor diam molestie at. Sed viverra justo id euismod gravida. Donec at molestie lorem. Nullam commodo odio vel lorem tempor, non interdum urna elementum.</p>
-  </div>
-
-  <div class="info-footer">
-    <p><strong>Organizador:</strong> <span class="organizador"><img src="../../resources/images/default-featured-image.jpg" alt="Imagen de Usuario"> Username</span></p>
-    <button class="btn-unirse">Solicitar unirme</button>
-  </div>
 </div>
 
-<div class="fixed-bottom">
-  <footer xlu-include-file="../../templates/html/footer.html"></footer>
-</div>
+<footer class="fixed-bottom" xlu-include-file="../../templates/html/footer.html"></footer>
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
