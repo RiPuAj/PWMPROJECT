@@ -16,12 +16,12 @@ CorrespondenciaMockups.pdf en /src:
 https://github.com/RiPuAj/PWMPROJECT/blob/main/src/Correspondencia%20Mockups.pdf
 
 # Listado de templates y donde se cargan:
-- card.html 
-- footer.html
-- match.html
-- navbar.html
-- teamCard.html
-- userPanel.html
+- card.html -> Usos: index.html, allTournaments.html, allMatches.html
+- footer.html -> Usos: Todos
+- match.html -> Usos: TournamentView.html
+- navbar.html -> Usos: Todos
+- teamCard.html -> Usos: Por ahora ninguno
+- userPanel.html -> Usos: userPage.html
 
 # Listado de páginas:
 - Página de incio de la aplicación web: index.html -> Mockup: Landing Page
