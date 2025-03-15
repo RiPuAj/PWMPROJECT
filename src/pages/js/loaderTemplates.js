@@ -1,4 +1,4 @@
-export async function fetchHeader(){
+export async function fetchHeader() {
     const header = document.querySelector("#main_header");
     console.log(header);
     return await fetch('../../templates/html/navbar.html')
@@ -18,3 +18,5 @@ export async function fetchCards() {
     return await fetch('../../templates/html/card.html')
         .then(response => response.text());
 }
+
+

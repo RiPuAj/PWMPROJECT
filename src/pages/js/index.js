@@ -1,11 +1,6 @@
-import {fetchHeader, fetchCards, fetchFooter} from "./loaderTemplates";
-
-
-async function fetchData(file_location, num_data){
-    const data = await fetch(file_location)
-        .then(response => response.json());
-    return data.splice(0, num_data);
-}
+import {fetchHeader, fetchCards, fetchFooter} from "./loaderTemplates.js";
+import {fetchData, textToHTML} from "./utils.js";
+import {setCardProperties} from "./cardsOperations.js";
 
 
 async function loadIndexData() {
@@ -28,28 +23,13 @@ async function loadIndexData() {
     })
 }
 
-function setCardProperties(template, data) {
-    let templateContainer = template.createElement("div");
-    const img = template.getElementById("image");
-    const title = template.getElementById("title");
-    const description = template.getElementById("description");
-
-    img.src = data.image;
-    title.textContent = data.name;
-    description.textContent = data.description;
-    templateContainer.innerHTML = template.body.innerHTML;
-
-    return templateContainer;
-}
-
-function textToHTML(text){
-    var parser = new DOMParser();
-    return parser.parseFromString(text, 'text/html');
-}
-
 
 async function loadIndexPage(){
     await fetchHeader();
     await loadIndexData();
     await fetchFooter();
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    loadIndexPage();
+})
