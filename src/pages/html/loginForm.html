@@ -57,5 +57,16 @@
       xLuIncludeFile();
     }, 100);
   });
+
+  document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function () {
+      if (this.checkValidity()) {
+        this.style.border = "";
+      } else if (this != document.getElementById("password")) {
+        this.style.border = "solid 2px red";
+      }
+    });
+  });
+
 </script>
 </html>
