@@ -20,19 +20,19 @@
 
         <div class="input mb-3">
             <label for="username" class="form-label">Nombre de usuario</label>
-            <input type="text" class="form-control" id="username" placeholder="Nombre de usuario">
+            <input type="text" required minlength="3" class="form-control" id="username" placeholder="Nombre de usuario">
         </div>
 
 
         <div class="input mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input id="email" type="email" class="form-control" placeholder="name@example.com">
+            <input id="email" required type="email" class="form-control" placeholder="name@example.com">
         </div>
 
         <div class="input mb-3">
             <label for="password" class="form-label">Contraseña</label>
             <div class="input-group mb-3">
-                <input type="password" id="password" class="form-control" placeholder="Contraseña">
+                <input type="password" required minlength="5" id="password" class="form-control" placeholder="Contraseña">
                 <button class="btn btn-outline-light" type="button" id="togglePassword">
                     <i class="fa-solid fa-eye"></i>
                 </button>
@@ -42,7 +42,7 @@
         <div class="input mb-5">
             <label for="repeatPassword" class="form-label">Repetir contraseña</label>
             <div class="input-group mb-3">
-                <input type="password" id="repeatPassword" class="form-control" placeholder="Repetir contraseña">
+                <input type="password" required minlength="5" id="repeatPassword" class="form-control" placeholder="Repetir contraseña">
                 <button class="btn btn-outline-light" type="button" id="toggleRepeatPassword">
                     <i class="fa-solid fa-eye"></i>
                 </button>
@@ -50,7 +50,9 @@
         </div>
 
         <div class="container w-100 d-flex justify-content-center align-items-center">
-            <button type="button" class="btn btn-dark btn-lg">Registrarse</button>
+            <a href="index.html">
+                <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+            </a>
         </div>
 
     </form>
@@ -68,6 +70,75 @@
             xLuIncludeFile();
         }, 100);
     });
+
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("input", function () {
+            if(this.id != ("password" || "repeatPassword")){
+                if (this.checkValidity()) {
+                    this.style.border = "";
+                } else if (this != document.getElementById("password")) {
+                    this.style.border = "solid 2px red";
+                }
+            }
+        });
+    });
+
+    function validatePassword(password) {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{5,}$/;
+        return regex.test(password);
+    }
+
+    document.getElementById("password").addEventListener("input", function () {
+        this.setCustomValidity("");
+        if (!this.checkValidity()) {
+            this.style.border = "solid 2px red";
+        }
+        else if (!validatePassword(this.value)) {
+            this.setCustomValidity("Asegúrate de que tu contraseña tiene al menos una mayúscula, una minúscula, un número y un carácter especial (!?@#$%^&*).");
+            this.style.border = "solid 2px red";
+        }
+        else {
+            this.setCustomValidity("");
+            this.style.border = "";
+        }
+        this.reportValidity();
+    });
+
+    document.getElementById("repeatPassword").addEventListener("input", function () {
+        this.setCustomValidity("");
+        if (!this.checkValidity()) {
+            this.style.border = "solid 2px red";
+        }
+        else if (this.value !== document.getElementById("password").value) {
+            this.setCustomValidity("Las contraseñas deben coincidir.");
+            this.style.border = "solid 2px red";
+        }
+        else {
+            this.setCustomValidity("");
+            this.style.border = "";
+        }
+        this.reportValidity();
+    });
+
+
+    function togglePasswordVisibility(toggleButtonId, passwordInputId) {
+        const toggleButton = document.getElementById(toggleButtonId);
+        const passwordInput = document.getElementById(passwordInputId);
+
+        toggleButton.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+            } else {
+                passwordInput.type = "password";
+                toggleButton.innerHTML = '<i class="fa-solid fa-eye"></i>';
+            }
+        });
+    }
+
+    togglePasswordVisibility("togglePassword", "password");
+    togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
+
 </script>
 
 </body>
