@@ -53,3 +53,19 @@
     flex-direction: column;
     width: 30%;
 }
+
+.password-content-error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+/*
+#username:valid{
+    border-color: greenyellow;
+    border-radius: 2px;
+}
+
+#username:invalid{
+    border-color: red;
+    border-radius: 2px;
+}
