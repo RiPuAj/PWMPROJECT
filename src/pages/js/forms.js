@@ -2,7 +2,7 @@ import {loadHeaderAndFooter} from "./loaderTemplates.js";
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
-        if(this.id != ("password" || "repeatPassword")){
+        if (this.id !== "password" && this.id !== "repeatPassword"){
             if (this.checkValidity()) {
                 this.style.border = "";
             } else if (this != document.getElementById("password")) {
