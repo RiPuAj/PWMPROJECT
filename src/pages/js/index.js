@@ -1,4 +1,4 @@
-import {fetchHeader, fetchCards, fetchFooter} from "./loaderTemplates.js";
+import {fetchCards, fetchFooter, fetchHeader} from "./loaderTemplates.js";
 import {fetchData, textToHTML} from "./utils.js";
 import {setCardProperties} from "./cardsOperations.js";
 
@@ -7,8 +7,8 @@ async function loadIndexData() {
     var tournamentContainer = document.querySelector(".tournament-cards");
     var matchesContainer = document.querySelector(".matches-cards");
 
-    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 10)
-    var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', 10)
+    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json',null, 10)
+    var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', null, 10)
 
     var cardTemplate = textToHTML(await fetchCards());
 
@@ -24,12 +24,9 @@ async function loadIndexData() {
 }
 
 
-async function loadIndexPage(){
+
+document.addEventListener("DOMContentLoaded",  async function () {
     await fetchHeader();
     await loadIndexData();
     await fetchFooter();
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-    loadIndexPage();
 })

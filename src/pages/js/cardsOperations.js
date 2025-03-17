@@ -3,6 +3,7 @@ export function setCardProperties(template, data) {
     const img = template.getElementById("image");
     const title = template.getElementById("title");
     const description = template.getElementById("description");
+    const moreInfoBtn = template.getElementById("moreInfo");
 
     img.src = data.image;
     title.textContent = data.name;

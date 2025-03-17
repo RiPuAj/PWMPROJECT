@@ -1,3 +1,5 @@
+
+
 export async function fetchData(file_location, num_data){
     const data = await fetch(file_location)
         .then(response => response.json());
@@ -13,3 +15,4 @@ export function textToHTML(text){
     const parser = new DOMParser();
     return parser.parseFromString(text, 'text/html');
 }
+

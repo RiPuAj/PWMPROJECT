@@ -38,3 +38,4 @@ export async function fetchTeamCard() {
         .then(response => response.text());
 }
 
+
