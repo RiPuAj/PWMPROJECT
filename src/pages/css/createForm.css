@@ -63,13 +63,25 @@
 .char-counter{
     display: none;
 }
-/*
-#username:valid{
-    border-color: greenyellow;
-    border-radius: 2px;
-}
 
-#username:invalid{
-    border-color: red;
-    border-radius: 2px;
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.tag {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: relative;
+}
+.tag .remove {
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }

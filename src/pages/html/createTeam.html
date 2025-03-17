@@ -17,7 +17,7 @@
 <div class="container-createTeam">
   <div class="form-group">
     <label for="nequipo">Nombre del equipo</label>
-    <input type="text" id="nequipo" class="form-control" placeholder="Nombre">
+    <input type="text" required minlength="3" id="nequipo" class="form-control" placeholder="Nombre">
   </div>
 
   <div class="form-group">
@@ -46,6 +46,41 @@
       xLuIncludeFile();
     }, 100);
   });
+
+  document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function () {
+      if (this.checkValidity()) {
+        this.style.border = "";
+      } else {
+        this.style.border = "solid 2px red";
+      }
+    });
+  });
+
+  document.getElementById("tag-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const tagText = this.value.trim();
+      if (tagText !== "") {
+        addTag(tagText);
+        this.value = "";
+      }
+    }
+  });
+
+  function addTag(name) {
+    const tagContainer = document.getElementById("tag-container");
+    const tagElement = document.createElement("div");
+    tagElement.classList.add("tag");
+    tagElement.innerHTML = `${name} <span class="remove">&times;</span>`;
+
+    tagElement.querySelector(".remove").addEventListener("click", function() {
+      tagContainer.removeChild(tagElement);
+    });
+
+    tagContainer.insertBefore(tagElement, document.getElementById("tag-input").nextSibling);
+  }
+
 </script>
 </body>
 </html>
