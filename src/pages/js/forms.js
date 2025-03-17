@@ -1,4 +1,4 @@
-import {loadHeaderAndFooter} from "./loaderTemplates.js";
+import {fetchFooter, fetchHeader} from "./loaderTemplates.js";
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
@@ -67,6 +67,7 @@ function isValidPassword(password) {
     return regex.test(password);
 }
 
-loadHeaderAndFooter();
+fetchHeader();
+fetchFooter();
 togglePasswordVisibility("togglePassword", "password");
 togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
