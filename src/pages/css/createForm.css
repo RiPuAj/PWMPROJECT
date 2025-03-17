@@ -59,6 +59,10 @@
     font-size: 14px;
     display: none;
 }
+
+.char-counter{
+    display: none;
+}
 /*
 #username:valid{
     border-color: greenyellow;

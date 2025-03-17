@@ -40,7 +40,9 @@
 
     <button type="submit" class="btn btn-dark w-100">Iniciar sesión</button>
     <p class="or-divider">o</p>
-    <button type="button" class="btn btn-dark w-100"><a class="text-decoration-none text-light" href="#">Registrarse</a></button>
+    <a class="text-decoration-none text-light" href="registerForm.html">
+      <button type="button" class="btn btn-dark w-100">Registrarse</button>
+    </a>
   </form>
 </div>
 
@@ -55,5 +57,16 @@
       xLuIncludeFile();
     }, 100);
   });
+
+  document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function () {
+      if (this.checkValidity()) {
+        this.style.border = "";
+      } else if (this != document.getElementById("password")) {
+        this.style.border = "solid 2px red";
+      }
+    });
+  });
+
 </script>
 </html>
