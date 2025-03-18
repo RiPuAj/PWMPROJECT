@@ -11,23 +11,6 @@ document.querySelectorAll("input").forEach(input => {
         }
     });
 });
-
-document.getElementById("password").addEventListener("input", function () {
-    this.setCustomValidity("");
-    if (!this.checkValidity()) {
-        this.style.border = "solid 2px red";
-    }
-    else if (!isValidPassword(this.value)) {
-        this.setCustomValidity("Asegúrate de que tu contraseña tiene al menos una mayúscula, una minúscula, un número y un carácter especial (!?@#$%^&*).");
-        this.style.border = "solid 2px red";
-    }
-    else {
-        this.setCustomValidity("");
-        this.style.border = "";
-    }
-    this.reportValidity();
-});
-
 function addValidationRepPasswd(){
 
     document.getElementById("repeatPassword").addEventListener("input", function () {
@@ -49,9 +32,9 @@ function addValidationRepPasswd(){
 }
 
 function togglePasswordVisibility(toggleButtonId, passwordInputId) {
+
     const toggleButton = document.getElementById(toggleButtonId);
     const passwordInput = document.getElementById(passwordInputId);
-
     toggleButton.addEventListener("click", function () {
         if (passwordInput.type === "password") {
             passwordInput.type = "text";
@@ -64,26 +47,51 @@ function togglePasswordVisibility(toggleButtonId, passwordInputId) {
 
 }
 
-
 function isValidPassword(password) {
+
+
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{5,}$/;
     console.log(regex.test(password))
     return regex.test(password);
 }
+function addValidationPasswd() {
 
-function loadPage(){
 
-    fetchHeader();
-    fetchFooter();
+    document.getElementById("password").addEventListener("input", function () {
+        this.setCustomValidity("");
+        if (!this.checkValidity()) {
+            this.style.border = "solid 2px red";
+        }
+        else if (!isValidPassword(this.value)) {
+            this.setCustomValidity("Asegúrate de que tu contraseña tiene al menos una mayúscula, una minúscula, un número y un carácter especial (!?@#$%^&*).");
+            this.style.border = "solid 2px red";
+        }
+        else {
+            this.setCustomValidity("");
+            this.style.border = "";
+        }
+        this.reportValidity();
+    });
+
+}
+
+document.getElementById("register-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+})
+
+function register(name, email, password, avatar) {
+    
+}
+
+async function loadPage() {
+
+    await fetchHeader();
+    await fetchFooter();
     togglePasswordVisibility("togglePassword", "password");
-
-    const existRepPasswd = document.getElementById("repeatPassword") !== null;
-
-    if (existRepPasswd) {
-
-        addValidationRepPasswd();
-        togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
-    }
+    togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
+    addValidationRepPasswd()
+    addValidationPasswd()
 }
 
 loadPage();
