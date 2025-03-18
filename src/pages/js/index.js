@@ -7,8 +7,8 @@ async function loadIndexData() {
     var tournamentContainer = document.querySelector(".tournament-cards");
     var matchesContainer = document.querySelector(".matches-cards");
 
-    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json',null, 10)
-    var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', null, 10)
+    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 10)
+    var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', 10)
 
     var cardTemplate = textToHTML(await fetchCards());
 

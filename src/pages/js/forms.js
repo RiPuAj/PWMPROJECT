@@ -28,21 +28,25 @@ document.getElementById("password").addEventListener("input", function () {
     this.reportValidity();
 });
 
-document.getElementById("repeatPassword").addEventListener("input", function () {
-    this.setCustomValidity("");
-    if (!this.checkValidity()) {
-        this.style.border = "solid 2px red";
-    }
-    else if (this.value !== document.getElementById("password").value) {
-        this.setCustomValidity("Las contraseñas deben coincidir.");
-        this.style.border = "solid 2px red";
-    }
-    else {
+function addValidationRepPasswd(){
+
+    document.getElementById("repeatPassword").addEventListener("input", function () {
         this.setCustomValidity("");
-        this.style.border = "";
-    }
-    this.reportValidity();
-});
+        if (!this.checkValidity()) {
+            this.style.border = "solid 2px red";
+        }
+        else if (this.value !== document.getElementById("password").value) {
+            this.setCustomValidity("Las contraseñas deben coincidir.");
+            this.style.border = "solid 2px red";
+        }
+        else {
+            this.setCustomValidity("");
+            this.style.border = "";
+        }
+        this.reportValidity();
+    });
+
+}
 
 function togglePasswordVisibility(toggleButtonId, passwordInputId) {
     const toggleButton = document.getElementById(toggleButtonId);
@@ -67,7 +71,19 @@ function isValidPassword(password) {
     return regex.test(password);
 }
 
-fetchHeader();
-fetchFooter();
-togglePasswordVisibility("togglePassword", "password");
-togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
+function loadPage(){
+
+    fetchHeader();
+    fetchFooter();
+    togglePasswordVisibility("togglePassword", "password");
+
+    const existRepPasswd = document.getElementById("repeatPassword") !== null;
+
+    if (existRepPasswd) {
+
+        addValidationRepPasswd();
+        togglePasswordVisibility("toggleRepeatPassword", "repeatPassword");
+    }
+}
+
+loadPage();
