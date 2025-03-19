@@ -9,20 +9,19 @@
   <link rel="stylesheet" href="../css/login.css" />
   <link rel="stylesheet" href="../../templates/css/navbar.css" />
   <link rel="stylesheet" href="../../templates/css/footer.css" />
+  <script type="module" src="../js/loginForm.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/xlu-include-file.js"></script>
 
 </head>
 
-<header class="fixed-top shadow-sm">
-  <nav xlu-include-file="../../templates/html/navbar.html"></nav>
+<header id="main_header" class="fixed-top shadow-sm">
 </header>
 
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
 
 <div class="form-container">
-  <form>
+  <form id="loginForm-form">
     <div class="input mb-3">
       <label for="email">Email</label>
       <input type="email" required class="form-control" id="email" placeholder="name@example.com">
@@ -32,7 +31,7 @@
       <label for="password">Contraseña</label>
       <div class="input-group mb-3">
         <input type="password" required id="password" class="form-control" placeholder="Contraseña">
-        <button class="btn btn-outline-light" type="button" id="toggleRepeatPassword">
+        <button class="btn btn-outline-light" type="button" id="togglePasswordVisibility">
           <i class="fa-solid fa-eye"></i>
         </button>
       </div>
@@ -47,16 +46,11 @@
 </div>
 
 <div>
-  <footer id="main_footer" class="fixed-bottom" xlu-include-file="../../templates/html/footer.html"></footer>
+  <footer id="main_footer" class="fixed-bottom"></footer>
 </div>
 
 </body>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => {
-      xLuIncludeFile();
-    }, 100);
-  });
 
   document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
