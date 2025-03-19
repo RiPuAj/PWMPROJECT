@@ -2,7 +2,7 @@
     margin-bottom: 3rem;
 }
 
-.tournament-cards, .match-cards {
+.tournament-cards, .matches-cards {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

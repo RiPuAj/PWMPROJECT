@@ -11,13 +11,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 <header id="main_header" xlu-include-file="../../templates/html/navbar.html"></header>
 
 <div class="container-createTeam">
   <div class="form-group">
     <label for="nequipo">Nombre del equipo</label>
-    <input type="text" id="nequipo" class="form-control" placeholder="Nombre">
+    <input type="text" required minlength="3" id="nequipo" class="form-control" placeholder="Nombre">
   </div>
 
   <div class="form-group">
@@ -38,7 +38,9 @@
   </div>
 </div>
 
-<footer id="main_footer" xlu-include-file="../../templates/html/footer.html"></footer>
+<div class="fixed-bottom shadow-sm">
+  <footer id="main_footer" xlu-include-file="../../templates/html/footer.html"></footer>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -46,6 +48,41 @@
       xLuIncludeFile();
     }, 100);
   });
+
+  document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function () {
+      if (this.checkValidity()) {
+        this.style.border = "";
+      } else {
+        this.style.border = "solid 2px red";
+      }
+    });
+  });
+
+  document.getElementById("tag-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const tagText = this.value.trim();
+      if (tagText !== "") {
+        addTag(tagText);
+        this.value = "";
+      }
+    }
+  });
+
+  function addTag(name) {
+    const tagContainer = document.getElementById("tag-container");
+    const tagElement = document.createElement("div");
+    tagElement.classList.add("tag");
+    tagElement.innerHTML = `${name} <span class="remove">&times;</span>`;
+
+    tagElement.querySelector(".remove").addEventListener("click", function() {
+      tagContainer.removeChild(tagElement);
+    });
+
+    tagContainer.insertBefore(tagElement, document.getElementById("tag-input").nextSibling);
+  }
+
 </script>
 </body>
 </html>
