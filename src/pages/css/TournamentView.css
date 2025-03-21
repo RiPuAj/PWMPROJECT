@@ -1,28 +1,35 @@
-.torneo-container{
+.torneo-container {
     background-color: #00C02C;
     padding: 50px;
     border-radius: 10px;
-    margin: 150px;
+    margin: 150px auto;
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
 }
 
-.torneo-info h1{
-    font-size: 20px;
+.partidos-section .partidos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.torneo-info h1 {
+    font-size: 22px;
     text-align: center;
 }
 
-.torneo-info h2{
+.torneo-info h2 {
     font-size: 18px;
     text-align: center;
 }
 
-.torneo-info .torneo-logo img{
-    width: 10%;
+.torneo-info .torneo-logo img {
+    width: 80px;
     height: auto;
 }
 
-.torneo-info .torneo-logo{
+.torneo-info .torneo-logo {
     text-align: center;
     align-content: center;
     margin: auto;
@@ -31,23 +38,83 @@
 .partidos-container {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .partidos-section {
-    width: auto;
+    width: 100%;
     text-align: left;
 }
 
 .partidos-section h3 {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
     padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
 }
 
+/* MATCHES */
 .partidos {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+@media (max-width: 992px) {
+    .torneo-container {
+        padding: 40px;
+        margin: 100px 20px;
+    }
+
+    .partidos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partidos-section {
+        width: 90%;
+    }
+
+    .partidos-section .partidos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .torneo-container {
+        padding: 30px;
+        margin: 50px 10px;
+    }
+
+    .partidos-section .partidos {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .torneo-info h1 {
+        font-size: 18px;
+    }
+
+    .torneo-info h2 {
+        font-size: 16px;
+    }
+
+    .torneo-info .torneo-logo img {
+        width: 60px;
+    }
+
+    .partidos-container {
+        gap: 15px;
+    }
+
+    .partidos-section h3 {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
