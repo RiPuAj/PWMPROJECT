@@ -21,3 +21,18 @@
     transform: scale(1.1);
 }
 
+#user-menu{
+    align-items: center;
+    margin-left: 1.5em;
+}
+
+#username{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#user-photo{
+    border-radius: 100%;
+    width: 2rem;
+}

@@ -38,7 +38,12 @@ async function loginForm(email, password) {
         ? "Email o contraseña incorrecto"
         : "Inicio completado correctamente.";
 
+
     createModal(user, message);
+
+    if(user){
+        localStorage.setItem("loggedUser", JSON.stringify(user));
+    }
 }
 
 function createModal(user, message) {
@@ -112,6 +117,10 @@ function createModal(user, message) {
 
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show(); // Mostrar el modal
+
+    modal.addEventListener('hidden.bs.modal', function () {
+        window.location.href="index.html";
+    })
 }
 
 async function loadPage() {

@@ -22,7 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link text-light active" aria-current="page" href="../../pages/html/index.html">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" id="create-menu">
                         <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Crear
                         </a>
@@ -32,7 +32,7 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="navbar-nav d-flex mb-lg-0">
+                <ul class="navbar-nav d-flex mb-lg-0" id="auth-buttons">
                     <li class="nav-item d-flex">
                         <a class="text-decoration-none text-black" href="../../pages/html/loginForm.html">
                             <button class="btn btn-light">Iniciar sesión</button>
@@ -48,8 +48,22 @@
                     <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
                     <button class="btn btn-dark" type="submit">Buscar</button>
                 </form>
+                <ul class="navbar-nav d-flex mb-lg-0" id="user-menu">
+                    <li class="nav-item d-flex">
+                        <a class="text-decoration-none text-black" href="../../pages/html/userPage.html">
+                            <span id="username"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex me-5 ms-2">
+                        <a class="text-decoration-none text-white" href="../../pages/html/userPage.html">
+                            <img id="user-photo" src="">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 </body>
+
+
 </html>
