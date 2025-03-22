@@ -77,3 +77,21 @@ ul li {
     font-style: italic;
     text-align: center;
 }
+
+
+@media (max-width: 1250px) {
+    .panel {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .counter {
+        gap: 5px;
+        font-size: 1em;
+    }
+
+    .counter button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}

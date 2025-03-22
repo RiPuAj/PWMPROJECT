@@ -84,37 +84,3 @@
         justify-content: center;
     }
 }
-
-@media (max-width: 576px) {
-    .torneo-container {
-        padding: 30px;
-        margin: 50px 10px;
-    }
-
-    .partidos-section .partidos {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .torneo-info h1 {
-        font-size: 18px;
-    }
-
-    .torneo-info h2 {
-        font-size: 16px;
-    }
-
-    .torneo-info .torneo-logo img {
-        width: 60px;
-    }
-
-    .partidos-container {
-        gap: 15px;
-    }
-
-    .partidos-section h3 {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
