@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crear equipo</title>
-  <script src="../js/xlu-include-file.js"></script>
+  <script type="module" src="../js/createForm.js"></script>
   <link rel="stylesheet" href="../../templates/css/navbar.css">
   <link rel="stylesheet" href="../../templates/css/footer.css">
   <link rel="stylesheet" href="../css/createForm.css">
@@ -12,7 +12,7 @@
 
 </head>
 <body class="d-flex flex-column min-vh-100">
-<header id="main_header" xlu-include-file="../../templates/html/navbar.html"></header>
+<header id="main_header"></header>
 
 <div class="container-createTeam">
   <div class="form-group">
@@ -38,9 +38,7 @@
   </div>
 </div>
 
-<div class="fixed-bottom shadow-sm">
-  <footer id="main_footer" xlu-include-file="../../templates/html/footer.html"></footer>
-</div>
+<footer id="main_footer" class="fixed-bottom"></footer>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
