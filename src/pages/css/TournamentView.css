@@ -2,10 +2,9 @@
     background-color: #00C02C;
     padding: 50px;
     border-radius: 10px;
-    margin: 150px auto;
+    margin: 150px 100px;
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
 }
 
 .partidos-section .partidos {
