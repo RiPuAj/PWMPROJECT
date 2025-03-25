@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="../../templates/css/navbar.css">
   <link rel="stylesheet" href="../../templates/css/footer.css">
   <link rel="stylesheet" href="../css/userPage.css">
-  <script src="../js/xlu-include-file.js"></script>
+  <script type="module" src="../js/userPage.js"></script>
 </head>
 <body>
-  <header class="fixed-top" xlu-include-file="../../templates/html/navbar.html"></header>
+  <header id="main_header" class="fixed-top"></header>
   <div class="container">
     <div class="profile-header">
       <img src="../../resources/images/default-featured-image.jpg" alt="Usuario" class="profile-img">
@@ -19,33 +19,23 @@
     <div class="main">
       <div class="sidebar">
         <ul>
-          <a class="active" href="#"><li>Datos personales</a>
-          <a href="#"><li>Mis equipos</li></a>
-          <a href="#"><li>Mis Estadísticas</li></a>
-          <a href="#"><li>Torneos</li></a>
-          <a href="#"><li>Partidos</li></a>
+          <a id="my-data" class="active sidebar-button"><li>Datos personales</li></a>
+          <a id="my-teams" class="sidebar-button"><li>Mis equipos</li></a>
+          <a id="my-statistics" class="sidebar-button"><li>Mis Estadísticas</li></a>
+          <a id="my-tournaments" class="sidebar-button"><li>Torneos</li></a>
+          <a id="my-matches" class="sidebar-button"><li>Partidos</li></a>
         </ul>
       </div>
 
       <div class="content">
-        <h2>Panel de Usuario</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget lobortis mi.
-          Praesent nec pellentesque nibh, in porta turpis. Suspendisse laoreet sit amet
-          neque sit amet gravida. Aliquam nulla ex, ultrices in molestie eu, bibendum in erat.</p>
+        <h2 id="panel-name"></h2>
+        <div id="panel-content"></div>
       </div>
     </div>
   </div>
 
-  <div class="fixed-bottom">
-    <footer xlu-include-file="../../templates/html/footer.html"></footer>
-  </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    setTimeout(() => {
-      xLuIncludeFile();
-    }, 100);
-  });
-</script>
+  <footer id="main_footer" class="fixed-bottom"></footer>
+
 </body>
 </html>
