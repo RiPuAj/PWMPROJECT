@@ -13,12 +13,12 @@ async function loadIndexData() {
     var cardTemplate = textToHTML(await fetchCards());
 
     tournamentsData.forEach(element => {
-        let templateContainer = setCardProperties(cardTemplate, element);
+        let templateContainer = setCardProperties(cardTemplate, element, "tournament");
         tournamentContainer.appendChild(templateContainer);
     })
 
     matchesData.forEach(element => {
-        let templateContainer = setCardProperties(cardTemplate, element);
+        let templateContainer = setCardProperties(cardTemplate, element, "matches");
         matchesContainer.appendChild(templateContainer);
     })
 }

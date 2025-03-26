@@ -38,9 +38,16 @@ const loadData = async () => {
         let start = (currentPage-1) * itemsPerPage;
         let end = currentPage * itemsPerPage;
         let dataPaginated = data.slice(start,end);
+        let currentPagePath = window.location.pathname
+        let type = null;
+        if (currentPagePath.includes("allMatches.html")) {
+            type = "matches";
+        } else if (currentPagePath.includes("allTournaments.html")) {
+            type = "tournament";
+        }
 
         dataPaginated.forEach(element => {
-            let templateContainer = setCardProperties(cardTemplate, element);
+            let templateContainer = setCardProperties(cardTemplate, element, type);
             container.appendChild(templateContainer);
         })
 

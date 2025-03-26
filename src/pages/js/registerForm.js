@@ -1,4 +1,5 @@
 import {fetchFooter, fetchHeader} from "./loaderTemplates.js";
+import {fetchData} from "./utils.js ";
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
@@ -75,13 +76,32 @@ function addValidationPasswd() {
 
 }
 
-document.getElementById("register-form").addEventListener("submit", function (event) {
+document.getElementById("register-form").addEventListener("submit", async function (event) {
     event.preventDefault();
+    const name = document.getElementById("user-name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
+    await register(name, email, password);
 })
 
-function register(name, email, password, avatar) {
-    
+async function register(name, email, password) {
+    const usersData = await fetchData("../../resources/mocks/MOCK_USER.json", null).then(data => data.json());
+
+    const newUser = {
+        id: usersData.length + 1,
+        name: name,
+        email: email,
+        password: password,
+        avatar: "https://robohash.org/liberoeaplaceat.png?size=200x200&set=set1"
+    }
+
+    const existUser = usersData.find(element => {
+        return email === element.email;
+    })
+    if(existUser) alert("El usuario con ese email ya existe");
+
+    usersData.push(newUser);
 }
 
 async function loadPage() {

@@ -1,9 +1,11 @@
-export function setCardProperties(template, data) {
+export function setCardProperties(template, data, type) {
     let templateContainer = template.createElement("div");
     const img = template.getElementById("image");
     const title = template.getElementById("title");
     const description = template.getElementById("description");
-    const moreInfoBtn = template.getElementById("moreInfo");
+    const moreInfoBtn = template.getElementById("more-info-btn");
+    moreInfoBtn.href = `matchInfoPage.html?type=${type}&id=${data.id}`;
+
 
     img.src = data.image;
     title.textContent = data.name;
