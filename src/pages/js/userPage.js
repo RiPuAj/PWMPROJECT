@@ -18,7 +18,6 @@ function changePanelInfo(button){
     const panelContent = document.getElementById("panel-content")
 
     if (button.id === "my-data") {
-        panelContent.innerHTML = "<h1>ESTE SON MIS DATOS</h1>";
         panelName.innerHTML = button.name;
     } else if (button.id === "my-teams") {
         panelContent.innerHTML = "<h1>ESTO SON MIS EQUIPOS</h1>"
