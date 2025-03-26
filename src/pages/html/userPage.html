@@ -47,7 +47,12 @@
           </div>
           <div class = "field">
             <p> Contraseña</p>
-            <input type="text" id="password-field" class="form-control" placeholder="Contraseña">
+            <div class="input-group mb-3">
+              <input type="password" id="password-field" class="form-control" placeholder="Contraseña">
+              <button class="btn btn-outline-light" type="button" id="togglePasswordVisibility">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
           </div>
           <button type="button" id="log-out-button" class="close-button btn btn-primary">Cerrar Sesión</button>
           <div class="save-buttons">

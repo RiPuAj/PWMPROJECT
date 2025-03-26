@@ -131,5 +131,27 @@ if(user){
     changeUserPanelData()
 
 }
-fetchHeader();
-fetchFooter();
+
+function togglePasswordVisibility(toggleButtonId, passwordInputId) {
+
+    const toggleButton = document.getElementById(toggleButtonId);
+    const passwordInput = document.getElementById(passwordInputId);
+    toggleButton.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleButton.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+        } else {
+            passwordInput.type = "password";
+            toggleButton.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        }
+    });
+
+}
+async function loadPage() {
+
+    await fetchHeader();
+    await fetchFooter();
+    togglePasswordVisibility("togglePasswordVisibility", "password-field");
+}
+
+loadPage();
