@@ -111,10 +111,25 @@ function createLogoutModal() {
     modalInstance.show();
 }
 
+function changeUserPanelData(){
+    let userNameField = document.getElementById("username-field");
+    let emailField = document.getElementById("email-field");
+    let passwordField = document.getElementById("password-field");
+    userNameField.placeholder = user.username;
+    emailField.placeholder = user.email;
+    passwordField.value = user.password;
+    document.getElementById("email-field").addEventListener('focus', function (){emailField.value = user.email;})
+    document.getElementById("username-field").addEventListener('focus', function (){userNameField.value = user.username;})
+}
+
 document.getElementById("log-out-button").addEventListener("click", function (){
     createLogoutModal();
 })
 
-if(user){changeUserData();}
+if(user){
+    changeUserData();
+    changeUserPanelData()
+
+}
 fetchHeader();
 fetchFooter();
