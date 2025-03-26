@@ -96,5 +96,34 @@ h2 {
 p {
     font-size: 16px;
     color: black;
-    font-weight: bold;
+}
+
+.field{
+    margin-bottom: 0.25rem;
+}
+
+.save-buttons{
+    text-align: right;
+    bottom: 0;
+}
+
+.close-button{
+    margin-top: 1rem;
+    background-color: red !important;
+    border-color: red !important;
+}
+
+.close-button:hover{
+    background-color: darkred !important;
+    border-color: darkred !important;
+}
+
+.cancel-button{
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+}
+
+.cancel-button:hover{
+    background-color: black !important;
+    border-color: black !important;
 }
