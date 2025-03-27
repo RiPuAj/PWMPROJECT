@@ -127,3 +127,31 @@ p {
     background-color: black !important;
     border-color: black !important;
 }
+
+#user-info-panel{
+    display: none;
+}
+
+#teams-panel{
+    display: none;
+}
+
+#stats-panel{
+    display: none;
+}
+
+#tournaments-panel{
+    display: none;
+}
+
+#matches-panel{
+    display: none;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.stats-table{
+    margin-top: 4rem !important;
+}

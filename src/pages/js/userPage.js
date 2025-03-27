@@ -19,17 +19,29 @@ function changePanelInfo(button){
     const panelName = document.getElementById("panel-name")
     const panelContent = document.getElementById("panel-content")
 
-    if (button.id === "my-data") {
-        panelName.innerHTML = button.name;
-    } else if (button.id === "my-teams") {
-        panelContent.innerHTML = "<h1>ESTO SON MIS EQUIPOS</h1>"
-    }else if (button.id === "my-statistics") {
-        panelContent.innerHTML = "<h1>ESTO SON MIS ESTADISTICAS</h1>"
-    } else if (button.id === "my-tournaments") {
-        panelContent.innerHTML = "<h1>ESTO SON MIS TORNEOS</h1>"
-    } else if (button.id === "my-matches") {
-        panelContent.innerHTML = "<h1>ESTO SON MIS PARTIDOS</h1>"
+
+    let activeInfo = sessionStorage.getItem("active-info");
+
+    if (activeInfo) {
+        document.getElementById(activeInfo).style.display = "none";
     }
+
+    let newActiveInfo = "";
+
+    if (button.id === "my-data") {
+        newActiveInfo = "user-info-panel";
+    } else if (button.id === "my-teams") {
+        newActiveInfo = "teams-panel";
+    } else if (button.id === "my-statistics") {
+        newActiveInfo = "stats-panel";
+    } else if (button.id === "my-tournaments") {
+        newActiveInfo = "tournaments-panel";
+    } else if (button.id === "my-matches") {
+        newActiveInfo = "matches-panel"; // Arreglado
+    }
+
+    document.getElementById(newActiveInfo).style.display = "block";
+    sessionStorage.setItem("active-info", newActiveInfo);
 
     let btn = document.querySelector(".sidebar-button.active");
     console.log(btn)
@@ -118,8 +130,24 @@ function changeUserPanelData(){
     userNameField.placeholder = user.username;
     emailField.placeholder = user.email;
     passwordField.value = user.password;
-    document.getElementById("email-field").addEventListener('focus', function (){emailField.value = user.email;})
-    document.getElementById("username-field").addEventListener('focus', function (){userNameField.value = user.username;})
+
+    userNameField.addEventListener("focus", function () {
+        this.value = this.placeholder || user.username;
+    });
+
+    emailField.addEventListener("focus", function () {
+        this.value = this.placeholder || user.email;
+    });
+
+    userNameField.addEventListener("blur", function () {
+        this.placeholder = this.value;
+        this.value = "";
+    });
+
+    emailField.addEventListener("blur", function () {
+        this.placeholder = this.value;
+        this.value = "";
+    });
 }
 
 document.getElementById("log-out-button").addEventListener("click", function (){
