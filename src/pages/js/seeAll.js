@@ -76,53 +76,6 @@ const loadData = async () => {
     renderPage();
 
 }
-/*
-document.addEventListener("DOMContentLoaded", function () {
-    const itemsPerPage = 5; // Cantidad de elementos por página
-    let currentPage = 1;
-
-    const totalPages = Math.ceil(items.length / itemsPerPage);
-
-    const itemList = document.getElementById("itemList");
-    const prevPageBtn = document.getElementById("prevPage");
-    const nextPageBtn = document.getElementById("nextPage");
-    const pageNumber = document.getElementById("pageNumber");
-
-    function renderItems() {
-        itemList.innerHTML = "";
-        const start = (currentPage - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        const paginatedItems = items.slice(start, end);
-
-        paginatedItems.forEach(item => {
-            const li = document.createElement("li");
-            li.className = "list-group-item";
-            li.textContent = item;
-            itemList.appendChild(li);
-        });
-
-        pageNumber.textContent = currentPage;
-
-        prevPageBtn.disabled = currentPage === 1;
-        nextPageBtn.disabled = currentPage === totalPages;
-    }
-
-    prevPageBtn.addEventListener("click", function () {
-        if (currentPage > 1) {
-            currentPage--;
-            renderItems();
-        }
-    });
-
-    nextPageBtn.addEventListener("click", function () {
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderItems();
-        }
-    });
-
-    renderItems(); // Renderiza la primera página al cargar
-});*/
 
 document.addEventListener("DOMContentLoaded", async () => {
     await loadData();
