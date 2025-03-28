@@ -10,13 +10,11 @@
     <link rel="stylesheet" href="../../templates/css/match.css" />
     <link rel="stylesheet" href="../css/TournamentView.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/xlu-include-file.js"></script>
+    <script type="module" src="../js/tournamentView.js"></script>
 
 </head>
 
-<header class="fixed-top shadow-sm">
-    <nav xlu-include-file="../../templates/html/navbar.html"></nav>
-</header>
+<header id="main_header" class="fixed-top"></header>
 
 <body>
 <main>
@@ -53,11 +51,8 @@
 </main>
 
 <div>
-    <footer id="main_footer" class="fixed-bottom" xlu-include-file="../../templates/html/footer.html"></footer>
+    <footer id="main_footer" class="fixed-bottom"></footer>
 </div>
 
 </body>
-<script>
-    xLuIncludeFile();
-</script>
 </html>

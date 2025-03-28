@@ -162,6 +162,6 @@ a:hover{
     flex-wrap: nowrap;
     gap: 20px;
     overflow-x: auto;
+    overflow-y: auto;
     padding: 15px 0;
-    max-height: 100%;
 }
