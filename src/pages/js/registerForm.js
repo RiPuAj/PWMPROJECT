@@ -1,5 +1,5 @@
 import {fetchFooter, fetchHeader} from "./loaderTemplates.js";
-import {fetchData} from "./utils.js ";
+import {fetchData} from "./utils.js";
 
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
@@ -86,7 +86,11 @@ document.getElementById("register-form").addEventListener("submit", async functi
 })
 
 async function register(name, email, password) {
-    const usersData = await fetchData("../../resources/mocks/MOCK_USER.json", null).then(data => data.json());
+    const filePath = "../../resources/mocks/MOCK_USERS.json"
+    const usersData = await fetchData(filePath, null)
+
+    const existUser = usersData.find(user => user.email === email)
+    if (existUser) alert('El usuario ya existe')
 
     const newUser = {
         id: usersData.length + 1,
@@ -96,12 +100,11 @@ async function register(name, email, password) {
         avatar: "https://robohash.org/liberoeaplaceat.png?size=200x200&set=set1"
     }
 
-    const existUser = usersData.find(element => {
-        return email === element.email;
-    })
-    if(existUser) alert("El usuario con ese email ya existe");
 
     usersData.push(newUser);
+    const all = await fetchData("../../resources/mocks/MOCK_USERS.json", null);
+    console.log(all.find(element => element.email === email));
+    alert("Se ha creado el usuario correctamente");
 }
 
 async function loadPage() {
