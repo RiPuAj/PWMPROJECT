@@ -1,4 +1,7 @@
-import {fetchFooter, fetchHeader} from "./loaderTemplates.js";
+import {fetchCards, fetchFooter, fetchHeader} from "./loaderTemplates.js";
+import {fetchData, textToHTML} from "./utils.js";
+import {setCardProperties} from "./cardsOperations.js";
+
 
 const user = JSON.parse(localStorage.getItem("loggedUser"))
 
@@ -36,6 +39,7 @@ function changePanelInfo(button){
         newActiveInfo = "stats-panel";
     } else if (button.id === "my-tournaments") {
         newActiveInfo = "tournaments-panel";
+
     } else if (button.id === "my-matches") {
         newActiveInfo = "matches-panel"; // Arreglado
     }
@@ -175,10 +179,32 @@ function togglePasswordVisibility(toggleButtonId, passwordInputId) {
     });
 
 }
+
+async function loadCardsData() {
+    var tournamentContainer = document.querySelector(".tournament-cards");
+    var matchesContainer = document.querySelector(".matches-cards");
+
+    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 3)
+    var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', 3)
+
+    var cardTemplate = textToHTML(await fetchCards());
+
+    tournamentsData.forEach(element => {
+        let templateContainer = setCardProperties(cardTemplate, element, "tournament");
+        tournamentContainer.appendChild(templateContainer);
+    })
+
+    matchesData.forEach(element => {
+        let templateContainer = setCardProperties(cardTemplate, element, "matches");
+        matchesContainer.appendChild(templateContainer);
+    })
+}
+
 async function loadPage() {
 
     await fetchHeader();
     await fetchFooter();
+    await loadCardsData();
     togglePasswordVisibility("togglePasswordVisibility", "password-field");
 }
 
