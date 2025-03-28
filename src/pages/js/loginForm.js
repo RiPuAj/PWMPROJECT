@@ -82,18 +82,6 @@ function createModal(user, message) {
     modalBody.classList.add('modal-body');
     modalBody.textContent = message;
 
-    if(user !== undefined) {
-
-        var imagen = document.createElement('img');
-        imagen.src = user.avatar;  // Reemplaza con la ruta de tu imagen
-        imagen.alt = 'Descripción de la imagen';  // Texto alternativo
-        imagen.style.borderRadius = '50%';
-        imagen.style.width = '100px';
-        imagen.style.height = '100px';
-        modalBody.appendChild(imagen);
-
-    }
-
     var modalFooter = document.createElement('div');
     modalFooter.classList.add('modal-footer');
 
@@ -118,9 +106,11 @@ function createModal(user, message) {
     var modalInstance = new bootstrap.Modal(modal);
     modalInstance.show(); // Mostrar el modal
 
-    modal.addEventListener('hidden.bs.modal', function () {
-        window.location.href="index.html";
-    })
+    if(user !== undefined) {
+        modal.addEventListener('hidden.bs.modal', function () {
+            window.location.href="index.html";
+        })
+    }
 }
 
 async function loadPage() {
