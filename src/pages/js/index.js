@@ -13,8 +13,8 @@ async function loadIndexData(tournamentsData, matchesData) {
     tournamentContainer.innerHTML ="";
     matchesContainer.innerHTML = "";
 
-    if(tournamentsData.length == 0) tournamentContainer.innerHTML = "<h1> NO HAY TORNEOS DISPONIBLES </h1>";
-    if(matchesData.length == 0) matchesContainer.innerHTML = "<h1> NO HAY PARTIDOS DISPONIBLES </h1>";
+    if(tournamentsData.length == 0) tournamentContainer.innerHTML = "<h1> NO HAY TORNEOS CON ESAS COINCIDENCIAS </h1>";
+    if(matchesData.length == 0) matchesContainer.innerHTML = "<h1> NO HAY PARTIDOS CON ESAS COINCIDENCIAS </h1>";
 
     var cardTemplate = textToHTML(await fetchCards());
 
