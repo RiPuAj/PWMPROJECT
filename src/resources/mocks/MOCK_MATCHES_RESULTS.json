@@ -1,32 +1,59 @@
 [
   {
     "id": 1,
-    "result": {
-      "team_1": 0,
-      "team_2": 2
-    },
-    "participants": {
-      "team_1": [
+    "status" : "Finalizado",
+    "date" : "08/06/2024",
+    "hour" : "08:31",
+    "team1" : {
+      "score": 1,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants" : [
         "rmacnulty0",
         "apeaple1",
         "bsleeman2",
         "mcaulton3",
         "mviegas4"
-      ],
-      "team_2":[
+      ]
+    },
+    "team2": {
+      "score": 1,
+      "image":"https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants" : [
         "bharrold5",
         "ssegrave6",
         "nfawdry7",
         "bmitchenson8",
         "ekirman9"
       ]
-    },
-    "images":{
-      "team_1" : "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
-      "team_2" : "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg"
-    },
-    "status" : "Jugado",
-    "date" : "08/06/2024",
-    "hour" : "08:31"
+    }
+  },
+  {
+    "id": 2,
+    "status" : "Preparación",
+    "date" : "23/04/2024",
+    "hour" : "13:22",
+    "team1": {
+      "score": 1,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants" : [
+        "ernestina",
+        "apeaple1",
+        "bsleeman2",
+        "mcaulton3",
+        "mviegas4"
+      ]
+      },
+    "team2": {
+      "score": 1,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants" : [
+        "Nico",
+        "Jose",
+        "Javier",
+        "Pablo",
+        "Alejandro"
+      ]
+    }
   }
+
 ]

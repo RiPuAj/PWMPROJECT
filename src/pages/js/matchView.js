@@ -25,20 +25,20 @@ function setProperties(match){
 
     date.innerText = match.date;
     hour.innerText = match.hour;
-    teamOneImage.src = match.images.team_1;
-    teamTwoImage.src = match.images.team_2;
-    teamOneResult.innerText = match.result.team_1;
-    teamTwoResult.innerText = match.result.team_2;
+    teamOneImage.src = match.team1.image;
+    teamTwoImage.src = match.team2.image;
+    teamOneResult.innerText = match.team1.score;
+    teamTwoResult.innerText = match.team2.score;
     status.innerText = match.status;
 
 
-    match.participants.team_1.forEach(participant => {
+    match.team1.participants.forEach(participant => {
         const li = document.createElement("li");
         li.textContent = participant;
         teamOneList.appendChild(li);
     })
 
-    match.participants.team_2.forEach(participant => {
+    match.team2.participants.forEach(participant => {
         const li = document.createElement("li");
         li.textContent = participant;
         teamTwoList.appendChild(li);
