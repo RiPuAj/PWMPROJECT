@@ -1,6 +1,5 @@
 import {fetchCards, fetchFooter, fetchHeader} from "./loaderTemplates.js";
 import {fetchData, textToHTML} from "./utils.js";
-import {setCardProperties} from "./cardsOperations.js";
 
 
 const user = JSON.parse(localStorage.getItem("loggedUser"))
@@ -184,7 +183,7 @@ async function loadCardsData() {
     var tournamentContainer = document.querySelector(".tournament-cards");
     var matchesContainer = document.querySelector(".matches-cards");
 
-    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 3)
+    var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 10)
     var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', 3)
 
     var cardTemplate = textToHTML(await fetchCards());
@@ -198,6 +197,23 @@ async function loadCardsData() {
         let templateContainer = setCardProperties(cardTemplate, element, "matches");
         matchesContainer.appendChild(templateContainer);
     })
+}
+
+function setCardProperties(template, data, type) {
+    let templateContainer = template.createElement("div");
+    const img = template.getElementById("image");
+    const title = template.getElementById("title");
+    const description = template.getElementById("description");
+    const moreInfoBtn = template.getElementById("more-info-btn");
+    moreInfoBtn.href = `matchInfoPage.html?type=${type}&id=${data.id}`;
+
+
+    img.src = data.image;
+    title.textContent = data.name;
+    description.textContent = data.description;
+    templateContainer.innerHTML = template.body.innerHTML;
+
+    return templateContainer;
 }
 
 async function loadPage() {

@@ -158,10 +158,29 @@ a:hover{
 
 .tournament-cards, .matches-cards {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;
-    overflow-y: auto;
-    padding: 15px 0;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 10px;
+    height: 5vh;
+}
+
+.card {
+    width: 30vh;
+    height: 5vh;
+
+}
+
+.card-img-top {
+    width: 5vh;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.card-text {
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
