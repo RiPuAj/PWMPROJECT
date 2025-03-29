@@ -200,21 +200,35 @@ async function loadCardsData() {
 }
 
 function setCardProperties(template, data, type) {
-    let templateContainer = template.createElement("div");
-    const img = template.getElementById("image");
-    const title = template.getElementById("title");
-    const description = template.getElementById("description");
-    const moreInfoBtn = template.getElementById("more-info-btn");
-    moreInfoBtn.href = `matchInfoPage.html?type=${type}&id=${data.id}`;
+    let templateContainer = document.createElement("div"); // Se usaba "template.createElement" (incorrecto)
+    templateContainer.classList.add("card");
 
-
+    const img = document.createElement("img");
     img.src = data.image;
+    img.alt = data.name;
+    img.style.width = "100%";
+    img.style.height = "150px";
+    img.style.objectFit = "cover";
+
+    const title = document.createElement("h3");
     title.textContent = data.name;
+
+    const description = document.createElement("p");
     description.textContent = data.description;
-    templateContainer.innerHTML = template.body.innerHTML;
+
+    const moreInfoBtn = document.createElement("a");
+    moreInfoBtn.href = `matchInfoPage.html?type=${type}&id=${data.id}`;
+    moreInfoBtn.textContent = "Más info";
+    moreInfoBtn.classList.add("btn", "btn-primary");
+
+    templateContainer.appendChild(img);
+    templateContainer.appendChild(title);
+    templateContainer.appendChild(description);
+    templateContainer.appendChild(moreInfoBtn);
 
     return templateContainer;
 }
+
 
 async function loadPage() {
 
