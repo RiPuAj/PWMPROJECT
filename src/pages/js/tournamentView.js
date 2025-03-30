@@ -7,6 +7,7 @@ async function loadTournamentView() {
 
     const matches = await fetchData('../../resources/mocks/MOCK_MATCHES.json', null);
     const tournaments = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', null);
+    const teams = await fetchData('../../resources/mocks/MOCK_TEAMS.json', null);
     const matchTemplateHTML = await fetchMatch();
 
     const lastMatchesContainer = document.querySelector(".partidos-section:nth-of-type(1) .partidos");
@@ -25,17 +26,25 @@ async function loadTournamentView() {
     const lastMatches = sortedMatches.filter(match => new Date(match.date.split("/").reverse().join("-")) < today).slice(-3).reverse();
     const upcomingMatches = sortedMatches.filter(match => new Date(match.date.split("/").reverse().join("-")) >= today).slice(0, 3);
 
+    const getTeamByName = (name) => {
+        return teams.find(team => team.name === name);
+    };
+
     lastMatches.forEach(match => {
         const matchElement = textToHTML(matchTemplateHTML).body.firstElementChild.cloneNode(true);
         matchElement.querySelector(".text-light-date").textContent = match.date + " - " + match.hour;
 
-        const teams = matchElement.querySelectorAll(".team p");
-        teams[0].textContent = match.participants[0] || "Equipo 1";
-        teams[1].textContent = match.participants[1] || "Equipo 2";
+        const teamsElements = matchElement.querySelectorAll(".team p");
+
+        const team1 = getTeamByName(match.participants[0]);
+        const team2 = getTeamByName(match.participants[1]);
+
+        teamsElements[0].textContent = team1 ? team1.name : "Equipo 1";
+        teamsElements[1].textContent = team2 ? team2.name : "Equipo 2";
 
         const images = matchElement.querySelectorAll(".team img");
-        images[0].src = match.image;
-        images[1].src = match.image;
+        images[0].src = team1 ? team1.image : "default_image_url_1";
+        images[1].src = team2 ? team2.image : "default_image_url_2";
 
         matchElement.addEventListener("click", () => {
             window.location.href = `matchView.html?id=${match.id}`;
@@ -48,13 +57,17 @@ async function loadTournamentView() {
         const matchElement = textToHTML(matchTemplateHTML).body.firstElementChild.cloneNode(true);
         matchElement.querySelector(".text-light-date").textContent = match.date + " - " + match.hour;
 
-        const teams = matchElement.querySelectorAll(".team p");
-        teams[0].textContent = match.participants[0] || "Equipo 1";
-        teams[1].textContent = match.participants[1] || "Equipo 2";
+        const teamsElements = matchElement.querySelectorAll(".team p");
+
+        const team1 = getTeamByName(match.participants[0]);
+        const team2 = getTeamByName(match.participants[1]);
+
+        teamsElements[0].textContent = team1 ? team1.name : "Equipo 1";
+        teamsElements[1].textContent = team2 ? team2.name : "Equipo 2";
 
         const images = matchElement.querySelectorAll(".team img");
-        images[0].src = match.image;
-        images[1].src = match.image;
+        images[0].src = team1 ? team1.image : "default_image_url_1";
+        images[1].src = team2 ? team2.image : "default_image_url_2";
 
         matchElement.addEventListener("click", () => {
             window.location.href = `matchView.html?id=${match.id}`;
@@ -76,4 +89,3 @@ async function loadTournamentView() {
 }
 
 document.addEventListener("DOMContentLoaded", loadTournamentView);
-
