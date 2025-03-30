@@ -197,6 +197,11 @@ a:hover{
     overflow: hidden;
 }
 
+.card-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card-img-top {
     width: 5rem;
     height: 10rem;

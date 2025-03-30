@@ -1,5 +1,6 @@
 import {fetchCards, fetchFooter, fetchHeader} from "./loaderTemplates.js";
 import {fetchData, textToHTML} from "./utils.js";
+import {setCardProperties} from "./cardsOperations.js";
 
 
 const user = JSON.parse(localStorage.getItem("loggedUser"))
@@ -198,10 +199,9 @@ async function loadCardsData() {
         matchesContainer.appendChild(templateContainer);
     })
 }
-
+/*
 function setCardProperties(template, data, type) {
-    let templateContainer = document.createElement("div"); // Se usaba "template.createElement" (incorrecto)
-    templateContainer.classList.add("card");
+    let templateContainer = template.createElement("div"); // Se usaba "template.createElement" (incorrecto)
 
     const img = document.createElement("img");
     img.src = data.image;
@@ -227,7 +227,7 @@ function setCardProperties(template, data, type) {
     templateContainer.appendChild(moreInfoBtn);
 
     return templateContainer;
-}
+}*/
 
 
 async function loadPage() {
