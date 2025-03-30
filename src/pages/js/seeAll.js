@@ -66,7 +66,7 @@ const loadData = async () => {
 
     nextPageBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if(currentPage < itemsPerPage){
+        if(currentPage < totalPages){
             currentPage++;
             renderPage();
         }

@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "status" : "Finalizado",
-    "date" : "08/06/2024",
-    "hour" : "08:31",
-    "team1" : {
+    "status": "Finalizado",
+    "date": "08/06/2024",
+    "hour": "08:31",
+    "team1": {
       "score": 1,
       "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
-      "participants" : [
+      "participants": [
         "rmacnulty0",
         "apeaple1",
         "bsleeman2",
@@ -17,8 +17,8 @@
     },
     "team2": {
       "score": 1,
-      "image":"https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
-      "participants" : [
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
         "bharrold5",
         "ssegrave6",
         "nfawdry7",
@@ -29,24 +29,24 @@
   },
   {
     "id": 2,
-    "status" : "Preparación",
-    "date" : "23/04/2024",
-    "hour" : "13:22",
+    "status": "Preparación",
+    "date": "23/04/2024",
+    "hour": "13:22",
     "team1": {
       "score": 0,
       "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
-      "participants" : [
+      "participants": [
         "ernestina",
         "apeaple1",
         "bsleeman2",
         "mcaulton3",
         "mviegas4"
       ]
-      },
+    },
     "team2": {
       "score": 0,
       "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
-      "participants" : [
+      "participants": [
         "Nico",
         "Jose",
         "Javier",
@@ -54,6 +54,229 @@
         "Alejandro"
       ]
     }
+  },
+  {
+    "id": 3,
+    "status": "En progreso",
+    "date": "12/05/2024",
+    "hour": "15:00",
+    "team1": {
+      "score": 0,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "aroberts0",
+        "mbrown1",
+        "lwhite2",
+        "kjohnson3",
+        "aperez4"
+      ]
+    },
+    "team2": {
+      "score": 1,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "jdoe1",
+        "gsanchez2",
+        "rfisher3",
+        "bwilson4",
+        "kmartinez5"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "status": "Finalizado",
+    "date": "18/05/2024",
+    "hour": "11:15",
+    "team1": {
+      "score": 2,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "emartin0",
+        "vclark1",
+        "pjohnson2",
+        "lwilliams3",
+        "mroberts4"
+      ]
+    },
+    "team2": {
+      "score": 3,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "rwalker0",
+        "sjohnson1",
+        "bcole2",
+        "tgarcia3",
+        "mdavis4"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "status": "En progreso",
+    "date": "25/05/2024",
+    "hour": "17:30",
+    "team1": {
+      "score": 1,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "wharrison0",
+        "vgreen1",
+        "klee2",
+        "jgordon3",
+        "pwalker4"
+      ]
+    },
+    "team2": {
+      "score": 2,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "rjames0",
+        "nallen1",
+        "tsmith2",
+        "bwatson3",
+        "mperry4"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "status": "Finalizado",
+    "date": "01/06/2024",
+    "hour": "12:00",
+    "team1": {
+      "score": 0,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "jrowe0",
+        "ljames1",
+        "mmartin2",
+        "tmoore3",
+        "vlee4"
+      ]
+    },
+    "team2": {
+      "score": 1,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "rjones0",
+        "sdiaz1",
+        "kwilson2",
+        "jclark3",
+        "mlong4"
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "status": "Preparación",
+    "date": "05/06/2024",
+    "hour": "14:45",
+    "team1": {
+      "score": 1,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "bkim0",
+        "jhall1",
+        "vjohnson2",
+        "mrodriguez3",
+        "bmiller4"
+      ]
+    },
+    "team2": {
+      "score": 0,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "krobinson0",
+        "fgonzalez1",
+        "ecameron2",
+        "gsmith3",
+        "jcameron4"
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "status": "En progreso",
+    "date": "10/06/2024",
+    "hour": "16:00",
+    "team1": {
+      "score": 0,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "lprice0",
+        "wharrison1",
+        "mroberts2",
+        "mjones3",
+        "mgreen4"
+      ]
+    },
+    "team2": {
+      "score": 1,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "sgreen0",
+        "kallen1",
+        "bmiller2",
+        "bwatson3",
+        "rclark4"
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "status": "Finalizado",
+    "date": "20/06/2024",
+    "hour": "18:00",
+    "team1": {
+      "score": 3,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "slong0",
+        "ggarcia1",
+        "twalsh2",
+        "rgreen3",
+        "ksmith4"
+      ]
+    },
+    "team2": {
+      "score": 2,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "tjohnson0",
+        "pmartinez1",
+        "bcole2",
+        "wlewis3",
+        "dking4"
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "status": "Preparación",
+    "date": "23/06/2024",
+    "hour": "10:30",
+    "team1": {
+      "score": 0,
+      "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
+      "participants": [
+        "mwhitney0",
+        "dcollins1",
+        "gmarshall2",
+        "staylor3",
+        "lwilliams4"
+      ]
+    },
+    "team2": {
+      "score": 0,
+      "image": "https://img.freepik.com/foto-gratis/hombres-tiro-completo-campo-futbol_23-2150405442.jpg",
+      "participants": [
+        "mmartin0",
+        "dbrooks1",
+        "tjones2",
+        "jmiller3",
+        "cstewart4"
+      ]
+    }
   }
-
 ]
