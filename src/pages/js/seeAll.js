@@ -24,7 +24,7 @@ const loadData = async () => {
         await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', null) :
         await fetchData('../../resources/mocks/MOCK_MATCHES.json', null);
 
-    const totalPages = Math.ceil(data / itemsPerPage);
+    const totalPages = Math.ceil(data.length / itemsPerPage);
 
     const prevPageBtn = document.querySelector("#prevPage");
     const nextPageBtn = document.querySelector("#nextPage");
@@ -52,7 +52,7 @@ const loadData = async () => {
         })
 
         prevPageBtn.className = currentPage === 1 ? "page-item disabled" : "page-item";
-        nextPageBtn.disabled = currentPage === totalPages ? "page-item disabled" : "page-item";
+        nextPageBtn.className = currentPage === totalPages ? "page-item disabled" : "page-item";
 
     }
 
