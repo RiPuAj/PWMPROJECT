@@ -33,7 +33,7 @@
     "date" : "23/04/2024",
     "hour" : "13:22",
     "team1": {
-      "score": 1,
+      "score": 0,
       "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
       "participants" : [
         "ernestina",
@@ -44,7 +44,7 @@
       ]
       },
     "team2": {
-      "score": 1,
+      "score": 0,
       "image": "https://media.gettyimages.com/id/141467589/es/foto/equipo-de-f%C3%BAtbol-de-paso-por-la-noche.jpg?s=612x612&w=gi&k=20&c=yLvXpWpADNCFNPfhPG4HbGDTH7VvlKrl2MfyZLfFQOU=",
       "participants" : [
         "Nico",

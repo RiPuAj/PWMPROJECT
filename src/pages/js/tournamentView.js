@@ -22,7 +22,7 @@ async function loadTournamentView() {
         return new Date(a.date.split("/").reverse().join("-")) - new Date(b.date.split("/").reverse().join("-"));
     });
 
-    const lastMatches = sortedMatches.filter(match => new Date(match.date.split("/").reverse().join("-")) < today).slice(-3);
+    const lastMatches = sortedMatches.filter(match => new Date(match.date.split("/").reverse().join("-")) < today).slice(-3).reverse();
     const upcomingMatches = sortedMatches.filter(match => new Date(match.date.split("/").reverse().join("-")) >= today).slice(0, 3);
 
     lastMatches.forEach(match => {
@@ -36,6 +36,10 @@ async function loadTournamentView() {
         const images = matchElement.querySelectorAll(".team img");
         images[0].src = match.image;
         images[1].src = match.image;
+
+        matchElement.addEventListener("click", () => {
+            window.location.href = `matchView.html?id=${match.id}`;
+        });
 
         lastMatchesContainer.appendChild(matchElement);
     });
@@ -51,6 +55,10 @@ async function loadTournamentView() {
         const images = matchElement.querySelectorAll(".team img");
         images[0].src = match.image;
         images[1].src = match.image;
+
+        matchElement.addEventListener("click", () => {
+            window.location.href = `matchView.html?id=${match.id}`;
+        });
 
         upcomingMatchesContainer.appendChild(matchElement);
     });
