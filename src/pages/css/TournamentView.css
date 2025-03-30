@@ -13,6 +13,13 @@
     justify-content: center;
 }
 
+.torneo-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .torneo-info h1 {
     font-size: 22px;
     text-align: center;
@@ -26,6 +33,7 @@
 .torneo-info .torneo-logo img {
     width: 20%;
     height: auto;
+    align-content: center;
 }
 
 .torneo-info .torneo-logo {
