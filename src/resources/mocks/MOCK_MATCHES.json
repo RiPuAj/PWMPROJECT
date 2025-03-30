@@ -11,7 +11,7 @@
     "entry_tax": "€3,50",
     "prize_pool": "€45,00",
     "participants": [
-      "Atlético Tucumán",
+      "Atlético",
       "Cacereño"
     ],
     "hour": "14:15"
@@ -28,8 +28,8 @@
     "entry_tax": "€5,46",
     "prize_pool": "€68,43",
     "participants": [
-      "Marcial FC",
-      "UD Coloquial"
+      "Marcial",
+      "Coloquial"
     ],
     "hour": "13:22"
   },
@@ -37,7 +37,7 @@
     "id": 3,
     "name": "El Partidazo",
     "participants_num": 15,
-    "date": "01/04/2025",
+    "date": "01/05/2025",
     "description": "Torneo de fútbol entre amigos",
     "image": "https://cdn.pixabay.com/photo/2018/03/22/09/15/football-3249783_1280.png",
     "place": "678 Elm Street",
@@ -54,7 +54,7 @@
     "id": 4,
     "name": "El Clásico",
     "participants_num": 20,
-    "date": "02/04/2025",
+    "date": "12/05/2025",
     "description": "Competición deportiva amistosa",
     "image": "https://cdn.pixabay.com/photo/2015/08/02/23/51/ajinomoto-872493_960_720.jpg",
     "place": "890 Oak Avenue",
@@ -71,7 +71,7 @@
     "id": 5,
     "name": "Partido Entre Amigos",
     "participants_num": 24,
-    "date": "03/04/2025",
+    "date": "03/05/2025",
     "description": "Torneo amistoso entre vecinos",
     "image": "https://cdn.pixabay.com/photo/2020/11/18/10/18/goalkeeper-5754865_1280.jpg",
     "place": "567 Maple Street",
@@ -88,7 +88,7 @@
     "id": 6,
     "name": "El gran derbi",
     "participants_num": 16,
-    "date": "04/04/2025",
+    "date": "30/04/2025",
     "description": "Amistoso entre equipos aficionados",
     "image": "https://cdn.pixabay.com/photo/2015/11/03/09/04/sport-1020023_1280.jpg",
     "place": "234 Birch Road",
@@ -105,7 +105,7 @@
     "id": 7,
     "name": "Futebol",
     "participants_num": 19,
-    "date": "05/04/2025",
+    "date": "29/03/2025",
     "description": "Partido entre amigos y familia",
     "image": "https://cdn.pixabay.com/photo/2016/11/18/13/54/ball-1834701_1280.jpg",
     "place": "456 Cedar Drive",
@@ -113,8 +113,8 @@
     "entry_tax": "€4,00",
     "prize_pool": "€55,00",
     "participants": [
-      "Equipo A",
-      "Equipo B"
+      "Team A",
+      "Team B"
     ],
     "hour": "16:30"
   },
@@ -190,7 +190,7 @@
     "id": 12,
     "name": "Costa del sol match",
     "participants_num": 22,
-    "date": "10/04/2025",
+    "date": "27/03/2025",
     "description": "Competición en equipo amistosa",
     "image": "https://cdn.pixabay.com/photo/2021/10/13/20/28/football-6707564_1280.jpg",
     "place": "654 Birch Avenue",
@@ -258,7 +258,7 @@
     "id": 16,
     "name": "Derbi argentino",
     "participants_num": 17,
-    "date": "14/04/2025",
+    "date": "02/04/2025",
     "description": "Competición entre aficionados",
     "image": "https://cdn.pixabay.com/photo/2022/09/16/03/47/football-7457715_1280.jpg",
     "place": "543 Oak Road",
@@ -292,7 +292,7 @@
     "id": 18,
     "name": "Naciones",
     "participants_num": 16,
-    "date": "16/04/2025",
+    "date": "05/04/2025",
     "description": "Torneo de fútbol amistoso",
     "image": "https://cdn.pixabay.com/photo/2017/06/21/07/58/pictogram-2426398_1280.jpg",
     "place": "321 Maple Drive",
