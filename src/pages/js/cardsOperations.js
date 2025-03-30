@@ -15,6 +15,19 @@ export function setCardProperties(template, data, type) {
     return templateContainer;
 }
 
+export function setTeamCardProperties(template, data) {
+    let templateContainer = template.createElement("div");
+    const img = template.getElementById("image");
+    const teamName = template.getElementById("team-name");
+
+
+    img.src = data.image;
+    teamName.textContent = data.name;
+    templateContainer.innerHTML = template.body.innerHTML;
+
+    return templateContainer;
+}
+
 export function setCardInfoProperties(data, type) {
     let templateContainer = document.createElement("div");
     const img = document.getElementById("image");

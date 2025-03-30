@@ -167,6 +167,18 @@ a:hover{
     min-height: 320px;
 }
 
+.team-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+    overflow-x: auto !important;
+    padding: 15px 0 !important;
+    align-items: center !important;
+    margin-top: 7rem;
+}
+
+
 .tournament-cards::-webkit-scrollbar,
 .matches-cards::-webkit-scrollbar {
     height: 12px;

@@ -1,6 +1,6 @@
-import {fetchCards, fetchFooter, fetchHeader} from "./loaderTemplates.js";
+import {fetchCards, fetchFooter, fetchHeader, fetchTeamCard} from "./loaderTemplates.js";
 import {fetchData, textToHTML} from "./utils.js";
-import {setCardProperties} from "./cardsOperations.js";
+import {setCardProperties, setTeamCardProperties} from "./cardsOperations.js";
 
 
 const user = JSON.parse(localStorage.getItem("loggedUser"))
@@ -48,7 +48,6 @@ function changePanelInfo(button){
     sessionStorage.setItem("active-info", newActiveInfo);
 
     let btn = document.querySelector(".sidebar-button.active");
-    console.log(btn)
     btn.classList.remove("active");
     button.classList.add("active");
 }
@@ -183,11 +182,30 @@ function togglePasswordVisibility(toggleButtonId, passwordInputId) {
 async function loadCardsData() {
     var tournamentContainer = document.querySelector(".tournament-cards");
     var matchesContainer = document.querySelector(".matches-cards");
+    var teamsContainer = document.querySelector(".team-cards");
+
+    const user = JSON.parse(localStorage.getItem("loggedUser"));
+
+
 
     var tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', 10)
     var matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', 3)
+    var teamsData = await fetchData('../../resources/mocks/MOCK_TEAMS.json', 12);
 
     var cardTemplate = textToHTML(await fetchCards());
+    var teamTemplate = textToHTML(await fetchTeamCard());
+
+    var userTeams = teamsData.filter(team =>
+        team.participants.includes(user.username)
+    );
+
+    console.log(userTeams);
+
+    userTeams.forEach(element => {
+        let templateContainer = setTeamCardProperties(teamTemplate, element);
+        teamsContainer.appendChild(templateContainer);
+        console.log(element);
+    });
 
     tournamentsData.forEach(element => {
         let templateContainer = setCardProperties(cardTemplate, element, "tournament");
