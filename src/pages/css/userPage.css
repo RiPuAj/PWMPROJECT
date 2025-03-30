@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 800px;
-    height: 500px;
+    height: 600px;
     border-radius: 10px;
     border: 2px solid black;
     overflow: hidden;
@@ -44,8 +44,7 @@ body {
     display: flex;
     flex-direction: row;
     height: 100%;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 
@@ -194,7 +193,6 @@ a:hover{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     padding: 15px;
     text-align: center;
-    overflow: hidden;
 }
 
 .card-title{
