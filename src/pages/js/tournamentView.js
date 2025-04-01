@@ -46,9 +46,13 @@ async function loadTournamentView() {
         images[0].src = team1 ? team1.image : "default_image_url_1";
         images[1].src = team2 ? team2.image : "default_image_url_2";
 
-        matchElement.addEventListener("click", () => {
-            window.location.href = `matchView.html?id=${match.id}`;
+        images.forEach(image => {
+            image.addEventListener("click", (event) => {
+                event.stopPropagation();
+                window.location.href = `matchView.html?id=${match.id}`;
+            });
         });
+
 
         lastMatchesContainer.appendChild(matchElement);
     });
