@@ -30,7 +30,7 @@ async function loadIndexData(tournamentsData, matchesData) {
 }
 
 async function find(value) {
-    if (value.length < 1) return loadIndexData(tournaments.splice(0,10), matches.splice(0,10))
+    if (value.length < 1) return loadIndexData(tournaments.slice(0,10), matches.slice(0,10))
 
     let matchesFiltered = matches.filter(element => {
         return element.name.toLowerCase().includes(value);
@@ -47,14 +47,19 @@ async function find(value) {
 
 document.addEventListener("DOMContentLoaded",  async function () {
 
-    tournaments = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', null);
-    matches = await fetchData('../../resources/mocks/MOCK_MATCHES.json', null);
+    const tournamentsData = await fetchData('../../resources/mocks/MOCK_TOURNAMENT.json', null);
+    const matchesData = await fetchData('../../resources/mocks/MOCK_MATCHES.json', null);
+
+    tournaments = [...tournamentsData];
+    matches = [...matchesData];
 
     await fetchHeader();
-    await loadIndexData(tournaments.splice(0,10), matches.splice(0,10))
+    await loadIndexData(tournaments.slice(0,10), matches.slice(0,10));
     await fetchFooter();
+
     document.getElementById("search-input").addEventListener("input", async event => {
         console.log(event.target.value);
         await find(event.target.value);
-    })
-})
+    });
+});
+
