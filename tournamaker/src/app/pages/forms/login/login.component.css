@@ -1,0 +1,24 @@
+.form-container {
+  background-color: #00C02C; /* Fondo verde */
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid black;
+}
+.btn-dark-custom {
+  background-color: #222; /* Color oscuro de los botones */
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.btn-dark-custom:hover {
+  background-color: #333;
+}
+.or-divider {
+  text-align: center;
+  margin: 10px 0;
+  color: black;
+}
