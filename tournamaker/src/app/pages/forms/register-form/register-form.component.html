@@ -1,1 +1,43 @@
-<p>register-form works!</p>
+
+  <div class="container d-flex align-items-center justify-content-center">
+    <form id="register-form" class="tournament-creation-form m-2">
+
+      <div class="input mb-3">
+        <label for="user-name" class="form-label">Nombre de usuario</label>
+        <input type="text" required minlength="3" class="form-control" id="user-name" placeholder="Nombre de usuario">
+      </div>
+
+
+      <div class="input mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input id="email" required type="email" class="form-control" placeholder="name@example.com">
+      </div>
+
+      <div class="input mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <div class="input-group mb-3">
+          <input type="password" required minlength="5" id="password" class="form-control" placeholder="Contraseña">
+          <button class="btn btn-outline-light" type="button" id="togglePassword">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="input mb-5">
+        <label for="repeatPassword" class="form-label">Repetir contraseña</label>
+        <div class="input-group mb-3">
+          <input type="password" id="repeatPassword" class="form-control" placeholder="Repetir contraseña">
+          <button class="btn btn-outline-light" type="button" id="toggleRepeatPassword" onclick="">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="container w-100 d-flex justify-content-center align-items-center">
+        <a href="index.html">
+          <button type="submit" class="btn btn-dark btn-lg">Registrarse</button>
+        </a>
+      </div>
+
+    </form>
+  </div>
