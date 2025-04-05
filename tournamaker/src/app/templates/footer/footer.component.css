@@ -1,0 +1,40 @@
+.custom-footer {
+  background-color: #00C02C;
+  color: white;
+  padding: 10px 0;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5em;
+}
+
+.footer-text {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+  margin-right: 30px;
+}
+
+
+.footer-right .footer-text:hover {
+  color: #7FFF7F;
+  cursor: pointer;
+}
+
+.footer-right {
+  text-align: right;
+  font-style: italic;
+}
+
+

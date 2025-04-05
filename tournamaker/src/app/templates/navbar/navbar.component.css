@@ -1,0 +1,38 @@
+.navbar{
+  background-color: #00C02C;
+}
+
+.custom-dropdown{
+  background-color: #00C02C;
+}
+
+.custom-dropdown .dropdown-item:hover{
+  background-color: #00C02C;
+}
+
+.header-logo{
+  height: 2em;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+
+.header-logo:hover{
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+#user-menu{
+  align-items: center;
+  margin-left: 1.5em;
+}
+
+#username{
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+#user-photo{
+  border-radius: 100%;
+  width: 2rem;
+}
