@@ -1,0 +1,614 @@
+[
+  {
+    "id": 1,
+    "name": "Torneo Apertura Juvenil",
+    "teams_num": 16,
+    "date": "04/15/2025",
+    "description": "El Torneo Apertura Juvenil reúne a los mejores equipos sub-18 de la región en una competencia llena de talento emergente.",
+    "image": "https://gestorligas.com/imagenes/gestor-ligas-futbol.jpg",
+    "place": "Estadio Municipal de La Laguna",
+    "organizer": "Federación Juvenil de Fútbol",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Atlético Juvenil",
+      "Real Promesas",
+      "CF Estudiantes",
+      "Juventud Unida"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Copa Primavera Femenina",
+    "teams_num": 8,
+    "date": "05/20/2025",
+    "description": "La Copa Primavera Femenina destaca el crecimiento del fútbol femenino, enfrentando a equipos destacados en un torneo vibrante.",
+    "image": "https://www.costablancacup.com/Portals/5/EasyDNNnews/498/thumbs/2193/620400cthumb53833177784_f432111938_k.jpg",
+    "place": "Campo Deportivo Las Rosas",
+    "organizer": "Asociación de Fútbol Femenino",
+    "entry_tax": "€3,50",
+    "prize_pool": "€750,00",
+    "participants": [
+      "Leonas FC",
+      "Mujeres al Balón",
+      "Estrellas del Sur",
+      "Guerreras del Norte"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Campeonato Regional de Clubes",
+    "teams_num": 12,
+    "date": "06/10/2025",
+    "description": "El Campeonato Regional de Clubes es el escenario donde los equipos locales compiten por el título de campeón regional.",
+    "image": "https://www.ayto-torrejon.es/sites/default/files/2024-03/IMG_4151.JPG",
+    "place": "Estadio Central",
+    "organizer": "Liga Regional de Fútbol",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "Deportivo Ciudad",
+      "Unión Deportiva",
+      "Club Atlético Regional",
+      "Sporting Local"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Torneo Internacional Sub-21",
+    "teams_num": 10,
+    "date": "07/05/2025",
+    "description": "Este torneo internacional sub-21 reúne a jóvenes promesas del fútbol mundial en una competencia de alto nivel.",
+    "image": "https://media.istockphoto.com/id/1149107191/es/foto/futbolistas-de-f%C3%BAtbol-corriendo-con-bal%C3%B3n-futbolistas-que-patean-partido-de-f%C3%BAtbol-j%C3%B3venes.jpg?s=612x612&w=0&k=20&c=czmoEruGza3V-yUk-BS1N2zTfkc6AnOt-9OIc672OuQ=",
+    "place": "Complejo Deportivo Internacional",
+    "organizer": "Federación Internacional de Fútbol Juvenil",
+    "entry_tax": "€8,00",
+    "prize_pool": "€2.000,00",
+    "participants": [
+      "Selección Juvenil de España",
+      "Selección Juvenil de Francia",
+      "Selección Juvenil de Alemania",
+      "Selección Juvenil de Italia"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Copa de Campeones Locales",
+    "teams_num": 8,
+    "date": "08/15/2025",
+    "description": "La Copa de Campeones Locales enfrenta a los equipos ganadores de las ligas locales en una batalla por la supremacía.",
+    "image": "https://www.competize.com/blog/wp-content/uploads/2020/02/competicion-deporte-futbol-espana-2020-scaled.jpg",
+    "place": "Estadio Metropolitano",
+    "organizer": "Asociación de Ligas Locales",
+    "entry_tax": "€4,50",
+    "prize_pool": "€1.200,00",
+    "participants": [
+      "Campeón Liga Norte",
+      "Campeón Liga Sur",
+      "Campeón Liga Este",
+      "Campeón Liga Oeste"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Copa Nacional Juvenil",
+    "teams_num": 16,
+    "date": "09/01/2025",
+    "description": "La Copa Nacional Juvenil reúne equipos de todo el país para demostrar su talento en una competencia de alto nivel.",
+    "image": "https://cdn.pixabay.com/photo/2016/04/08/01/10/sport-1315354_1280.jpg",
+    "place": "Estadio Nacional",
+    "organizer": "Federación Nacional de Fútbol",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.200,00",
+    "participants": [
+      "FC Juvenil",
+      "Jóvenes Estrellas",
+      "Atlético U-18",
+      "Cuerpo de Campeones"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Copa Femenina Regional",
+    "teams_num": 10,
+    "date": "09/20/2025",
+    "description": "La Copa Femenina Regional se organiza para fortalecer la participación femenina en el fútbol a nivel regional.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/07/06/41/football-2600732_1280.jpg",
+    "place": "Estadio Regional",
+    "organizer": "Asociación Regional de Fútbol Femenino",
+    "entry_tax": "€4,00",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Red Eagles FC",
+      "Amanecer Femenino",
+      "Las Guerreras",
+      "Panteras Rojas"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Torneo Sub-17 Internacional",
+    "teams_num": 12,
+    "date": "10/10/2025",
+    "description": "Un torneo internacional sub-17 con la participación de equipos de élite de varios países.",
+    "image": "https://cdn.pixabay.com/photo/2018/01/24/08/31/pictogram-3103399_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional Juvenil",
+    "entry_tax": "€7,00",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "Selección Juvenil de Brasil",
+      "Selección Juvenil de Argentina",
+      "Selección Juvenil de Portugal",
+      "Selección Juvenil de México"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Copa Nacional Femenina",
+    "teams_num": 6,
+    "date": "11/15/2025",
+    "description": "Un torneo para equipos femeninos de primer nivel, donde el objetivo es coronar a las mejores jugadoras nacionales.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/23/15/28/architecture-1853520_1280.jpg",
+    "place": "Estadio Nacional",
+    "organizer": "Federación Nacional de Fútbol Femenino",
+    "entry_tax": "€5,50",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Atlético Femenino",
+      "Real Madrid Femenino",
+      "Barcelona Femenino",
+      "Sevilla Femenino"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Torneo Juvenil de Verano",
+    "teams_num": 14,
+    "date": "12/01/2025",
+    "description": "El Torneo Juvenil de Verano ofrece a los jóvenes la oportunidad de mostrarse ante entrenadores de todo el mundo.",
+    "image": "https://cdn.pixabay.com/photo/2016/04/26/22/42/people-1355499_1280.jpg",
+    "place": "Estadio Olímpico",
+    "organizer": "Federación Internacional Juvenil",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.400,00",
+    "participants": [
+      "Juventud Premier",
+      "Real Madrid Sub-18",
+      "Bayern Múnich Juvenil",
+      "Liverpool Academy"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Copa de Invierno Sub-21",
+    "teams_num": 8,
+    "date": "01/15/2026",
+    "description": "Un torneo sub-21 para jóvenes talentos que buscan destacar en el fútbol mundial.",
+    "image": "https://cdn.pixabay.com/photo/2023/03/27/23/54/ball-7881891_1280.jpg",
+    "place": "Estadio Invernal",
+    "organizer": "Federación de Fútbol Sub-21",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.200,00",
+    "participants": [
+      "Vikingos FC",
+      "Chicos de Oro",
+      "Juventud Elite",
+      "Academia Fútbol"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Torneo Intercolegial Juvenil",
+    "teams_num": 16,
+    "date": "02/10/2026",
+    "description": "El Torneo Intercolegial Juvenil reúne a los mejores equipos de colegios en una competencia amistosa de alto nivel.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/07/20/47/sport-5272084_1280.jpg",
+    "place": "Estadio Municipal",
+    "organizer": "Asociación de Escuelas de Fútbol",
+    "entry_tax": "€3,50",
+    "prize_pool": "€900,00",
+    "participants": [
+      "Escuela FC",
+      "Colegio Atlético",
+      "Deportiva Escolar",
+      "Colegio Real Madrid"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Torneo Internacional de Verano",
+    "teams_num": 10,
+    "date": "03/05/2026",
+    "description": "Equipos de todas partes del mundo participan en un torneo de verano internacional con un alto nivel competitivo.",
+    "image": "https://cdn.pixabay.com/photo/2013/07/03/13/27/football-142952_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional Juvenil",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "FC Barcelona Juvenil",
+      "Manchester United Sub-18",
+      "Paris Saint-Germain Juvenil",
+      "FC Porto U-21"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Copa U-19",
+    "teams_num": 12,
+    "date": "04/12/2026",
+    "description": "El torneo sub-19 más prestigioso del continente con equipos que buscan llevarse la copa del campeón.",
+    "image": "https://cdn.pixabay.com/photo/2020/06/10/01/37/sport-5280590_1280.jpg",
+    "place": "Estadio Olímpico",
+    "organizer": "Liga Juvenil Internacional",
+    "entry_tax": "€7,00",
+    "prize_pool": "€2.000,00",
+    "participants": [
+      "FC Barcelona U-19",
+      "Juventus U-19",
+      "Real Madrid U-19",
+      "Chelsea FC Sub-19"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Copa Internacional de Fútbol Femenino",
+    "teams_num": 8,
+    "date": "05/01/2026",
+    "description": "Un torneo internacional femenino que reúne a selecciones de élite de diferentes países.",
+    "image": "https://cdn.pixabay.com/photo/2014/04/09/13/28/football-pitch-320100_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional de Fútbol Femenino",
+    "entry_tax": "€4,50",
+    "prize_pool": "€1.800,00",
+    "participants": [
+      "Selección Femenina de Brasil",
+      "Selección Femenina de Alemania",
+      "Selección Femenina de Estados Unidos",
+      "Selección Femenina de Francia"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Torneo Internacional Sub-18",
+    "teams_num": 10,
+    "date": "06/10/2026",
+    "description": "Un torneo internacional sub-18 con participación de equipos de élite juvenil en busca de demostrar su potencial.",
+    "image": "https://cdn.pixabay.com/photo/2017/09/23/11/43/football-2778583_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional de Fútbol",
+    "entry_tax": "€8,00",
+    "prize_pool": "€2.000,00",
+    "participants": [
+      "Selección Sub-18 de España",
+      "Selección Sub-18 de Italia",
+      "Selección Sub-18 de Portugal",
+      "Selección Sub-18 de Inglaterra"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Copa U-16",
+    "teams_num": 14,
+    "date": "07/15/2026",
+    "description": "Un torneo para las mejores selecciones juveniles sub-16 que buscan demostrar su talento emergente.",
+    "image": "https://cdn.pixabay.com/photo/2020/04/19/20/57/soccer-ball-5065617_1280.jpg",
+    "place": "Estadio Juvenil",
+    "organizer": "Federación de Fútbol Juvenil",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Selección Sub-16 de Brasil",
+      "Selección Sub-16 de Argentina",
+      "Selección Sub-16 de Francia",
+      "Selección Sub-16 de México"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Copa Internacional de Clubes Sub-21",
+    "teams_num": 6,
+    "date": "08/05/2026",
+    "description": "El mejor torneo internacional de clubes sub-21 para mostrar el talento más joven y prometedor del fútbol mundial.",
+    "image": "https://cdn.pixabay.com/photo/2020/11/18/16/00/ball-5755801_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional de Clubes Juveniles",
+    "entry_tax": "€7,00",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "Juventus U-21",
+      "FC Barcelona B",
+      "Real Madrid Castilla",
+      "Manchester United U-21"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Torneo Nacional Sub-21",
+    "teams_num": 12,
+    "date": "09/30/2026",
+    "description": "El Torneo Nacional Sub-21 de fútbol reúne a los jóvenes talentos locales de todo el país.",
+    "image": "https://cdn.pixabay.com/photo/2021/07/12/19/40/football-6421158_1280.jpg",
+    "place": "Estadio Nacional",
+    "organizer": "Liga Nacional Sub-21",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.800,00",
+    "participants": [
+      "Atlético Nacional Sub-21",
+      "Deportivo Sub-21",
+      "Juventus U-21",
+      "Boca Juniors U-21"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Copa Femenina Internacional",
+    "teams_num": 8,
+    "date": "10/10/2026",
+    "description": "La Copa Femenina Internacional reúne a equipos de élite mundial del fútbol femenino.",
+    "image": "https://cdn.pixabay.com/photo/2020/03/13/23/13/girls-4929292_1280.jpg",
+    "place": "Estadio Internacional",
+    "organizer": "Federación Internacional de Fútbol Femenino",
+    "entry_tax": "€5,50",
+    "prize_pool": "€2.000,00",
+    "participants": [
+      "Selección Femenina de Estados Unidos",
+      "Selección Femenina de Japón",
+      "Selección Femenina de España",
+      "Selección Femenina de Brasil"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Torneo de Invierno Juvenil",
+    "teams_num": 14,
+    "date": "11/20/2026",
+    "description": "Un torneo juvenil que marca el cierre de la temporada de invierno con competencias intensas entre equipos promesa.",
+    "image": "https://cdn.pixabay.com/photo/2016/05/27/14/33/football-1419954_1280.jpg",
+    "place": "Estadio Polar",
+    "organizer": "Asociación Juvenil de Invierno",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.200,00",
+    "participants": [
+      "Aurora FC Juvenil",
+      "Estrellas del Norte",
+      "Promesas de Invierno",
+      "Campeones del Hielo"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Copa Internacional Sub-15",
+    "teams_num": 10,
+    "date": "12/15/2026",
+    "description": "Un torneo internacional dirigido a jóvenes talentos sub-15 de todo el mundo en busca de mostrar su potencial.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/07/06/bleachers-1867992_1280.jpg",
+    "place": "Estadio Internacional Juvenil",
+    "organizer": "Liga Juvenil Mundial",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "Selección Sub-15 de Japón",
+      "Selección Sub-15 de Estados Unidos",
+      "Selección Sub-15 de Argentina",
+      "Selección Sub-15 de Brasil"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Torneo Nacional de Clubes",
+    "teams_num": 12,
+    "date": "01/20/2027",
+    "description": "Un campeonato nacional que reúne clubes destacados en una competencia de alto nivel deportivo.",
+    "image": "https://cdn.pixabay.com/photo/2015/09/09/17/18/stadium-931975_1280.jpg",
+    "place": "Estadio de la República",
+    "organizer": "Liga Nacional de Fútbol",
+    "entry_tax": "€6,50",
+    "prize_pool": "€1.800,00",
+    "participants": [
+      "Club Campeón Norte",
+      "Club Deportivo Central",
+      "Atlético Nacional Juvenil",
+      "Sporting Sur"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Copa Juvenil de Primavera",
+    "teams_num": 8,
+    "date": "02/28/2027",
+    "description": "Un torneo juvenil dedicado a destacar los equipos emergentes de la temporada primaveral.",
+    "image": "https://cdn.pixabay.com/photo/2016/09/18/20/47/football-1678992_1280.jpg",
+    "place": "Estadio Verde",
+    "organizer": "Federación de Primavera Juvenil",
+    "entry_tax": "€4,50",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Primavera FC",
+      "Juventud en Flor",
+      "Futuro Estelar",
+      "Verde Esperanza FC"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Torneo Internacional de la Amistad",
+    "teams_num": 8,
+    "date": "04/20/2025",
+    "description": "Un torneo amistoso que reúne a selecciones juveniles de varios países para promover la camaradería.",
+    "image": "https://cdn.pixabay.com/photo/2017/12/17/12/45/football-3024154_1280.jpg",
+    "place": "Estadio de la Paz",
+    "organizer": "Organización Internacional de Fútbol Juvenil",
+    "entry_tax": "€3,00",
+    "prize_pool": "€800,00",
+    "participants": [
+      "Selección Sub-18 de Chile",
+      "Selección Sub-18 de Noruega",
+      "Selección Sub-18 de Sudáfrica",
+      "Selección Sub-18 de India"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Liga Juvenil del Atlántico",
+    "teams_num": 12,
+    "date": "06/30/2025",
+    "description": "Una liga que enfrenta a equipos juveniles de las regiones costeras en una competencia vibrante.",
+    "image": "https://cdn.pixabay.com/photo/2019/09/26/11/00/football-4505650_1280.jpg",
+    "place": "Estadio del Mar",
+    "organizer": "Liga Juvenil Atlántica",
+    "entry_tax": "€4,50",
+    "prize_pool": "€1.100,00",
+    "participants": [
+      "Costa FC",
+      "Rayo Marítimo",
+      "Juventud del Atlántico",
+      "Estrellas del Faro"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Campeonato Interregional Sub-20",
+    "teams_num": 16,
+    "date": "07/25/2025",
+    "description": "Un campeonato que enfrenta a los mejores equipos sub-20 de diferentes regiones del país.",
+    "image": "https://cdn.pixabay.com/photo/2023/09/21/06/10/football-8266065_1280.jpg",
+    "place": "Estadio Regional",
+    "organizer": "Confederación Nacional de Fútbol Juvenil",
+    "entry_tax": "€6,00",
+    "prize_pool": "€1.300,00",
+    "participants": [
+      "Atlético del Centro",
+      "Rangers del Norte",
+      "Fuerza Sureña",
+      "Estrellas del Este"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Copa Juvenil del Desierto",
+    "teams_num": 10,
+    "date": "09/05/2025",
+    "description": "Un torneo celebrado en zonas áridas, donde el fútbol florece incluso en los paisajes más duros.",
+    "image": "https://cdn.pixabay.com/photo/2020/11/18/16/00/soccer-5755804_1280.jpg",
+    "place": "Estadio del Sol",
+    "organizer": "Federación Juvenil del Desierto",
+    "entry_tax": "€4,00",
+    "prize_pool": "€900,00",
+    "participants": [
+      "Arena FC",
+      "Leones del Desierto",
+      "Viento del Sur",
+      "Oasis Juvenil"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Torneo Femenino Sub-17 Internacional",
+    "teams_num": 6,
+    "date": "10/15/2025",
+    "description": "Un evento exclusivo para equipos femeninos sub-17 que buscan destacar a nivel mundial.",
+    "image": "https://cdn.pixabay.com/photo/2022/02/05/11/40/football-6994607_1280.jpg",
+    "place": "Estadio Olímpico Juvenil",
+    "organizer": "Federación Internacional de Fútbol Femenino Juvenil",
+    "entry_tax": "€5,50",
+    "prize_pool": "€1.500,00",
+    "participants": [
+      "Selección Sub-17 de Canadá",
+      "Selección Sub-17 de México",
+      "Selección Sub-17 de Japón",
+      "Selección Sub-17 de Australia"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Copa de Invierno Juvenil",
+    "teams_num": 8,
+    "date": "12/10/2025",
+    "description": "Un torneo celebrado en pleno invierno, donde los equipos juveniles compiten en condiciones extremas.",
+    "image": "https://cdn.pixabay.com/photo/2016/07/01/07/17/soccer-1490541_1280.jpg",
+    "place": "Estadio Nevado",
+    "organizer": "Liga Invernal de Fútbol",
+    "entry_tax": "€3,50",
+    "prize_pool": "€1.000,00",
+    "participants": [
+      "Ártico FC",
+      "Pingüinos del Norte",
+      "Tormenta Blanca",
+      "Aurora Boreal"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Copa del Valle Juvenil",
+    "teams_num": 14,
+    "date": "01/20/2026",
+    "description": "Un torneo que celebra el espíritu del fútbol juvenil en las regiones montañosas.",
+    "image": "https://cdn.pixabay.com/photo/2015/12/05/18/52/wallpaper-1078629_1280.jpg",
+    "place": "Estadio del Valle",
+    "organizer": "Asociación de Fútbol del Valle",
+    "entry_tax": "€4,00",
+    "prize_pool": "€1.100,00",
+    "participants": [
+      "Montaña FC",
+      "Río Verde",
+      "Cumbres Altas",
+      "Juventud del Valle"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Campeonato de Futuras Estrellas",
+    "teams_num": 16,
+    "date": "02/15/2026",
+    "description": "Un campeonato diseñado para descubrir y promover el talento más prometedor en el fútbol juvenil.",
+    "image": "https://cdn.pixabay.com/photo/2022/08/17/15/45/soccer-7392834_1280.jpg",
+    "place": "Estadio de las Estrellas",
+    "organizer": "Fundación Futuras Estrellas",
+    "entry_tax": "€6,50",
+    "prize_pool": "€2.000,00",
+    "participants": [
+      "Jóvenes Futuras",
+      "Gladiadores Juveniles",
+      "Talentos del Futuro",
+      "Promesas del Balón"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Liga de Campeones Juveniles",
+    "teams_num": 12,
+    "date": "03/10/2026",
+    "description": "Un torneo anual que enfrenta a los campeones de las ligas juveniles de cada continente.",
+    "image": "https://cdn.pixabay.com/photo/2017/08/10/05/52/soccer-2618787_1280.jpg",
+    "place": "Estadio Internacional de Campeones",
+    "organizer": "Federación Juvenil Continental",
+    "entry_tax": "€7,00",
+    "prize_pool": "€2.500,00",
+    "participants": [
+      "Juventud Campeón de África",
+      "Campeón Juvenil de Europa",
+      "Estrellas de Asia",
+      "Talentos de América"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Copa Juvenil de Primavera",
+    "teams_num": 10,
+    "date": "04/05/2026",
+    "description": "Un torneo que marca el inicio de la primavera y celebra el espíritu juvenil del fútbol.",
+    "image": "https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg",
+    "place": "Estadio Primavera",
+    "organizer": "Federación Juvenil de Primavera",
+    "entry_tax": "€5,00",
+    "prize_pool": "€1.200,00",
+    "participants": [
+      "Primavera Juvenil",
+      "Renacer FC",
+      "Flores del Balón",
+      "Jardines del Gol"
+    ]
+  }
+]

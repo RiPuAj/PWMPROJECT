@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-login',
   imports: [],
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  onFormSubmit() {
+
+
+  }
 }
+
+

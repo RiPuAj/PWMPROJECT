@@ -1,0 +1,27 @@
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+.tournament-creation-form, .container-createTeam {
+  background-color: #00C02C;
+  padding: 1em;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+@media (max-width: 768px) {
+  .tournament-creation-form, .container-createTeam{
+    width: 90%;
+    padding: 15px;
+    margin: 10% auto;
+  }
+}
+
+

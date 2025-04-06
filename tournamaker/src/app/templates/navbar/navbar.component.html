@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <img src="../../resources/images/Logo.jpg" class="d-inline-block align-top header-logo" alt="Logo de la compñía">
+      <img src="../../resources/images/Logo.jpg" class="d-inline-block align-top header-logo" alt="Logo de la compañía">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,7 +22,7 @@
           </ul>
         </li>
       </ul>
-      <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 me-1" id="auth-buttons">
+      <div *ngIf="!isLoggedIn" class="d-flex flex-column flex-lg-row align-items-lg-center gap-2 me-1" id="auth-buttons">
         <a href="/login" class="btn btn-light mb-1">Iniciar sesión</a>
         <a href="/register" class="btn btn-dark text-white mb-1">Registrarse</a>
       </div>
@@ -30,7 +30,7 @@
         <input id="search-input" class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
         <button id="search-button" class="btn btn-dark" type="button">Buscar</button>
       </form>
-      <ul class="navbar-nav d-flex mb-lg-0" id="user-menu">
+      <ul *ngIf="isLoggedIn" class="navbar-nav d-flex mb-lg-0" id="user-menu">
         <li class="nav-item d-flex">
           <a class="text-decoration-none text-black" href="../../pages/html/userPage.html">
             <span id="username"></span>
@@ -42,6 +42,7 @@
           </a>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>

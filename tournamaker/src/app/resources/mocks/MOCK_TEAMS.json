@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "name": "Cacereño",
+      "image": "https://th.bing.com/th/id/OIP.uFC6xq2H7LPDFjgMtc-lKAHaHa?rs=1&pid=ImgDetMain",
+      "participants": [
+        "Nico",
+        "Jose",
+        "Javier",
+        "Pablo",
+        "Alejandro"
+    ]
+    },
+  {
+    "id": 2,
+    "name": "Atlético",
+    "image": "https://th.bing.com/th/id/OIP.AOPklWICw1P29_DE7kwPSAHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "Ernestina",
+      "apeaple1",
+      "bsleeman2",
+      "mcaulton3",
+      "mviegas4"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Marcial",
+    "image": "https://static.vecteezy.com/ti/vetor-gratis/p1/12318953-logotipo-de-futebol-com-designial-de-fundo-de-escudo-impressionante-vetor.jpg",
+    "participants": [
+      "cr7",
+      "apeaple1",
+      "bsleeman2",
+      "mcaulton3",
+      "mviegas4"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Coloquial",
+    "image": "https://th.bing.com/th/id/OIP.NjXJCGRdPwLCBvHj-dIR5wHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "messi",
+      "apeaple1",
+      "bsleeman2",
+      "mcaulton3",
+      "mviegas4"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Boca",
+    "image": "https://th.bing.com/th/id/OIP.BtRh10OzKXrOKyiNWkxoUQHaEo?rs=1&pid=ImgDetMain",
+    "participants": [
+      "maradona",
+      "apeaple1",
+      "bsleeman2",
+      "mcaulton3",
+      "mviegas4"
+    ]
+  },
+  {
+  "id": 6,
+  "name": "River",
+  "image": "https://wallpaperaccess.com/full/1602311.jpg",
+  "participants": [
+    "velez",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 7,
+  "name": "España",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png",
+  "participants": [
+    "Ernestina",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 8,
+  "name": "Brasil",
+  "image": "https://img.freepik.com/fotos-premium/fondo-bandera-nacional-brasil-bandera-brasil_659987-23626.jpg?w=2000",
+  "participants": [
+    "hugo43",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 9,
+  "name": "Valencia",
+  "image": "https://images8.alphacoders.com/991/thumb-1920-991439.jpg",
+  "participants": [
+    "Ernestina",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 10,
+  "name": "Murcia",
+  "image": "https://th.bing.com/th/id/OIP.vj7g9Xa4mk4DjflZxvijDAHaHa?rs=1&pid=ImgDetMain",
+  "participants": [
+    "pepe",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 11,
+  "name": "Team A",
+  "image": "https://img.freepik.com/fotos-premium/grafico-de-escudo_931878-242474.jpg",
+  "participants": [
+    "Ernesto",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+},{
+  "id": 12,
+  "name": "Team B",
+  "image": "https://i.pinimg.com/originals/28/50/79/2850797c0f47c1095d1a32e818414ebf.png",
+  "participants": [
+    "usuario123",
+    "apeaple1",
+    "bsleeman2",
+    "mcaulton3",
+    "mviegas4"
+  ]
+}
+]
