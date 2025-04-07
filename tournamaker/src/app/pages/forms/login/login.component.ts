@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {User} from '../../../models/user.model';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {CommonModule} from '@angular/common';
 
 export class LoginComponent {
 
-  user = {
+  user: User = {
     id: 0,
     username: "",
     name: "",
