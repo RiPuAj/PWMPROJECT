@@ -20,7 +20,6 @@
     </div>
     <div *ngIf="password.invalid && loginForm.submitted" class="text-danger">
       <small *ngIf="password.errors?.['required']">La contraseña es obligatoria.</small>
-      <!--small *ngIf="email.errors?.['pattern']">El email no es válido.</small!-->
     </div>
 
     <button type="submit"  class="btn btn-dark w-100">Iniciar sesión</button>
