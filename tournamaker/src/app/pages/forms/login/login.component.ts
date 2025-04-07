@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {User} from '../../../models/user.model';
+import {UserService} from '../../../services/user.service';
 
 
 @Component({
@@ -25,12 +26,22 @@ export class LoginComponent {
     avatar: ""
   }
 
-  usersFromJSON: any[] = [];
+  users: User[] = [];
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe((data) => {
+      this.users = data;
+    });
+  }
 
 
   onFormSubmit(userForm: NgForm) {
+    if (userForm.valid) {
+      console.log('valid');
+    }
 
-    console.log(userForm.controls['email'].value);
   }
 }
 
