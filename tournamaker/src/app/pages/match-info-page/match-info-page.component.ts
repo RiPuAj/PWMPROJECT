@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './match-info-page.component.html',
   styleUrl: './match-info-page.component.css'
 })
+
 export class MatchInfoPageComponent {
 
 }

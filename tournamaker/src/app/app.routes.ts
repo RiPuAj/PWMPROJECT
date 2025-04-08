@@ -20,7 +20,7 @@ export const routes: Routes = [
   { path: "create-match", component: CreateMatchComponent },
   { path: "create-team", component: CreateTeamComponent },
   { path: "create-tournament", component: CreateTournamentPageComponent },
-  { path: "match-info", component: MatchInfoPageComponent },
+  { path: "match-info/:id", component: MatchInfoPageComponent },
   { path: "tournament-view", component: TournamentViewComponent },
-  { path: "user-page", component: UserPageComponent }
+  { path: "user-page", component: UserPageComponent },
 ];
