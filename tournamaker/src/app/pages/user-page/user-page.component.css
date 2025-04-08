@@ -1,0 +1,224 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  height: 600px;
+  border-radius: 10px;
+  border: 2px solid black;
+  overflow: hidden;
+  background-color: #00C02C;
+}
+
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  background: #00C02C;
+  color: white;
+  padding: 15px;
+  border-bottom: 2px solid black;
+}
+
+.profile-header .profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow-x: auto;
+}
+
+
+.sidebar {
+  width: 250px;
+  background: #00C02C;
+  color: white;
+  border-right: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid black;
+}
+
+.sidebar ul a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidebar ul a:hover{
+  color: #7fff7f;
+}
+
+.sidebar ul a.active {
+  color: #02571e;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #00C02C;
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  font-size: 16px;
+  color: black;
+}
+
+.field{
+  margin-bottom: 0.25rem;
+}
+
+.save-buttons{
+  text-align: right;
+  bottom: 0;
+}
+
+.close-button{
+  margin-top: 1rem;
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.close-button:hover{
+  background-color: darkred !important;
+  border-color: darkred !important;
+}
+
+.cancel-button{
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+}
+
+.cancel-button:hover{
+  background-color: black !important;
+  border-color: black !important;
+}
+
+#user-info-panel{
+  display: none;
+}
+
+#teams-panel{
+  display: none;
+}
+
+#stats-panel{
+  display: none;
+}
+
+#tournaments-panel{
+  display: none;
+}
+
+#matches-panel{
+  display: none;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.stats-table{
+  margin-top: 4rem !important;
+}
+
+.tournament-cards, .matches-cards {
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 320px;
+}
+
+.team-cards {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  padding: 15px 0 !important;
+  align-items: center !important;
+  margin-top: 7rem;
+}
+
+
+.tournament-cards::-webkit-scrollbar,
+.matches-cards::-webkit-scrollbar {
+  height: 12px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.tournament-cards::-webkit-scrollbar-thumb,
+.matches-cards::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.tournament-cards::-webkit-scrollbar-thumb:hover,
+.matches-cards::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.card {
+  min-width: 250px;
+  max-width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-img-top {
+  width: 5rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.card-text {
+  margin-bottom: 15px;
+  height:3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.sidebar {
+  width: 250px;
+  min-width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+}

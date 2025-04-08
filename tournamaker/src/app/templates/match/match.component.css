@@ -1,0 +1,44 @@
+.match-container{
+  background-color: #0C6800;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  width: 415px;
+  height: 160px;
+  margin: 10px;
+  color: white;
+}
+.text-light-date{
+  font-size: 15px;
+  margin-top: -10px;
+}
+.team{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.text-light{
+  font-size: 20px;
+}
+
+.team-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.score{
+  width: 60px;
+  height: 40px;
+  font-size: 17px;
+  border: 1px solid black;
+  margin-top: -45px;
+}
+
+.text-light-line{
+  font-size: 25px;
+  margin-top: -50px;
+  font-weight: bold;
+}
