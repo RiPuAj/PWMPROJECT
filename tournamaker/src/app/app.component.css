@@ -1,0 +1,54 @@
+/* Ocupa toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Contenedor principal de toda la app */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Zona del contenido que se expande */
+.content-wrapper {
+  flex: 1;
+}
+
+/* Footer normal, sin fixed ni sticky */
+.custom-footer {
+  background-color: #00C02C;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5em;
+}
+
+.footer-text {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+  margin-right: 30px;
+}
+
+.footer-right .footer-text:hover {
+  color: #7FFF7F;
+  cursor: pointer;
+}
+
+.footer-right {
+  text-align: right;
+  font-style: italic;
+}
