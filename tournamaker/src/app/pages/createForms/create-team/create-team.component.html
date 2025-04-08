@@ -1,1 +1,23 @@
-<p>create-team works!</p>
+<div class="container-createTeam">
+  <div class="form-group">
+    <label for="nequipo">Nombre del equipo</label>
+    <input type="text" required minlength="3" id="nequipo" class="form-control" placeholder="Nombre">
+  </div>
+
+  <div class="form-group">
+    <label>Nombre de los integrantes</label>
+    <div class="tag-container form-control" id="tag-container">
+      <input type="text" id="tag-input" class="tag-input" placeholder="Nombres">
+    </div>
+  </div>
+
+  <div class="form-group team-shield">
+    <label>Escudo del equipo (opcional)</label>
+    <input class="shield-input" type="file" accept="image/*">
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <button type="guardar" class="btn btn-dark me-2">Guardar</button>
+    <button type="cancelar" class="btn btn-danger">Cancelar</button>
+  </div>
+</div>

@@ -1,1 +1,89 @@
-<p>user-page works!</p>
+<div class="container">
+  <div class="profile-header">
+    <img src="../src/assets/images/default-featured-image.jpg" id="user-picture"alt="Usuario" class="profile-img">
+    <span id="username">Username</span>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <ul>
+        <a id="my-data" class="active sidebar-button"><li>Datos personales</li></a>
+        <a id="my-teams" class="sidebar-button"><li>Mis equipos</li></a>
+        <a id="my-statistics" class="sidebar-button"><li>Mis Estadísticas</li></a>
+        <a id="my-tournaments" class="sidebar-button"><li>Torneos</li></a>
+        <a id="my-matches" class="sidebar-button"><li>Partidos</li></a>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h2 id="panel-name"></h2>
+      <div id="user-info-panel">
+        <div class = "field">
+          <p> Nombre de usuario</p>
+          <input type="text" id="username-field" class="form-control" placeholder="Nombre de usuario">
+        </div>
+        <div class = "field">
+          <p> Email</p>
+          <input type="text" id="email-field" class="form-control" placeholder="Email">
+        </div>
+        <div class = "field">
+          <p> Contraseña</p>
+          <div class="input-group mb-3">
+            <input type="password" id="password-field" class="form-control" placeholder="Contraseña">
+            <button class="btn btn-outline-light" type="button" id="togglePasswordVisibility">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <button type="button" id="log-out-button" class="close-button btn btn-primary">Cerrar Sesión</button>
+        <div class="save-buttons">
+          <button type="button" class="btn btn-primary">Guardar</button>
+          <a href="index.html">
+            <button type="button" class="btn btn-primary cancel-button">Cancelar</button>
+          </a>
+        </div>
+      </div>
+      <div id="teams-panel">
+        <h1>Mis Equipos</h1>
+        <div class="team-cards"></div>
+      </div>
+      <div id="stats-panel">
+        <h1>Mis estadísticas</h1>
+        <table class="table table-striped table-dark stats-table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Partidos</th>
+            <th scope="col">Goles</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">Torneo 1</th>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">Torneo 2</th>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">Torneo 3</th>
+            <td >-</td>
+            <td >-</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="tournaments-panel">
+        <h1>Mis Torneos</h1>
+        <div class="tournament-cards"></div>
+      </div>
+      <div id="matches-panel">
+        <h1>Mis Partidos</h1>
+        <div class="matches-cards"></div>
+      </div>
+    </div>
+  </div>
+</div>
