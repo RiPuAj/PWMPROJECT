@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import {User} from '../../../models/user.model';
 import {NgIf} from '@angular/common';
+import {UserService} from '../../../services/userService/user.service';
+import {AuthService} from '../../../services/authService/auth.service';
 
 @Component({
   selector: 'app-register-form',
@@ -13,6 +15,9 @@ import {NgIf} from '@angular/common';
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
+
+  constructor(private userService: UserService, private authService: AuthService) {}
+
   registerUser: User = {
     id: 0,
     username: "",
