@@ -29,7 +29,15 @@ export class UserService {
     return this.http.get<User[]>(`http://localhost:5000/users?username=${username}&password=${password}`);
   }
 
-  updateUsers(users: User[]) {
+  updateUser(users: User[]) {
     this.usersSubject.next(users);
+  }
+
+  createUser(){
+
+  }
+
+  deleteUser(){
+
   }
 }
