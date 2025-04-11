@@ -5,6 +5,7 @@
      width: 350px;
      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
      border: 2px solid black;
+
  }
 .btn-dark-custom {
     background-color: #222; /* Color oscuro de los botones */
