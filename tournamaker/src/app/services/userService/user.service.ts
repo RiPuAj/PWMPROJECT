@@ -29,15 +29,21 @@ export class UserService {
     return this.http.get<User[]>(`http://localhost:5000/users?username=${username}&password=${password}`);
   }
 
-  updateUser(users: User[]) {
-    this.usersSubject.next(users);
+  updateUser(userId: number, updatedUser: User): Observable<User> {
+    return this.http.patch<User>(`http://localhost:5000/users/${userId}`, updatedUser);
   }
 
-  createUser(){
-
+  getUserById(userId: number): Observable<User> {
+    return this.http.get<User>(`http://localhost:5000/users/${userId}`);
   }
 
-  deleteUser(){
 
+  createUser(newUser: User): Observable<User> {
+    return this.http.post<User>('http://localhost:5000/users', newUser);
   }
+
+  deleteUser(userId: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:5000/users/${userId}`);
+  }
+
 }

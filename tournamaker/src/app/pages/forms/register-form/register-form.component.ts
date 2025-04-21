@@ -4,12 +4,14 @@ import {User} from '../../../models/user.model';
 import {NgIf} from '@angular/common';
 import {UserService} from '../../../services/userService/user.service';
 import {AuthService} from '../../../services/authService/auth.service';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-register-form',
   imports: [
     FormsModule,
-    NgIf
+    NgIf,
+    CommonModule,
   ],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
@@ -37,7 +39,22 @@ export class RegisterFormComponent {
     avatar: ""
   }
 
-  onFormSubmit(userForm: NgForm){
+  onFormSubmit(registerForm: NgForm){
+
+    if(registerForm.valid){
+      this.registerUser = {
+        id: 1003,
+        username: this.formUser.username,
+        name: this.formUser.name,
+        email: this.formUser.email,
+        password: this.formUser.password,
+        avatar: this.formUser.avatar
+      };
+
+      console.log(this.registerUser.name);
+      this.userService.createUser(this.registerUser).subscribe()
+    }
+
 
   }
 }
