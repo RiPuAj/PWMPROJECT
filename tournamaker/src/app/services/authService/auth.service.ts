@@ -14,6 +14,8 @@ export class AuthService {
   }
 
   getUser(): User | null {
+    if (typeof window === 'undefined') return null;
+
     const userJson = localStorage.getItem(this.currentUserKey);
     return userJson ? JSON.parse(userJson) : null;
   }
