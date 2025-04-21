@@ -5,6 +5,7 @@ import {NgIf} from '@angular/common';
 import {UserService} from '../../../services/userService/user.service';
 import {AuthService} from '../../../services/authService/auth.service';
 import {CommonModule} from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -18,10 +19,12 @@ import {CommonModule} from '@angular/common';
 })
 export class RegisterFormComponent {
 
-  constructor(private userService: UserService, private authService: AuthService) {}
+  constructor(
+    private userService: UserService,
+    private authService: AuthService,
+    private router: Router) {}
 
   registerUser: User = {
-    id: 0,
     username: "",
     name: "",
     email: "",
@@ -43,16 +46,18 @@ export class RegisterFormComponent {
 
     if(registerForm.valid){
       this.registerUser = {
-        id: 1003,
         username: this.formUser.username,
-        name: this.formUser.name,
+        name: this.formUser.username,
         email: this.formUser.email,
         password: this.formUser.password,
         avatar: this.formUser.avatar
       };
 
-      console.log(this.registerUser.name);
-      this.userService.createUser(this.registerUser).subscribe()
+      this.userService.createUser(this.registerUser).subscribe((createdUser: User) => {
+
+        this.authService.setUser(createdUser);
+        this.router.navigate(['/']);
+      });
     }
 
 
