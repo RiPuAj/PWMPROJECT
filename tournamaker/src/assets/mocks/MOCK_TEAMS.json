@@ -2,15 +2,15 @@
   {
     "id": 1,
     "name": "Cacereño",
-      "image": "https://th.bing.com/th/id/OIP.uFC6xq2H7LPDFjgMtc-lKAHaHa?rs=1&pid=ImgDetMain",
-      "participants": [
-        "Nico",
-        "Jose",
-        "Javier",
-        "Pablo",
-        "Alejandro"
+    "image": "https://th.bing.com/th/id/OIP.uFC6xq2H7LPDFjgMtc-lKAHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "Nico",
+      "Jose",
+      "Javier",
+      "Pablo",
+      "Alejandro"
     ]
-    },
+  },
   {
     "id": 2,
     "name": "Atlético",
@@ -60,17 +60,18 @@
     ]
   },
   {
-  "id": 6,
-  "name": "River",
-  "image": "https://wallpaperaccess.com/full/1602311.jpg",
-  "participants": [
-    "velez",
-    "apeaple1",
-    "bsleeman2",
-    "mcaulton3",
-    "mviegas4"
-  ]
-},{
+    "id": 6,
+    "name": "River",
+    "image": "https://wallpaperaccess.com/full/1602311.jpg",
+    "participants": [
+      "rios",
+      "apeaple1",
+      "bsleeman2",
+      "mcaulton3",
+      "mviegas4"
+    ]
+  },
+  {
   "id": 7,
   "name": "España",
   "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png",
@@ -81,7 +82,8 @@
     "mcaulton3",
     "mviegas4"
   ]
-},{
+  },
+  {
   "id": 8,
   "name": "Brasil",
   "image": "https://img.freepik.com/fotos-premium/fondo-bandera-nacional-brasil-bandera-brasil_659987-23626.jpg?w=2000",
@@ -92,7 +94,8 @@
     "mcaulton3",
     "mviegas4"
   ]
-},{
+  },
+  {
   "id": 9,
   "name": "Valencia",
   "image": "https://images8.alphacoders.com/991/thumb-1920-991439.jpg",
@@ -103,7 +106,8 @@
     "mcaulton3",
     "mviegas4"
   ]
-},{
+  },
+  {
   "id": 10,
   "name": "Murcia",
   "image": "https://th.bing.com/th/id/OIP.vj7g9Xa4mk4DjflZxvijDAHaHa?rs=1&pid=ImgDetMain",
@@ -114,27 +118,365 @@
     "mcaulton3",
     "mviegas4"
   ]
-},{
-  "id": 11,
-  "name": "Team A",
-  "image": "https://img.freepik.com/fotos-premium/grafico-de-escudo_931878-242474.jpg",
-  "participants": [
-    "Ernesto",
-    "apeaple1",
-    "bsleeman2",
-    "mcaulton3",
-    "mviegas4"
-  ]
-},{
-  "id": 12,
-  "name": "Team B",
-  "image": "https://i.pinimg.com/originals/28/50/79/2850797c0f47c1095d1a32e818414ebf.png",
-  "participants": [
-    "usuario123",
-    "apeaple1",
-    "bsleeman2",
-    "mcaulton3",
-    "mviegas4"
-  ]
-}
+  },
+  {
+    "id": 7,
+    "name": "Los béticos",
+    "image": "https://th.bing.com/th/id/OIP.D3iN3QLOHwlZjsrAPmUzGgHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "juan",
+      "marta",
+      "carlos",
+      "raul",
+      "antonio"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Los sevillanos",
+    "image": "https://th.bing.com/th/id/OIP.A0QczB88Dh_wIUVJ00T03AHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "isabel",
+      "pedro",
+      "sara",
+      "luis",
+      "fernando"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Team A",
+    "image": "https://img.freepik.com/fotos-premium/grafico-de-escudo_931878-242474.jpg",
+    "participants": [
+      "harry",
+      "peter",
+      "paul",
+      "david",
+      "john"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Team B",
+    "image": "https://i.pinimg.com/originals/28/50/79/2850797c0f47c1095d1a32e818414ebf.png",
+    "participants": [
+      "jake",
+      "simon",
+      "ben",
+      "liam",
+      "adam"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Los de Primero",
+    "image": "https://th.bing.com/th/id/OIP.j3u92Bpy8ZjGAYnVK9c72QHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "rafael",
+      "manuel",
+      "juanjo",
+      "josep",
+      "miguel"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Los de Segundo",
+    "image": "https://th.bing.com/th/id/OIP.2jlfOgGZ8YbBJeGGa5aLuAHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "jose",
+      "carlos",
+      "maria",
+      "pedro",
+      "alvaro"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Basconia",
+    "image": "https://th.bing.com/th/id/OIP.jfjjk95hY72gnxz-d-y7FQHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "pablo",
+      "pepe",
+      "elena",
+      "david",
+      "jorge"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Cántabros Unidos",
+    "image": "https://th.bing.com/th/id/OIP.9-w0zAYrAAev5rzkjUJWJgHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "marta",
+      "sandra",
+      "adriano",
+      "alejandra",
+      "manuel"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "El Tagoror FC",
+    "image": "https://th.bing.com/th/id/OIP.3FMzRuAFv58xIcm6qJwQvAHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "luis",
+      "mario",
+      "antonio",
+      "victor",
+      "jorge"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "UD Ermita",
+    "image": "https://th.bing.com/th/id/OIP.yJ7mwQNN02wpb4BvvZ5p4wHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "victoria",
+      "felipe",
+      "josé",
+      "antonio",
+      "rafael"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Must FC",
+    "image": "https://th.bing.com/th/id/OIP.F3xxm5zR32K0rH_zEuUJ2QHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "mario",
+      "maria",
+      "jorge",
+      "ana",
+      "alberto"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Fry FC",
+    "image": "https://th.bing.com/th/id/OIP.QyVopQH5iPlAghMh7Zff7QHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "andres",
+      "carla",
+      "javier",
+      "pablo",
+      "sergio"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Colo-Colo",
+    "image": "https://th.bing.com/th/id/OIP.xT1dCGS8AlnXcBzD2mJ4ZgHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "gonzalo",
+      "fernando",
+      "pedro",
+      "roberto",
+      "ricardo"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Palmeiras",
+    "image": "https://th.bing.com/th/id/OIP.9-GaI20vFT65-NF6dM9qVQHaHa?rs=1&pid=ImgDetMain",
+    "participants": [
+      "henrique",
+      "raul",
+      "lucas",
+      "gabriel",
+      "andre"
+    ]
+  },
+  {
+      "id": 21,
+      "name": "Tenerife",
+      "image": "https://th.bing.com/th/id/OIP.XG-iS30hL0FdmMkcfu9fsgHaJ2?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Juan",
+        "Carlos",
+        "Miguel",
+        "Luis",
+        "Pedro"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Las Palmas",
+      "image": "https://th.bing.com/th/id/OIP.7rVZxIR0Mi1Ys6Pzzv6vPQHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Daniel",
+        "David",
+        "Fernando",
+        "Javier",
+        "Alejandro"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Mostoles",
+      "image": "https://th.bing.com/th/id/OIP.ZxwbfrbMhYZ4IcTtYO5QdgHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Antonio",
+        "Rafael",
+        "Luis",
+        "Sergio",
+        "Jorge"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Rayo de Barcelona",
+      "image": "https://th.bing.com/th/id/OIP.wcxaK0zErfYYShz1jB5w2QHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Ricardo",
+        "Carlos",
+        "Oscar",
+        "Pablo",
+        "Fernando"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Xbuyer Team",
+      "image": "https://th.bing.com/th/id/OIP.99Km5If0l94V_JD9bHtTDAHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Javier",
+        "Santiago",
+        "David",
+        "Lucas",
+        "Andrés"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Saiyans FC",
+      "image": "https://th.bing.com/th/id/OIP.Zq0zUJkV4d9MwD64rP2cOAHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Goku",
+        "Vegeta",
+        "Piccolo",
+        "Frieza",
+        "Trunks"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "FC Barcelona",
+      "image": "https://th.bing.com/th/id/OIP.P1q62km22ys20RtqntqobwHaD3?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Lionel Messi",
+        "Sergio Busquets",
+        "Gerard Piqué",
+        "Ansu Fati",
+        "Pedri"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Real Madrid",
+      "image": "https://th.bing.com/th/id/OIP.r2LQwzAlp7EUBhO8hbFfLgHaEK?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Karim Benzema",
+        "Vinícius Júnior",
+        "Luka Modrić",
+        "Toni Kroos",
+        "Thibaut Courtois"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Atlético de Madrid",
+      "image": "https://th.bing.com/th/id/OIP.f9NGOK-xtQh8F-j5VpRA2AHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Antoine Griezmann",
+        "Jan Oblak",
+        "Koke",
+        "Luis Suárez",
+        "João Félix"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Valencia CF",
+      "image": "https://th.bing.com/th/id/OIP.jh96T2ch9BQkkslz5eGpxgHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Gonçalo Guedes",
+        "Carlos Soler",
+        "José Luis Gayà",
+        "Maxi Gómez",
+        "Cenk Özkaçar"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Sevilla FC",
+      "image": "https://th.bing.com/th/id/OIP.cXk_B9gK8BZ3je_0K5gZQAHaF9?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Jules Koundé",
+        "Ivan Rakitic",
+        "Youssef En-Nesyri",
+        "Suso",
+        "Thomas Delaney"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Real Betis",
+      "image": "https://th.bing.com/th/id/OIP._0X94qAF17BlDpQ0Ymy4owHaD4?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Nabil Fekir",
+        "Sergio Canales",
+        "Juanmi",
+        "Marc Bartra",
+        "Claudio Bravo"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Alonso Team",
+      "image": "https://th.bing.com/th/id/OIP.gE-JoPTu0k6dP4b8gHz5NQHaEK?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Fernando Alonso",
+        "Carlos Sainz",
+        "Esteban Ocon",
+        "Daniel Ricciardo",
+        "Lando Norris"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Verstappen Team",
+      "image": "https://th.bing.com/th/id/OIP.Yt9O0R9hPhrZ1gbKvR9RZgHaEK?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Max Verstappen",
+        "Sergio Pérez",
+        "Pierre Gasly",
+        "Charles Leclerc",
+        "Valtteri Bottas"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Equipo 1",
+      "image": "https://th.bing.com/th/id/OIP.LtKwHgV8BzfrcgnExyLRsQHaHa?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Juan",
+        "Carlos",
+        "Miguel",
+        "Luis",
+        "Pedro"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Equipo 2",
+      "image": "https://th.bing.com/th/id/OIP.V_JXxhTuO2MldC5cJdx6rAHaEK?pid=ImgDet&w=150&h=150&c=7",
+      "participants": [
+        "Daniel",
+        "David",
+        "Fernando",
+        "Javier",
+        "Alejandro"
+      ]
+    }
 ]

@@ -13,13 +13,14 @@
   justify-content: center;
 }
 
-.torneo-info{
+.torneo-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
+
 .torneo-info h1 {
   font-size: 22px;
   text-align: center;
@@ -63,11 +64,41 @@
   border-radius: 8px;
 }
 
+/* Fondo verde para cada partido */
+.fondo-verde {
+  background-color: #008C1C;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Espacio entre los partidos */
+  cursor: pointer; /* Cambio del puntero al pasar sobre el partido */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  height: 150px; /* Altura pequeña */
+  width: 100%; /* Asegura que ocupen el 100% del ancho del contenedor */
+  max-width: 300px; /* Limita el tamaño a un máximo de 300px de ancho */
+}
+
 /* MATCHES */
 .partidos {
   display: flex;
   flex-direction: column;
   gap: 5%;
+}
+
+.teams {
+  display: flex;
+  justify-content: center; /* Centra los equipos horizontalmente */
+  align-items: center; /* Centra los equipos verticalmente */
+  gap: 40px; /* Espacio más grande entre los equipos */
+  width: 100%;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .team img {
@@ -82,11 +113,25 @@
   object-fit: cover;
 }
 
-.team p{
+.team p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+/* Marcador */
+.marcador {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Media query para dispositivos pequeños */
 @media (max-width: 992px) {
   .torneo-container {
     padding: 10%;
