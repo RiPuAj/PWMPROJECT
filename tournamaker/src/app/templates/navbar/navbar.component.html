@@ -32,12 +32,12 @@
       </form>
       <ul *ngIf="isLoggedIn" class="navbar-nav d-flex mb-lg-0" id="user-menu">
         <li class="nav-item d-flex">
-          <a class="text-decoration-none text-black" href="../../pages/html/userPage.html">
+          <a class="text-decoration-none text-black" routerLink="/user-page">
             <span id="username">{{username}}</span>
           </a>
         </li>
         <li class="nav-item d-flex me-5 ms-2">
-          <a class="text-decoration-none text-white" href="../../pages/html/userPage.html">
+          <a class="text-decoration-none text-white" routerLink="/user-page">
             <img id="user-photo" [src]="avatar" alt="Avatar" class="rounded-circle" >
           </a>
         </li>
