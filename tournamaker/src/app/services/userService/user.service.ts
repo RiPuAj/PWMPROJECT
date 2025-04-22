@@ -25,8 +25,8 @@ export class UserService {
     return this.users$;
   }
 
-  loginUser(username: string, password: string): Observable<User[]> {
-    return this.http.get<User[]>(`http://localhost:5000/users?username=${username}&password=${password}`);
+  loginUser(email: string, password: string): Observable<User[]> {
+    return this.http.get<User[]>(`http://localhost:5000/users?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`);
   }
 
   updateUser(userId: number, updatedUser: User): Observable<User> {

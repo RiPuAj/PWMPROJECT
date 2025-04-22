@@ -16,6 +16,10 @@ export class UserPageComponent {
     private authService: AuthService,
     private router: Router) {}
 
+  ngOnInit() {
+    console.log("USUARIO = " + this.authService.getUser()?.username);
+  }
+
   logOut(){
     console.log("logOut");
     this.authService.logout();

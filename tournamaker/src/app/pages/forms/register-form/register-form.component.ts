@@ -56,7 +56,7 @@ export class RegisterFormComponent {
       this.userService.createUser(this.registerUser).subscribe((createdUser: User) => {
 
         this.authService.setUser(createdUser);
-        this.router.navigate(['/']);
+        window.location.href = '/';
       });
     }
 

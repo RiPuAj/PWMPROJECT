@@ -89,7 +89,7 @@
       "avatar": "https://robohash.org/voluptatemdolorquod.png?size=200x200&set=set1"
     },
     {
-      "id": 1003,
+      "id": "1003",
       "username": "asda",
       "name": "",
       "email": "a@a.com",
@@ -134,6 +134,22 @@
       "name": "dasfas",
       "email": "afasd@rr.c",
       "password": "asfdg",
+      "avatar": ""
+    },
+    {
+      "id": "0ae0",
+      "username": "dsgsdg",
+      "name": "dsgsdg",
+      "email": "auaua@a.com",
+      "password": "12413414",
+      "avatar": ""
+    },
+    {
+      "id": "08ff",
+      "username": "nicolaso",
+      "name": "nicolaso",
+      "email": "a@a.ioio",
+      "password": "39139044",
       "avatar": ""
     }
   ]
