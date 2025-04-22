@@ -24,9 +24,18 @@
       <div class="input mb-3">
         <label for="password" class="form-label">Contraseña</label>
         <div class="input-group mb-3">
-          <input [(ngModel)]="formUser.password" name="password" #password="ngModel" type="password" required minlength="5" id="password" class="form-control" placeholder="Contraseña">
-          <button class="btn btn-outline-light" type="button" id="togglePassword">
-            <i class="fa-solid fa-eye"></i>
+          <input
+            [(ngModel)]="formUser.password"
+            name="password"
+            #password="ngModel"
+            [type]="showPassword ? 'text' : 'password'"
+            required
+            minlength="5"
+            id="password"
+            class="form-control"
+            placeholder="Contraseña">
+          <button class="btn btn-outline-light" type="button" (click)="togglePasswordVisibility('password')">
+            <i class="fa-solid" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
           </button>
         </div>
       </div>
@@ -38,14 +47,25 @@
       <div class="input mb-5">
         <label for="repeatPassword" class="form-label">Repetir contraseña</label>
         <div class="input-group mb-3">
-          <input [(ngModel)]="formUser.repeatPassword" required name="repeatPassword" #repeatPassword="ngModel" type="password" id="repeatPassword" class="form-control" placeholder="Repetir contraseña">
-          <button class="btn btn-outline-light" type="button" id="toggleRepeatPassword" onclick="">
-            <i class="fa-solid fa-eye"></i>
+          <input
+            [(ngModel)]="formUser.repeatPassword"
+            required
+            name="repeatPassword"
+            #repeatPassword="ngModel"
+            [type]="showRepeatPassword ? 'text' : 'password'"
+            id="repeatPassword"
+            class="form-control"
+            placeholder="Repetir contraseña">
+          <button class="btn btn-outline-light" type="button" (click)="togglePasswordVisibility('repeatPassword')">
+            <i class="fa-solid" [ngClass]="showRepeatPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
           </button>
         </div>
 
         <div *ngIf="repeatPassword.invalid && registerForm.submitted" class="text-danger">
           <small *ngIf="repeatPassword.errors?.['required']">Por favor, vuelva a introducir su contraseña.</small>
+        </div>
+        <div *ngIf="(repeatPassword.dirty || password.dirty) && isPasswordMismatch()" class="text-danger">
+          <small>Las contraseñas deben coincidir.</small>
         </div>
 
       </div>
