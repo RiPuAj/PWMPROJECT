@@ -37,7 +37,7 @@
     "id": 3,
     "name": "El Partidazo",
     "participants_num": 15,
-    "date": "01/05/2025",
+    "date": "01/05/2023",
     "description": "Torneo de fútbol entre amigos",
     "image": "https://cdn.pixabay.com/photo/2018/03/22/09/15/football-3249783_1280.png",
     "place": "678 Elm Street",
@@ -45,8 +45,8 @@
     "entry_tax": "€4,00",
     "prize_pool": "€50,00",
     "participants": [
-      "Perez y 10 más",
-      "1 más 1 son 7"
+      "Real Betis",
+      "Sevilla FC"
     ],
     "hour": "12:00"
   },
@@ -54,7 +54,7 @@
     "id": 4,
     "name": "El Clásico",
     "participants_num": 20,
-    "date": "12/05/2025",
+    "date": "12/05/2024",
     "description": "Competición deportiva amistosa",
     "image": "https://cdn.pixabay.com/photo/2015/08/02/23/51/ajinomoto-872493_960_720.jpg",
     "place": "890 Oak Avenue",
@@ -62,8 +62,8 @@
     "entry_tax": "€3,75",
     "prize_pool": "€60,00",
     "participants": [
-      "Fake Varcelona",
-      "Fake Vardrid"
+      "Atletico de Madrid",
+      "Real Madrid"
     ],
     "hour": "10:30"
   },
@@ -79,8 +79,8 @@
     "entry_tax": "€6,00",
     "prize_pool": "€75,00",
     "participants": [
-      "Los amos del fútbol",
-      "El barrio"
+      "Real Madrid",
+      "FC Barcelona"
     ],
     "hour": "15:45"
   },
