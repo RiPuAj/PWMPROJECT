@@ -42,9 +42,24 @@ export class RegisterFormComponent {
     avatar: ""
   }
 
-  onFormSubmit(registerForm: NgForm){
+  showPassword: boolean = false;
+  showRepeatPassword: boolean = false;
 
-    if(registerForm.valid){
+  togglePasswordVisibility(field: string): void {
+    if (field === 'password') {
+      this.showPassword = !this.showPassword;
+    } else if (field === 'repeatPassword') {
+      this.showRepeatPassword = !this.showRepeatPassword;
+    }
+  }
+
+  isPasswordMismatch(): boolean {
+    console.log("isPasswordMismatch");
+    return this.formUser.password !== this.formUser.repeatPassword;
+  }
+
+  onFormSubmit(registerForm: NgForm) {
+    if (registerForm.valid && !this.isPasswordMismatch()) {
       this.registerUser = {
         username: this.formUser.username,
         name: this.formUser.username,
@@ -54,12 +69,11 @@ export class RegisterFormComponent {
       };
 
       this.userService.createUser(this.registerUser).subscribe((createdUser: User) => {
-
         this.authService.setUser(createdUser);
         window.location.href = '/';
       });
+    } else if (this.isPasswordMismatch()) {
+      alert('Las contraseñas no coinciden.');
     }
-
-
   }
 }

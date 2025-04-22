@@ -151,6 +151,22 @@
       "email": "a@a.ioio",
       "password": "39139044",
       "avatar": ""
+    },
+    {
+      "id": "3ff0",
+      "username": "Julio la anguila",
+      "name": "Julio la anguila",
+      "email": "juliano@gmail.com",
+      "password": "12345",
+      "avatar": ""
+    },
+    {
+      "id": "6b32",
+      "username": "rrere",
+      "name": "rrere",
+      "email": "asd@a",
+      "password": "2312414",
+      "avatar": ""
     }
   ]
 }
