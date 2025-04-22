@@ -1,28 +1,33 @@
-<main>
-  <div class="panel">
-    <div class="panel-header">
-      <h3 id="match-date"></h3>
-      <span id="match-hour">Hora</span>
+<main *ngIf="match && teamOne && teamTwo">
+  <h1>{{ match.name }}</h1>
+  <img [src]="match.image" alt="Match image" width="300" />
+
+  <p><strong>Fecha:</strong> {{ match.date }} a las {{ match.hour }}</p>
+  <p><strong>Lugar:</strong> {{ match.place }}</p>
+  <p><strong>Descripción:</strong> {{ match.description }}</p>
+  <p><strong>Organizador:</strong> {{ match.organizer }}</p>
+  <p><strong>Precio de entrada:</strong> {{ match.entry_tax }}</p>
+  <p><strong>Premio:</strong> {{ match.prize_pool }}</p>
+
+  <div class="teams">
+    <div class="team">
+      <h3>{{ teamOne.name }}</h3>
+      <img [src]="teamOne.image" width="150" />
+      <ul>
+        <li *ngFor="let player of teamOne.participants">{{ player }}</li>
+      </ul>
     </div>
-    <div class="teams-and-counter">
-      <div class="team">
-        <img id="team-one-image" class="image"  alt="Escudo equipo 1">
-        <h3>Equipo 1</h3>
-        <ul id="team-one-list"></ul>
-      </div>
-      <div class="counter-container">
-        <div class="counter">
-          <button id="team-one-result">-</button>
-          <h2>—</h2>
-          <button id="team-two-result">-</button>
-        </div>
-        <p id="status" class="match-status"></p>
-      </div>
-      <div class="team">
-        <img id="team-two-image" class="image" alt="Escudo equipo 1">
-        <h3>Equipo 2</h3>
-        <ul id="team-two-list"></ul>
-      </div>
+
+    <div class="team">
+      <h3>{{ teamTwo.name }}</h3>
+      <img [src]="teamTwo.image" width="150" />
+      <ul>
+        <li *ngFor="let player of teamTwo.participants">{{ player }}</li>
+      </ul>
     </div>
   </div>
 </main>
+
+<!-- Cargando -->
+<p *ngIf="!match || !teamOne || !teamTwo">Cargando partido...</p>
+<p *ngIf="!loading && error">{{ error }}</p>

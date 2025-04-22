@@ -70,18 +70,12 @@ export class TournamentViewComponent implements OnInit {
 
 
   getTeamByName(name: string) {
-    console.log('Buscando equipo: ', name);
     return this.teams.find(team => {
-      console.log('Comparando con: ', team.name);
       return team.name.trim().toLowerCase() === name.trim().toLowerCase();
     });
   }
 
-
-
-
   goToMatch(id: string): void {
-    this.router.navigate(['/match', id]);
+    this.router.navigate(['/match-view', id]);
   }
-
 }

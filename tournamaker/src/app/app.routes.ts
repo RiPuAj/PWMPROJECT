@@ -24,5 +24,5 @@ export const routes: Routes = [
   { path: "match-info/:id", component: MatchInfoPageComponent },
   { path: "tournament-view", component: TournamentViewComponent },
   { path: "user-page", component: UserPageComponent },
-  { path: "match-view", component: MatchViewComponent },
+  { path: "match-view/:id", component: MatchViewComponent },
 ];
