@@ -61,4 +61,10 @@ export class LoginComponent {
   }
 }
 
+//https://garage.sekrab.com/posts/putting-angular-fire-firestore-library-to-use-i
+//coleccion=tabla documento=dato
+//npm install -g @angular/cli
+//ng add @angular/fire@19 (habilitar solo Firestore, en la app, crear una nueva para el CRUD)
+//mirar la guia como poner en marcha firebase
+
 
