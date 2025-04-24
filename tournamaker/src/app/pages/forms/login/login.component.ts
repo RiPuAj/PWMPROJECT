@@ -66,5 +66,6 @@ export class LoginComponent {
 //npm install -g @angular/cli
 //ng add @angular/fire@19 (habilitar solo Firestore, en la app, crear una nueva para el CRUD)
 //mirar la guia como poner en marcha firebase
+//ng generate service <ruta con nombre del servicio>
 
 
