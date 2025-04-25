@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {User} from '../../../models/user.model';
+
 import {UserService} from '../../../services/userService/user.service';
 import {AuthService} from '../../../services/authService/auth.service';
 import {Router} from '@angular/router';
+import {FbUserService} from '../../../services/fbUserService/fb-user.service';
+import {User} from '../../../services/fbUserService/fb-user.service';
 
 
 @Component({
@@ -19,6 +21,12 @@ import {Router} from '@angular/router';
 
 export class LoginComponent {
 
+
+  constructor(
+    private userService: FbUserService,
+    private authService: AuthService,
+    private router: Router) {}
+
   user: User = {
     username: "",
     name: "",
@@ -27,37 +35,17 @@ export class LoginComponent {
     avatar: ""
   }
 
-  users: User[] = [];
-
-  constructor(
-    private userService: UserService,
-    private authService: AuthService,
-    private router: Router) {}
-
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe((data) => {
-      this.users = data;
-    });
-  }
-
   onFormSubmit(userForm: NgForm) {
-
     if (userForm.valid) {
-
-      this.userService.loginUser(this.user.email, this.user.password).subscribe((res) => {
-        if (res.length > 0) {
-          console.log("Intentando login con:", this.user.email, this.user.password);
-          console.log("✅ Login exitoso:", res[0]);
-          const user = res[0];
-          this.authService.setUser(user)
+      this.userService.getByEmail(this.user.email).subscribe((loginUser) => {
+        if (loginUser && this.user.password === loginUser.password) {
+          this.authService.setUser(loginUser);
           window.location.href = '/';
         } else {
-          console.error("❌ Usuario o contraseña incorrectos");
-          alert("Credenciales incorrectas");
+          alert("❌ Credenciales incorrectas");
         }
       });
     }
-
   }
 }
 
@@ -66,6 +54,7 @@ export class LoginComponent {
 //npm install -g @angular/cli
 //ng add @angular/fire@19 (habilitar solo Firestore, en la app, crear una nueva para el CRUD)
 //mirar la guia como poner en marcha firebase
+//al instalar angular/fire@19, ya se puso las cosas bien bien para el angular, no hace falta tocar el main.ts
 //ng generate service <ruta con nombre del servicio>
 
 

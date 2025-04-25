@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {User} from '../../models/user.model';
+import {User} from '../fbUserService/fb-user.service';
+
 
 @Injectable({
   providedIn: 'root'

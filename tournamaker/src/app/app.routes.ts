@@ -10,7 +10,8 @@ import {CreateTournamentPageComponent} from './pages/createForms/create-tourname
 import {MatchInfoPageComponent} from './pages/match-info-page/match-info-page.component';
 import {TournamentViewComponent} from './pages/tournament-view/tournament-view.component';
 import {UserPageComponent} from './pages/user-page/user-page.component';
-import {MatchViewComponent} from './pages/match-view/match-view.component';
+import {AllUsersComponent} from './all-users/all-users.component';
+//import {MatchViewComponent} from './pages/match-view/match-view.component';
 
 export const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -24,5 +25,6 @@ export const routes: Routes = [
   { path: "match-info/:id", component: MatchInfoPageComponent },
   { path: "tournament-view", component: TournamentViewComponent },
   { path: "user-page", component: UserPageComponent },
-  { path: "match-view/:id", component: MatchViewComponent },
+  //{ path: "match-view/:id", component: MatchViewComponent },
+  { path: "all-users", component: AllUsersComponent },
 ];
