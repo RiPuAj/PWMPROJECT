@@ -69,9 +69,9 @@ export class RegisterFormComponent {
           avatar: this.formUser.avatar || 'https://cdn-icons-png.flaticon.com/512/6858/6858504.png'
         };
 
-        await this.userService.create(newUser);
+        const createdUser = await this.userService.create(newUser);
 
-        this.authService.setUser(newUser);
+        this.authService.setUser(createdUser);
 
         window.location.href = '/';
       } catch (error) {

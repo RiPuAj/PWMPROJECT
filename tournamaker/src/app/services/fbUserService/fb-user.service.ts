@@ -50,8 +50,9 @@ export class FbUserService {
     return deleteDoc(userDoc);
   }
 
-  async create(user: User): Promise<void> {
-    await addDoc(this.usersRef, user);
+  async create(user: User): Promise<User> {
+    const docRef = await addDoc(this.usersRef, user);
+    return { ...user, id: docRef.id };
   }
 
 }

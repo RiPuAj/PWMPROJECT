@@ -40,6 +40,10 @@ export class UserPageComponent {
       });
       this.authService.logout();
     } else {
+      if(loginUser){
+
+        console.log("Intentando eliminar usuario con ID:", loginUser);
+      }
       alert("❌ No se pudo obtener el usuario actual");
     }
   }
