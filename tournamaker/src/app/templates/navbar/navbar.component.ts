@@ -2,7 +2,8 @@ import {Component, NgModule, OnInit} from '@angular/core';
 import {CommonModule, NgIf} from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
 import {AuthService} from '../../services/authService/auth.service';
-import {User} from '../../models/user.model';
+import {User} from '../../services/fbUserService/fb-user.service';
+
 
 
 @Component({

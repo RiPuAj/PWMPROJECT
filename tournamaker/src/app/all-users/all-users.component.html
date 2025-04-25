@@ -1,0 +1,12 @@
+<section class="p-4">
+  <h1 class="text-2xl mb-4">Listado de usuarios</h1>
+  <ul *ngIf="users$ | async as users; else loading">
+    <li *ngFor="let u of users" class="mb-2">
+      <strong>{{ u.username }}</strong> — {{ u.name }} ({{ u.email }})
+    </li>
+    <li *ngIf="users.length === 0">No hay usuarios registrados.</li>
+  </ul>
+  <ng-template #loading>
+    <p>Cargando usuarios…</p>
+  </ng-template>
+</section>
