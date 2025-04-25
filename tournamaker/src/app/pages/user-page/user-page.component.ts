@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthService} from '../../services/authService/auth.service';
-import {UserService} from '../../services/userService/user.service';
 import {Router} from '@angular/router';
+import {FbUserService, User} from '../../services/fbUserService/fb-user.service';
 
 @Component({
   selector: 'app-user-page',
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class UserPageComponent {
 
   constructor(
-    private userService: UserService,
+    private userService: FbUserService,
     private authService: AuthService,
     private router: Router) {}
 
@@ -24,6 +24,24 @@ export class UserPageComponent {
     console.log("logOut");
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  deleteAccount() {
+    const loginUser = this.authService.getUser();
+
+    if (loginUser && loginUser.id) {
+      console.log("Intentando eliminar usuario con ID:", loginUser.id);
+      this.userService.delete(loginUser.id).then(() => {
+        alert("✅ Cuenta eliminada correctamente");
+        this.router.navigate(['/']);
+      }).catch(err => {
+        console.error("Error al eliminar la cuenta:", err);
+        alert("❌ Error al eliminar la cuenta");
+      });
+      this.authService.logout();
+    } else {
+      alert("❌ No se pudo obtener el usuario actual");
+    }
   }
 
 }

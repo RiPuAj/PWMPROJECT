@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
 import {User} from '../../../models/user.model';
 import {NgIf} from '@angular/common';
@@ -76,4 +76,4 @@ export class RegisterFormComponent {
       alert('Las contraseñas no coinciden.');
     }
   }
-}
+}*/

@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {collection, collectionData, doc, docData, Firestore, query, where} from '@angular/fire/firestore';
+import {collection, collectionData, deleteDoc, doc, docData, Firestore, query, where} from '@angular/fire/firestore';
 import {map, Observable} from 'rxjs';
 
 export interface User {
@@ -32,6 +32,11 @@ export class FbUserService {
     return collectionData(q, { idField: 'id' }).pipe(
       map(users => users[0] as User | undefined)
     );
+  }
+
+  delete(id: string): Promise<void> {
+    const userDoc = doc(this.firestore, `users/${id}`);
+    return deleteDoc(userDoc);
   }
 
 }
