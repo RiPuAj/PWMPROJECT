@@ -4,10 +4,12 @@ import { MatchService } from '../../services/matchService/match.service';
 import { TeamService } from '../../services/teamService/team.service';
 import { Match } from '../../models/match.model';
 import { Team } from '../../models/team.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-match-view',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './match-view.component.html',
   styleUrl: './match-view.component.css'
 })
