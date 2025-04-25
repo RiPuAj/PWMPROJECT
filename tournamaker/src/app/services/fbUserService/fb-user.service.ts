@@ -1,6 +1,17 @@
 import {inject, Injectable} from '@angular/core';
-import {collection, collectionData, deleteDoc, doc, docData, Firestore, query, where} from '@angular/fire/firestore';
+import {
+  addDoc,
+  collection,
+  collectionData,
+  deleteDoc,
+  doc,
+  docData,
+  Firestore,
+  query,
+  where
+} from '@angular/fire/firestore';
 import {map, Observable} from 'rxjs';
+
 
 export interface User {
   id?: string;
@@ -37,6 +48,10 @@ export class FbUserService {
   delete(id: string): Promise<void> {
     const userDoc = doc(this.firestore, `users/${id}`);
     return deleteDoc(userDoc);
+  }
+
+  async create(user: User): Promise<void> {
+    await addDoc(this.usersRef, user);
   }
 
 }

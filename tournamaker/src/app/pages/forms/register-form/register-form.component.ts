@@ -1,11 +1,11 @@
-/*import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormsModule, NgForm} from '@angular/forms';
-import {User} from '../../../models/user.model';
 import {NgIf} from '@angular/common';
 import {UserService} from '../../../services/userService/user.service';
 import {AuthService} from '../../../services/authService/auth.service';
 import {CommonModule} from '@angular/common';
 import { Router } from '@angular/router';
+import {FbUserService, User} from '../../../services/fbUserService/fb-user.service';
 
 @Component({
   selector: 'app-register-form',
@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 export class RegisterFormComponent {
 
   constructor(
-    private userService: UserService,
+    private userService: FbUserService,
     private authService: AuthService,
     private router: Router) {}
 
@@ -58,22 +58,29 @@ export class RegisterFormComponent {
     return this.formUser.password !== this.formUser.repeatPassword;
   }
 
-  onFormSubmit(registerForm: NgForm) {
+  async onFormSubmit(registerForm: NgForm) {
     if (registerForm.valid && !this.isPasswordMismatch()) {
-      this.registerUser = {
-        username: this.formUser.username,
-        name: this.formUser.username,
-        email: this.formUser.email,
-        password: this.formUser.password,
-        avatar: this.formUser.avatar
-      };
+      try {
+        const newUser: User = {
+          username: this.formUser.username,
+          name: this.formUser.username,
+          email: this.formUser.email,
+          password: this.formUser.password,
+          avatar: this.formUser.avatar || 'https://cdn-icons-png.flaticon.com/512/6858/6858504.png'
+        };
 
-      this.userService.createUser(this.registerUser).subscribe((createdUser: User) => {
-        this.authService.setUser(createdUser);
+        await this.userService.create(newUser);
+
+        this.authService.setUser(newUser);
+
         window.location.href = '/';
-      });
+      } catch (error) {
+        console.error('Error al registrar el usuario:', error);
+        alert('Hubo un error al registrar el usuario. Intenta nuevamente.');
+      }
+
     } else if (this.isPasswordMismatch()) {
       alert('Las contraseñas no coinciden.');
     }
   }
-}*/
+}

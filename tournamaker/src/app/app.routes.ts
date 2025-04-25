@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import {LoginComponent} from './pages/forms/login/login.component';
 import {LandingComponent} from './pages/landing/landing.component';
-//import {RegisterFormComponent} from './pages/forms/register-form/register-form.component';
+import {RegisterFormComponent} from './pages/forms/register-form/register-form.component';
 import {AllMatchesComponent} from './pages/all-matches/all-matches.component';
 import {AllTournamentsComponent} from './pages/all-tournaments/all-tournaments.component';
 import {CreateMatchComponent} from './pages/createForms/create-match/create-match.component';
@@ -16,7 +16,7 @@ import {MatchViewComponent} from './pages/match-view/match-view.component';
 export const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "", component: LandingComponent },
-  //{ path: "register", component: RegisterFormComponent },
+  { path: "register", component: RegisterFormComponent },
   { path: "all-matches", component: AllMatchesComponent },
   { path: "all-tournaments", component: AllTournamentsComponent },
   { path: "create-match", component: CreateMatchComponent },

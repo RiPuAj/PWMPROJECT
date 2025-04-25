@@ -33,7 +33,7 @@ export class UserPageComponent {
       console.log("Intentando eliminar usuario con ID:", loginUser.id);
       this.userService.delete(loginUser.id).then(() => {
         alert("✅ Cuenta eliminada correctamente");
-        this.router.navigate(['/']);
+        window.location.href = '/';
       }).catch(err => {
         console.error("Error al eliminar la cuenta:", err);
         alert("❌ Error al eliminar la cuenta");

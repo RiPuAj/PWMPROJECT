@@ -1,4 +1,4 @@
-<!--
+
   <div class="container d-flex align-items-center justify-content-center">
     <form #registerForm="ngForm" (ngSubmit)="onFormSubmit(registerForm)" id="register-form" class="tournament-creation-form m-2">
 
@@ -18,9 +18,9 @@
 
       <div *ngIf="email.invalid && registerForm.submitted" class="text-danger">
       <small *ngIf="email.errors?.['required']">El email es obligatorio.</small>
-      -->
+
       <!--small *ngIf="email.errors?.['pattern']">El email no es válido.</small!-->
-<!--
+
       </div>
 
       <div class="input mb-3">
@@ -80,4 +80,3 @@
 
     </form>
   </div>
--->
