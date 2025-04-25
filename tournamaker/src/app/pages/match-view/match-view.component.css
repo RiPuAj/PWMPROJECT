@@ -1,21 +1,73 @@
-main{
+main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20vh;
+  padding: 20px;
 }
 
-.panel{
-  border: 1px solid black;
+.match-container {
   background-color: #00C02C;
-  border-radius: 10px;
-}
-
-.team {
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
+  color: #000; /* Título en negro */
+}
+
+.match-image {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.match-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+  color: #000; /* Textos en negro */
+  text-align: center;
+  font-weight: 500;
+}
+
+.match-details-grid div {
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.teams {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.team {
+  /* Sin fondo blanco */
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team img {
+  border-radius: 10px;
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 ul {
@@ -25,73 +77,21 @@ ul {
 }
 
 ul li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-left: -15px;
+  margin-bottom: 5px;
 }
 
-.team ul li::before {
-  content: "•";
-  position: absolute;
-  left: -25px;
-  color: black;
-  font-size: 1.2em;
-}
-
-.image{
-  width: 50%;
-  border-radius: 10px;
-}
-
-.panel-header{
-  text-align: center;
-}
-
-.teams-and-counter{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.counter{
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  gap: 15px
-}
-
-.counter button {
-  margin: 0 15px;
-  padding: 10px 15px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.match-status {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #555;
-  font-style: italic;
-  text-align: center;
-}
-
-
-@media (max-width: 1250px) {
-  .panel {
-    width: 95%;
-    padding: 10px;
+@media (max-width: 768px) {
+  .match-details-grid {
+    grid-template-columns: 1fr;
   }
 
-  .counter {
-    gap: 5px;
-    font-size: 1em;
+  .teams {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .counter button {
-    font-size: 14px;
-    padding: 6px 10px;
+  .team {
+    width: 80%;
+    margin-bottom: 20px;
   }
 }

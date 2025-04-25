@@ -1,33 +1,34 @@
 <main *ngIf="match && teamOne && teamTwo">
-  <h1>{{ match.name }}</h1>
-  <img [src]="match.image" alt="Match image" width="300" />
+  <div class="match-container">
+    <h1>{{ match.name }}</h1>
 
-  <p><strong>Fecha:</strong> {{ match.date }} a las {{ match.hour }}</p>
-  <p><strong>Lugar:</strong> {{ match.place }}</p>
-  <p><strong>Descripción:</strong> {{ match.description }}</p>
-  <p><strong>Organizador:</strong> {{ match.organizer }}</p>
-  <p><strong>Precio de entrada:</strong> {{ match.entry_tax }}</p>
-  <p><strong>Premio:</strong> {{ match.prize_pool }}</p>
+    <img [src]="match.image" alt="Match image" class="match-image" />
 
-  <div class="teams">
-    <div class="team">
-      <h3>{{ teamOne.name }}</h3>
-      <img [src]="teamOne.image" width="150" />
-      <ul>
-        <li *ngFor="let player of teamOne.participants">{{ player }}</li>
-      </ul>
+    <div class="match-details-grid">
+      <div><strong>Fecha:</strong> {{ match.date }} a las {{ match.hour }}</div>
+      <div><strong>Lugar:</strong> {{ match.place }}</div>
+      <div><strong>Descripción:</strong> {{ match.description }}</div>
+      <div><strong>Organizador:</strong> {{ match.organizer }}</div>
+      <div><strong>Precio de entrada:</strong> {{ match.entry_tax }}</div>
+      <div><strong>Premio:</strong> {{ match.prize_pool }}</div>
     </div>
 
-    <div class="team">
-      <h3>{{ teamTwo.name }}</h3>
-      <img [src]="teamTwo.image" width="150" />
-      <ul>
-        <li *ngFor="let player of teamTwo.participants">{{ player }}</li>
-      </ul>
+    <div class="teams">
+      <div class="team">
+        <h3>{{ teamOne.name }}</h3>
+        <img [src]="teamOne.image" alt="Team one logo" />
+        <ul>
+          <li *ngFor="let player of teamOne.participants">{{ player }}</li>
+        </ul>
+      </div>
+
+      <div class="team">
+        <h3>{{ teamTwo.name }}</h3>
+        <img [src]="teamTwo.image" alt="Team two logo" />
+        <ul>
+          <li *ngFor="let player of teamTwo.participants">{{ player }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </main>
-
-<!-- Cargando -->
-<p *ngIf="!match || !teamOne || !teamTwo">Cargando partido...</p>
-<p *ngIf="!loading && error">{{ error }}</p>
