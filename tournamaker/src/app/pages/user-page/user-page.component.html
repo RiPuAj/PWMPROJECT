@@ -18,31 +18,33 @@
     <div class="content">
       <h2 id="panel-name"></h2>
       <div id="user-info-panel">
-        <div class = "field">
-          <p> Nombre de usuario</p>
-          <input type="text" id="username-field" class="form-control" placeholder="Nombre de usuario">
-        </div>
-        <div class = "field">
-          <p> Email</p>
-          <input type="text" id="email-field" class="form-control" placeholder="Email">
-        </div>
-        <div class = "field">
-          <p> Contraseña</p>
-          <div class="input-group mb-3">
-            <input type="password" id="password-field" class="form-control" placeholder="Contraseña">
-            <button class="btn btn-outline-light" type="button" id="togglePasswordVisibility">
-              <i class="fa-solid fa-eye"></i>
-            </button>
+        <form #updateForm="ngForm" (ngSubmit)="onFormSubmit(updateForm)">
+          <div class = "field">
+            <p> Nombre de usuario</p>
+            <input type="text" name="username" #username="ngModel" [(ngModel)]="user.username" id="username-field" class="form-control" placeholder="Nombre de usuario">
           </div>
-        </div>
-        <button (click)="logOut()" type="button" id="log-out-button" class="close-button btn btn-primary me-2">Cerrar Sesión</button>
-        <button (click)="deleteAccount()" type="button" id="delete-button" class="close-button btn btn-primary">Eliminar cuenta</button>
-        <div class="save-buttons">
-          <button type="button" class="btn btn-primary">Guardar</button>
-          <a href="index.html">
-            <button type="button" class="btn btn-primary cancel-button">Cancelar</button>
-          </a>
-        </div>
+          <div class = "field">
+            <p> Email</p>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email" id="email-field" class="form-control" placeholder="Email">
+          </div>
+          <div class = "field">
+            <p> Contraseña</p>
+            <div class="input-group mb-3">
+              <input type="password" name="password" #password="ngModel" [(ngModel)]="user.password" id="password-field" class="form-control" placeholder="Contraseña">
+              <button class="btn btn-outline-light" type="button" id="togglePasswordVisibility">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <button (click)="logOut()" type="button" id="log-out-button" class="close-button btn btn-primary me-2">Cerrar Sesión</button>
+          <button (click)="deleteAccount()" type="button" id="delete-button" class="close-button btn btn-primary">Eliminar cuenta</button>
+          <div class="save-buttons">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="index.html">
+              <button type="button" class="btn btn-primary cancel-button">Cancelar</button>
+            </a>
+          </div>
+        </form>
       </div>
       <div id="teams-panel">
         <h1>Mis Equipos</h1>

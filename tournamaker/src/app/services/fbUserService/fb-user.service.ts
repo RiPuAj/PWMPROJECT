@@ -7,7 +7,7 @@ import {
   doc,
   docData,
   Firestore,
-  query,
+  query, updateDoc,
   where
 } from '@angular/fire/firestore';
 import {map, Observable} from 'rxjs';
@@ -53,6 +53,11 @@ export class FbUserService {
   async create(user: User): Promise<User> {
     const docRef = await addDoc(this.usersRef, user);
     return { ...user, id: docRef.id };
+  }
+
+  async update(id: string, data: Partial<User>): Promise<void> {
+    const userDoc = doc(this.firestore, `users/${id}`);
+    return updateDoc(userDoc, data);
   }
 
 }
