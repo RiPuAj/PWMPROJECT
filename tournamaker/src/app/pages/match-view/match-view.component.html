@@ -1,8 +1,8 @@
-<main *ngIf="match && teamOne && teamTwo">
+<main *ngIf="match && !loading; else loadingOrError">
   <div class="match-container">
     <h1>{{ match.name }}</h1>
 
-    <img [src]="match.image" alt="Match image" class="match-image" />
+    <img *ngIf="match.image" [src]="match.image" alt="Imagen del partido" class="match-image" />
 
     <div class="match-details-grid">
       <div><strong>Fecha:</strong> {{ match.date }} a las {{ match.hour }}</div>
@@ -12,23 +12,10 @@
       <div><strong>Precio de entrada:</strong> {{ match.entry_tax }}</div>
       <div><strong>Premio:</strong> {{ match.prize_pool }}</div>
     </div>
-
-    <div class="teams">
-      <div class="team">
-        <h3>{{ teamOne.name }}</h3>
-        <img [src]="teamOne.image" alt="Team one logo" />
-        <ul>
-          <li *ngFor="let player of teamOne.participants">{{ player }}</li>
-        </ul>
-      </div>
-
-      <div class="team">
-        <h3>{{ teamTwo.name }}</h3>
-        <img [src]="teamTwo.image" alt="Team two logo" />
-        <ul>
-          <li *ngFor="let player of teamTwo.participants">{{ player }}</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </main>
+
+<ng-template #loadingOrError>
+  <div *ngIf="loading">Cargando partido...</div>
+  <div *ngIf="error">{{ error }}</div>
+</ng-template>

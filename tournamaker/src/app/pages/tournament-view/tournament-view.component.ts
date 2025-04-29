@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { TeamService } from '../../services/teamService/team.service';
-import { MatchService } from '../../services/matchService/match.service';
-import { TournamentService } from '../../services/tournamentService/tournament.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FbTeamService } from '../../services/fbTeamService/fb-team.service';
+import { FbMatchService } from '../../services/fbMatchService/fb-match.service';
+import { FbTournamentService } from '../../services/fbTournamentService/fb-tournament.service';
 
 @Component({
   selector: 'app-tournament-view',
@@ -18,26 +18,32 @@ export class TournamentViewComponent implements OnInit {
   teams: any[] = [];
   lastMatches: any[] = [];
   upcomingMatches: any[] = [];
+  currentTournamentId: string = '';
+  currentTournament: any = null;
 
   constructor(
-    private teamService: TeamService,
-    private matchService: MatchService,
-    private tournamentService: TournamentService,
-    private router: Router
+    private fbTeamService: FbTeamService,
+    private fbMatchService: FbMatchService,
+    private fbTournamentService: FbTournamentService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.matchService.getMatches().subscribe(matches => {
-      this.matches = matches;
+    this.currentTournamentId = this.route.snapshot.paramMap.get('id') || '';
+
+    this.fbTournamentService.list().subscribe(tournaments => {
+      this.tournaments = tournaments || [];
+      this.currentTournament = this.tournaments.find(t => t.id === this.currentTournamentId);
+    });
+
+    this.fbTeamService.list().subscribe(teams => {
+      this.teams = teams || [];
+    });
+
+    this.fbMatchService.list().subscribe(matches => {
+      this.matches = (matches || []).filter(m => m.tournament === this.currentTournamentId);
       this.procesarDatos();
-    });
-
-    this.teamService.getTeams().subscribe(teams => {
-      this.teams = teams;
-    });
-
-    this.tournamentService.getTournaments().subscribe(tournaments => {
-      this.tournaments = tournaments;
     });
   }
 
@@ -51,28 +57,36 @@ export class TournamentViewComponent implements OnInit {
 
     this.lastMatches = sortedMatches
       .filter(m => new Date(m.date.split('/').reverse().join('-')) < today)
-      .slice(-3).reverse();
+      .slice(-3)
+      .reverse();
 
     this.upcomingMatches = sortedMatches
       .filter(m => new Date(m.date.split('/').reverse().join('-')) >= today)
       .slice(0, 3);
   }
 
-  getTeamImage(teamName: string): string {
-    const team = this.getTeamByName(teamName);
+  getTeamById(id: string) {
+    if (!id) return null;
+    return this.teams.find(team => team.id === id);
+  }
+
+  goToCreateMatch() {
+    this.router.navigate(['/create-match', this.currentTournamentId]);
+  }
+
+  getTeamImage(teamId: string): string {
+    const team = this.getTeamById(teamId);
     return team?.image || 'default_image_url';
   }
 
-  getTeamName(teamName: string): string {
-    const team = this.getTeamByName(teamName);
+  getTeamName(teamId: string): string {
+    const team = this.getTeamById(teamId);
     return team?.name || 'Equipo desconocido';
   }
 
-
-  getTeamByName(name: string) {
-    return this.teams.find(team => {
-      return team.name.trim().toLowerCase() === name.trim().toLowerCase();
-    });
+  getTeamPlayers(teamId: string): string[] {
+    const team = this.getTeamById(teamId);
+    return team?.participants || [];
   }
 
   goToMatch(id: string): void {

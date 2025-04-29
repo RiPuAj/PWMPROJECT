@@ -1,51 +1,58 @@
-<main>
-  <div class="torneo-container">
-    <div class="torneo-info" *ngIf="tournaments.length">
-      <div class="torneo-detalle">
-        <img [src]="tournaments[0]?.image || 'default_image_url'" alt="Imagen del torneo">
-        <h2>{{ tournaments[0]?.name || 'Nombre del Torneo' }}</h2>
-        <p>Organizado por: {{ tournaments[0]?.organizer || 'Organizador desconocido' }}</p>
-      </div>
-    </div>
+<div class="torneo-container" *ngIf="currentTournament">
+  <div class="torneo-info">
+    <img [src]="currentTournament.image || 'default_image_url'" alt="Imagen del torneo">
 
-    <div class="partidos-container">
-      <section class="partidos-section">
-        <h3>Últimos partidos</h3>
-        <div class="partidos">
-          <div *ngFor="let match of lastMatches" class="match-card fondo-verde" (click)="goToMatch(match.id)">
-            <div class="text-light-date">{{ match.date }} - {{ match.hour }}</div>
-            <div class="teams">
-              <div class="team">
-                <img [src]="getTeamImage(match.participants[0])">
-                <p>{{ getTeamName(match.participants[0]) }}</p>
-              </div>
-              <div class="team">
-                <img [src]="getTeamImage(match.participants[1])">
-                <p>{{ getTeamName(match.participants[1]) }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <h2>{{ currentTournament.name || 'Nombre del Torneo' }}</h2>
+    <p><strong>Organizado por:</strong> {{ currentTournament.organizer || 'Organizador desconocido' }}</p>
+    <p><strong>Descripción:</strong> {{ currentTournament.description || 'Sin descripción disponible' }}</p>
+    <p><strong>Fecha:</strong> {{ currentTournament.date || 'Por confirmar' }}</p>
+    <p><strong>Localización:</strong> {{ currentTournament.place || 'Localización desconocida' }}</p>
+    <p><strong>Premio:</strong> {{ currentTournament.prize_pool || 'Sin premio especificado' }}</p>
 
-      <section class="partidos-section">
-        <h3>Próximos partidos</h3>
-        <div class="partidos">
-          <div *ngFor="let match of upcomingMatches" class="match-card fondo-verde" (click)="goToMatch(match.id)">
-            <div class="text-light-date">{{ match.date }} - {{ match.hour }}</div>
-            <div class="teams">
-              <div class="team">
-                <img [src]="getTeamImage(match.participants[0])">
-                <p>{{ getTeamName(match.participants[0]) }}</p>
-              </div>
-              <div class="team">
-                <img [src]="getTeamImage(match.participants[1])">
-                <p>{{ getTeamName(match.participants[1]) }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
   </div>
-</main>
+
+  <div class="partidos-container">
+    <div class="partidos-section">
+      <h3>Últimos partidos</h3>
+      <div class="partidos" *ngIf="lastMatches.length > 0; else noLastMatches">
+        <div class="fondo-verde" *ngFor="let match of lastMatches" (click)="goToMatch(match.id)">
+          <div>
+            <img [src]="getTeamImage(match.teams[0])" width="50" height="50" alt="Team A" />
+            <strong>{{ getTeamName(match.teams[0]) }}</strong>
+            vs
+            <img [src]="getTeamImage(match.teams[1])" width="50" height="50" alt="Team B" />
+            <strong>{{ getTeamName(match.teams[1]) }}</strong>
+          </div>
+          <p>{{ match.date }}</p>
+        </div>
+      </div>
+      <ng-template #noLastMatches>
+        <p>No hay últimos partidos disponibles.</p>
+      </ng-template>
+    </div>
+
+    <div class="partidos-section">
+      <h3>Próximos partidos</h3>
+      <div class="partidos" *ngIf="upcomingMatches.length > 0; else noUpcomingMatches">
+        <div class="fondo-verde" *ngFor="let match of upcomingMatches" (click)="goToMatch(match.id)">
+          <div>
+            <img [src]="getTeamImage(match.teams[0])" width="50" height="50" alt="Team A" />
+            <strong>{{ getTeamName(match.teams[0]) }}</strong>
+            vs
+            <img [src]="getTeamImage(match.teams[1])" width="50" height="50" alt="Team B" />
+            <strong>{{ getTeamName(match.teams[1]) }}</strong>
+          </div>
+          <p>{{ match.date }}</p>
+        </div>
+      </div>
+      <ng-template #noUpcomingMatches>
+        <p>No hay próximos partidos disponibles.</p>
+      </ng-template>
+    </div>
+    <button class="create-match-btn" (click)="goToCreateMatch()">Crear Partido</button>
+  </div>
+</div>
+
+<div *ngIf="!currentTournament">
+  <p>Cargando torneo...</p>
+</div>

@@ -1,155 +1,170 @@
-.torneo-container {
-  background-color: #00C02C;
-  padding: 50px;
-  border-radius: 10px;
-  margin: 150px 100px;
+main {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
 
-.partidos-section .partidos {
+.torneo-container {
+  position: relative;
+  background-color: #00C02C;
+  padding: 30px 20px;
+  border-radius: 15px;
+  max-width: 1200px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 30px;
+  margin: 5% auto 5% auto;
 }
 
 .torneo-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
 
-.torneo-info h1 {
-  font-size: 22px;
-  text-align: center;
+.torneo-info img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .torneo-info h2 {
-  font-size: 18px;
-  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #000;
 }
 
-.torneo-info .torneo-logo img {
-  width: 20%;
-  height: auto;
-  align-content: center;
+.torneo-info p {
+  font-size: 1.1rem;
+  margin: 4px 0;
+  color: #000;
+  max-width: 600px;
+  word-wrap: break-word;
 }
 
-.torneo-info .torneo-logo {
-  text-align: center;
-  align-content: center;
-  margin: auto;
+.torneo-info li {
+  background: rgba(255, 255, 255, 0.5);
+  margin: 6px 0;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: #000;
+  font-weight: 500;
 }
 
 .partidos-container {
   display: flex;
-  justify-content: space-between;
-  gap: 5%;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
 }
 
 .partidos-section {
-  width: 100%;
-  text-align: left;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .partidos-section h3 {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 5%;
-  text-align: center;
-  padding: 2%;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  margin-bottom: 20px;
+  color: #000;
 }
 
-/* Fondo verde para cada partido */
-.fondo-verde {
-  background-color: #008C1C;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px; /* Espacio entre los partidos */
-  cursor: pointer; /* Cambio del puntero al pasar sobre el partido */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centrado vertical */
-  align-items: center; /* Centrado horizontal */
-  height: 150px; /* Altura pequeña */
-  width: 100%; /* Asegura que ocupen el 100% del ancho del contenedor */
-  max-width: 300px; /* Limita el tamaño a un máximo de 300px de ancho */
-}
-
-/* MATCHES */
 .partidos {
   display: flex;
   flex-direction: column;
-  gap: 5%;
-}
-
-.teams {
-  display: flex;
-  justify-content: center; /* Centra los equipos horizontalmente */
-  align-items: center; /* Centra los equipos verticalmente */
-  gap: 40px; /* Espacio más grande entre los equipos */
+  gap: 20px;
   width: 100%;
+  align-items: center;
 }
 
-.team {
+.fondo-verde {
+  background-color: #008C1C;
+  padding: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.team img {
-  width: 75px;
-  height: 75px;
-  object-fit: cover;
+.fondo-verde:hover {
+  background-color: #006f17;
+  transform: scale(1.03);
 }
 
-.torneo-detalle img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-
-.team p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Marcador */
-.marcador {
-  font-size: 24px;
-  font-weight: bold;
-  color: #FFF;
+.fondo-verde > div {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 5px 10px;
-  background-color: #333;
-  border-radius: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-/* Media query para dispositivos pequeños */
-@media (max-width: 992px) {
-  .torneo-container {
-    padding: 10%;
-    margin: 30% 5%;
-  }
+.fondo-verde img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
+.fondo-verde p {
+  margin: 3px 0;
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.create-match-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-match-btn:hover {
+  background-color: dimgrey;
+}
+
+
+@media (max-width: 768px) {
   .partidos-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .partidos-section {
-    width: 90%;
+  .torneo-container {
+    padding: 20px 15px;
+    margin-top: 40px;
   }
 
-  .partidos-section .partidos {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .partidos-section {
+    max-width: 90%;
   }
 }

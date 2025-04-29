@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MatchService } from '../../services/matchService/match.service';
-import { TeamService } from '../../services/teamService/team.service';
-import { Match } from '../../models/match.model';
-import { Team } from '../../models/team.model';
+import { FbMatchService, Match } from '../../services/fbMatchService/fb-match.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,22 +8,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './match-view.component.html',
-  styleUrl: './match-view.component.css'
+  styleUrls: ['./match-view.component.css']
 })
 export class MatchViewComponent implements OnInit {
-  matchId!: number;
+  matchId!: string;
   match?: Match;
-  teamOne?: Team;
-  teamTwo?: Team;
-
   loading: boolean = true;
   error: string = '';
 
-  constructor(
-    private route: ActivatedRoute,
-    private matchService: MatchService,
-    private teamService: TeamService
-  ) {}
+  private route = inject(ActivatedRoute);
+  private matchService = inject(FbMatchService);
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -37,37 +28,17 @@ export class MatchViewComponent implements OnInit {
         return;
       }
 
-      this.matchId = +idParam;
+      this.matchId = idParam;
 
-      this.matchService.getMatches().subscribe(matches => {
-        const foundMatch = matches.find(m => m.id === this.matchId);
-
-        if (!foundMatch) {
+      this.matchService.getById(this.matchId).subscribe({
+        next: (match) => {
+          this.match = match;
+          this.loading = false;
+        },
+        error: () => {
           this.error = 'Partido no encontrado.';
           this.loading = false;
-          return;
         }
-
-        this.match = foundMatch;
-
-        if (this.match.participants.length !== 2) {
-          this.error = 'El partido no tiene dos equipos asignados.';
-          this.loading = false;
-          return;
-        }
-
-        const [team1Name, team2Name] = this.match.participants;
-
-        this.teamService.getTeams().subscribe(teams => {
-          this.teamOne = teams.find(t => t.name === team1Name);
-          this.teamTwo = teams.find(t => t.name === team2Name);
-
-          if (!this.teamOne || !this.teamTwo) {
-            this.error = 'No se pudieron cargar los equipos.';
-          }
-
-          this.loading = false;
-        });
       });
     });
   }

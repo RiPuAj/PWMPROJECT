@@ -1,60 +1,68 @@
-<div class="container d-flex align-items-center justify-content-center ">
-  <form class="tournament-creation-form m-2">
+<div class="container d-flex align-items-center justify-content-center">
+  <form class="tournament-creation-form m-2" #form="ngForm" (ngSubmit)="onFormSubmit(form)">
 
     <div class="input mb-3">
       <label for="tournamentName" class="form-label">Nombre del torneo</label>
-      <input type="text" required minlength="4" class="form-control" id="tournamentName" placeholder="Nombre">
-    </div>
-
-    <div class="input mb-3">
-      <label for="tournamentType" class="form-label">Tipo de torneo</label>
-      <select class="form-select" required id="tournamentType">
-        <option value="" disabled selected hidden>Seleccionar</option>
-        <option class="dropdown-item-sel" value="liga">Liga</option>
-        <option value="eliminacion">Eliminación</option>
-      </select>
+      <input type="text" required minlength="4" class="form-control" id="tournamentName" placeholder="Nombre" name="name" [(ngModel)]="tournament.name">
     </div>
 
     <div class="input mb-3">
       <label for="place" class="form-label">Lugar</label>
-      <input id="place" required minlength="4" type="text" class="form-control" placeholder="Lugar">
+      <input id="place" required minlength="4" type="text" class="form-control" placeholder="Lugar" name="place" [(ngModel)]="tournament.place">
     </div>
-
 
     <div class="row mb-3 d-flex justify-content-between">
       <div class="row mb-3">
         <div class="col-12 col-lg-4">
           <label for="teamsNumber" class="form-label">Número de equipos</label>
-          <input id="teamsNumber" type="number" required min="2" step="2" class="form-control" placeholder="Número de equipos" aria-label="Número de equipos">
+          <input id="teamsNumber" type="number" required min="2" step="2" class="form-control" placeholder="Número de equipos" name="teams_num" [(ngModel)]="tournament.teams_num">
         </div>
 
         <div class="col-12 col-lg-4">
           <label for="entryTax" class="form-label">Tasa de ingreso</label>
           <div class="input-group">
             <span class="input-group-text">€</span>
-            <input id="entryTax" type="number" min="0" class="form-control" placeholder="Tasa de ingreso" aria-label="Tasa de ingreso (opcional)">
+            <input id="entryTax" type="number" min="0" class="form-control" placeholder="Tasa de ingreso" name="entry_tax" [(ngModel)]="tournament.entry_tax">
           </div>
         </div>
 
         <div class="col-12 col-lg-4">
-          <label for="startDate" class="form-label">Fecha de comienzo</label>
-          <input type="date" required id="startDate" class="form-control" placeholder="Fecha de comienzo" aria-label="Fecha de comienzo">
+          <label for="startDate" class="form-label">Fecha</label>
+          <input type="date" required id="startDate" class="form-control" placeholder="Fecha de comienzo" name="date" [(ngModel)]="tournament.date">
         </div>
       </div>
-
     </div>
 
     <div class="input mb-3">
       <label for="descripcion" class="form-label">Descripción</label>
-      <textarea class="form-control" maxlength="500" id="descripcion" rows="5" placeholder="Descripción (opcional, máximo 500 caracteres)"></textarea>
+      <textarea class="form-control" maxlength="500" id="descripcion" rows="5" placeholder="Descripción" name="description" [(ngModel)]="tournament.description"></textarea>
       <small id="charCount" class="char-counter">0/500</small>
     </div>
 
+    <div class="input mb-3">
+      <label for="organizer" class="form-label">Organizador</label>
+      <input type="text" id="organizer" class="form-control" placeholder="Organizador" name="organizer" [(ngModel)]="tournament.organizer">
+    </div>
+
+    <div class="input mb-3">
+      <label for="prizePool" class="form-label">Premios</label>
+      <input type="text" id="prizePool" class="form-control" placeholder="Premios" name="prize_pool" [(ngModel)]="tournament.prize_pool">
+    </div>
+
+    <div class="input mb-3">
+      <label for="equipos" class="form-label">Equipos</label>
+      <input type="text" id="equipos" class="form-control" placeholder="Equipos participantes (separados por comas)" name="equipos" [(ngModel)]="tournament.teams">
+    </div>
+
+    <div class="input mb-3">
+      <label for="image" class="form-label">Enlace de la imagen</label>
+      <input type="text" id="image" [(ngModel)]="tournament.image" placeholder="Copia y pega el enlace a tu imagen" name="image" class="form-control" required>
+    </div>
+
     <div class="d-flex justify-content-center">
-      <button type="guardar" class="btn btn-dark me-2">Guardar</button>
-      <button type="cancelar" class="btn btn-danger">Cancelar</button>
+      <button type="submit" class="btn btn-dark me-2">Guardar</button>
+      <button type="button" class="btn btn-danger" (click)="cancel()">Cancelar</button>
     </div>
 
   </form>
 </div>
-
