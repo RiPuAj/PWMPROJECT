@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FbMatchService, Match } from '../../../services/fbMatchService/fb-match.service';
 import { CommonModule } from '@angular/common';
 import { FbTeamService } from '../../../services/fbTeamService/fb-team.service';
-import {FbTournamentService, Tournament} from '../../../services/fbTournamentService/fb-tournament.service';
+import { FbTournamentService, Tournament } from '../../../services/fbTournamentService/fb-tournament.service';
 
 @Component({
   selector: 'app-create-match',
@@ -13,7 +13,7 @@ import {FbTournamentService, Tournament} from '../../../services/fbTournamentSer
   standalone: true,
   imports: [FormsModule, CommonModule],
 })
-export class CreateMatchComponent {
+export class CreateMatchComponent implements OnInit {
   match: Match = {
     date: '',
     hour: '',
@@ -32,6 +32,7 @@ export class CreateMatchComponent {
 
   tournamentId: string = '';
   teams: any[] = [];
+  isReady = false;
 
   constructor(
     private fbMatchService: FbMatchService,
@@ -43,12 +44,21 @@ export class CreateMatchComponent {
 
   ngOnInit(): void {
     this.tournamentId = this.route.snapshot.paramMap.get('tournamentId') || '';
-    this.fbTournamentService.getTournamentById(this.tournamentId).subscribe((tournament: Tournament) => {
-      const teamIds = tournament.teams;
-      if (teamIds) {
-        this.loadTeams(teamIds);
-      }
-    });
+    if (this.tournamentId) {
+      this.match.tournament = this.tournamentId;
+      this.fbTournamentService.getTournamentById(this.tournamentId).subscribe((tournament: Tournament) => {
+        const teamIds = tournament.teams;
+        if (teamIds) {
+          this.loadTeams(teamIds);
+        }
+        this.isReady = true;
+      });
+    } else {
+      this.fbTeamService.list().subscribe((teams) => {
+        this.teams = teams;
+        this.isReady = true;
+      });
+    }
   }
 
   loadTeams(teamIds: string[]) {
@@ -64,34 +74,20 @@ export class CreateMatchComponent {
 
   async onFormSubmit(form: NgForm) {
     if (form.valid) {
-      const dateInput = (document.getElementById('date') as HTMLInputElement)?.value;
-      const hourInput = (document.getElementById('hour') as HTMLInputElement)?.value;
-
-      if (dateInput && hourInput) {
-        this.match.date = this.formatDate(dateInput);
-        this.match.hour = hourInput;
-      } else {
-        console.error('Fecha y hora son obligatorias');
-        return;
+      if (this.tournamentId) {
+        this.match.tournament = this.tournamentId;
       }
 
-      const nameInput = (document.getElementById('matchName') as HTMLInputElement)?.value;
-      const placeInput = (document.getElementById('place') as HTMLInputElement)?.value;
-      const entryTaxInput = (document.getElementById('entryTax') as HTMLInputElement)?.value;
-      const descriptionInput = (document.getElementById('descripcion') as HTMLTextAreaElement)?.value;
-      const participantsNumInput = (document.getElementById('participantsNum') as HTMLInputElement)?.value;
-      const organizerInput = (document.getElementById('organizer') as HTMLInputElement)?.value;
-      const prizePoolInput = (document.getElementById('prizePool') as HTMLInputElement)?.value;
-      const imageInput = (document.getElementById('image') as HTMLInputElement)?.value;
+      if (this.tournamentId) {
+        if (!this.match.teams || this.match.teams.length < 2 || !this.match.teams[0] || !this.match.teams[1]) {
+          console.error('Debes seleccionar dos equipos');
+          return;
+        }
+      }
 
-      this.match.name = nameInput;
-      this.match.place = placeInput;
-      this.match.entry_tax = entryTaxInput || undefined;
-      this.match.description = descriptionInput || undefined;
-      this.match.participants_num = Number(participantsNumInput) * 2;
-      this.match.prize_pool = prizePoolInput || undefined;
-      this.match.image = imageInput || undefined;
-      this.match.organizer = organizerInput || undefined;
+      if (!this.tournamentId) {
+        this.match.participants_num = Number(this.match.participants_num) * 2;
+      }
 
       try {
         const createdMatch = await this.fbMatchService.create(this.match);
@@ -107,14 +103,8 @@ export class CreateMatchComponent {
   onCancel() {
     if (!this.tournamentId) {
       this.router.navigate(['/']);
-    } else{
+    } else {
       this.router.navigate(['/tournament-view/' + this.tournamentId]);
     }
-
-  }
-
-  private formatDate(dateString: string): string {
-    const parts = dateString.split('-');
-    return `${parts[2]}-${parts[1]}-${parts[0]}`;
   }
 }

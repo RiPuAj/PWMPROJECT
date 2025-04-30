@@ -1,80 +1,82 @@
-<div class="container d-flex align-items-center justify-content-center">
-  <form class="tournament-creation-form m-2" (ngSubmit)="onFormSubmit(f)" #f="ngForm">
+<div *ngIf="isReady">
+  <div class="container d-flex align-items-center justify-content-center">
+    <form class="tournament-creation-form m-2" (ngSubmit)="onFormSubmit(f)" #f="ngForm">
 
-    <div class="input mb-3">
-      <label for="matchName" class="form-label">Título del partido</label>
-      <input type="text" required minlength="4" class="form-control" id="matchName" placeholder="Título del partido">
-    </div>
-
-    <div *ngIf="tournamentId" class="form-group">
-      <label for="team1">Equipo 1</label>
-      <select id="team1" class="form-control" [(ngModel)]="match.teams[0]" name="selectedTeams">
-        <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
-      </select>
-    </div>
-
-    <div *ngIf="tournamentId" class="form-group">
-      <label for="team2">Equipo 2</label>
-      <select id="team2" class="form-control" [(ngModel)]="match.teams[1]" name="selectedTeams">
-        <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
-      </select>
-    </div>
-
-    <div class="input mb-3">
-      <label for="place" class="form-label">Lugar</label>
-      <input id="place" required type="text" class="form-control" placeholder="Dirección del campo de fútbol">
-    </div>
-
-    <div class="row mb-3">
-      <div class="col">
-        <label for="date" class="form-label">Fecha</label>
-        <input id="date" required type="date" class="form-control" aria-label="Fecha">
+      <div class="input mb-3">
+        <label for="matchName" class="form-label">Título del partido</label>
+        <input type="text" required minlength="4" class="form-control" id="matchName" name="name" [(ngModel)]="match.name" placeholder="Título del partido">
       </div>
 
-      <div class="col">
-        <label for="hour" class="form-label">Hora</label>
-        <input id="hour" required type="time" class="form-control" aria-label="Hora">
+      <div *ngIf="tournamentId" class="form-group">
+        <label for="team1">Equipo 1</label>
+        <select id="team1" class="form-control" [(ngModel)]="match.teams[0]" name="team1" required>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
       </div>
-    </div>
 
-    <div *ngIf="!tournamentId" class="input mb-3">
-      <label for="participantsNum" class="form-label">Número de participantes por equipo</label>
-      <input id="participantsNum" required type="number" class="form-control" placeholder="Número de participantes por equipo">
-    </div>
-
-    <div *ngIf="!tournamentId" class="input mb-3">
-      <label for="entryTax" class="form-label">Tasa de ingreso</label>
-      <div class="input-group">
-        <span class="input-group-text">€</span>
-        <input id="entryTax" type="number" class="form-control" placeholder="Tasa de ingreso (opcional)" aria-label="Tasa de ingreso">
+      <div *ngIf="tournamentId" class="form-group">
+        <label for="team2">Equipo 2</label>
+        <select id="team2" class="form-control" [(ngModel)]="match.teams[1]" name="team2" required>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
       </div>
-    </div>
 
-    <div *ngIf="!tournamentId" class="input mb-3">
-      <label for="organizer" class="form-label">Organizador</label>
-      <input id="organizer" class="form-control" placeholder="Nombre del organizador (opcional)">
-    </div>
+      <div class="input mb-3">
+        <label for="place" class="form-label">Lugar</label>
+        <input id="place" required type="text" class="form-control" name="place" [(ngModel)]="match.place" placeholder="Dirección del campo de fútbol">
+      </div>
 
-    <div class="input mb-3">
-      <label for="descripcion" class="form-label">Descripción</label>
-      <textarea class="form-control" id="descripcion" maxlength="500" rows="5" placeholder="Descripción (opcional, máximo 500 caracteres)"></textarea>
-      <small id="charCount" class="char-counter">0/500</small>
-    </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label for="date" class="form-label">Fecha</label>
+          <input id="date" required type="date" class="form-control" name="date" [(ngModel)]="match.date" aria-label="Fecha">
+        </div>
 
-    <div class="input mb-3">
-      <label for="prizePool" class="form-label">Premio</label>
-      <input id="prizePool" type="text" class="form-control" placeholder="Premio (opcional)">
-    </div>
+        <div class="col">
+          <label for="hour" class="form-label">Hora</label>
+          <input id="hour" required type="time" class="form-control" name="hour" [(ngModel)]="match.hour" aria-label="Hora">
+        </div>
+      </div>
 
-    <div class="input mb-3">
-      <label for="image" class="form-label">Imagen del partido</label>
-      <input id="image" type="url" class="form-control" placeholder="URL de la imagen (opcional)">
-    </div>
+      <div *ngIf="!tournamentId" class="input mb-3">
+        <label for="participantsNum" class="form-label">Número de participantes por equipo</label>
+        <input id="participantsNum" required type="number" class="form-control" name="participantsNum" [(ngModel)]="match.participants_num" placeholder="Número de participantes por equipo">
+      </div>
 
-    <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-dark me-2">Guardar</button>
-      <button type="button" (click)="onCancel()" class="btn btn-danger">Cancelar</button>
-    </div>
+      <div *ngIf="!tournamentId" class="input mb-3">
+        <label for="entryTax" class="form-label">Tasa de ingreso</label>
+        <div class="input-group">
+          <span class="input-group-text">€</span>
+          <input id="entryTax" type="number" class="form-control" name="entry_tax" [(ngModel)]="match.entry_tax" placeholder="Tasa de ingreso (opcional)" aria-label="Tasa de ingreso">
+        </div>
+      </div>
 
-  </form>
+      <div *ngIf="!tournamentId" class="input mb-3">
+        <label for="organizer" class="form-label">Organizador</label>
+        <input id="organizer" class="form-control" name="organizer" [(ngModel)]="match.organizer" placeholder="Nombre del organizador (opcional)">
+      </div>
+
+      <div class="input mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="descripcion" name="description" [(ngModel)]="match.description" maxlength="500" rows="5" placeholder="Descripción (opcional, máximo 500 caracteres)"></textarea>
+        <small id="charCount" class="char-counter">{{ match.description?.length || 0 }}/500</small>
+      </div>
+
+      <div class="input mb-3">
+        <label for="prizePool" class="form-label">Premio</label>
+        <input id="prizePool" type="text" class="form-control" name="prize_pool" [(ngModel)]="match.prize_pool" placeholder="Premio (opcional)">
+      </div>
+
+      <div class="input mb-3">
+        <label for="image" class="form-label">Imagen del partido</label>
+        <input id="image" type="url" class="form-control" name="image" [(ngModel)]="match.image" placeholder="URL de la imagen (opcional)">
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-dark me-2">Guardar</button>
+        <button type="button" (click)="onCancel()" class="btn btn-danger">Cancelar</button>
+      </div>
+
+    </form>
+  </div>
 </div>
