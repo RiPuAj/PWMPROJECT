@@ -1,6 +1,7 @@
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
 }
 
@@ -19,7 +20,7 @@ main {
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #000; /* Título en negro */
+  color: #000;
 }
 
 .match-image {
@@ -35,48 +36,56 @@ h1 {
   gap: 20px;
   width: 100%;
   margin-bottom: 30px;
-  color: #000; /* Textos en negro */
+  color: #000;
   text-align: center;
   font-weight: 500;
 }
 
-.match-details-grid div {
-  padding: 10px;
-  border-radius: 8px;
+.teams-dnd-container {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
 }
 
 .teams {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 2rem;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .team {
-  padding: 20px;
-  border-radius: 10px;
-  width: 220px;
+  flex: 1 1 45%;
+  padding: 1rem;
+  border: 2px dashed #fff;
+  min-height: 250px;
+  background: #00c02c; /* mismo fondo verde */
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.team img {
-  border-radius: 10px;
-  width: 120px;
-  height: auto;
+.player {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0ff;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  cursor: grab;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+
+.team h3 {
   margin-bottom: 10px;
+  color: #333;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-ul li {
-  margin-bottom: 5px;
+.player.disabled {
+  cursor: default;
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
@@ -90,7 +99,6 @@ ul li {
   }
 
   .team {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 100%;
   }
 }

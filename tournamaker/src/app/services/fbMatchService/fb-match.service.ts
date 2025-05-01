@@ -18,7 +18,7 @@ export interface Match {
   hour: string;
   image?: string;
   name?: string;
-  organizer?: string;
+  organizer: string;
   teams: string[];
   participants_num?: number;
   place: string;

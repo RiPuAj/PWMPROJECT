@@ -1,21 +1,51 @@
-<main *ngIf="match && !loading; else loadingOrError">
+<main>
   <div class="match-container">
-    <h1>{{ match.name }}</h1>
+    <h1>{{ match?.name }}</h1>
 
-    <img *ngIf="match.image" [src]="match.image" alt="Imagen del partido" class="match-image" />
+    <img [src]="match?.image" alt="Imagen del partido" class="match-image" />
 
     <div class="match-details-grid">
-      <div><strong>Fecha:</strong> {{ match.date }} a las {{ match.hour }}</div>
-      <div><strong>Lugar:</strong> {{ match.place }}</div>
-      <div><strong>Descripción:</strong> {{ match.description }}</div>
-      <div><strong>Organizador:</strong> {{ match.organizer }}</div>
-      <div><strong>Precio de entrada:</strong> {{ match.entry_tax }}</div>
-      <div><strong>Premio:</strong> {{ match.prize_pool }}</div>
+      <div><strong>Fecha:</strong> {{ match?.date }} a las {{ match?.hour }}</div>
+      <div><strong>Lugar:</strong> {{ match?.place }}</div>
+      <div><strong>Descripción:</strong> {{ match?.description }}</div>
+      <div><strong>Organizador:</strong> {{ match?.organizer }}</div>
+      <div><strong>Precio de entrada:</strong> {{ match?.entry_tax }}</div>
+      <div><strong>Premio:</strong> {{ match?.prize_pool }}</div>
+    </div>
+
+    <h2>Participantes</h2>
+    <div class="teams">
+      <div class="team"
+           (dragover)="allowDrop($event)"
+           (drop)="onDrop($event, 'left')"
+           [class.disabled]="match?.tournament">
+        <h3>Equipo A</h3>
+        <div
+          class="player"
+          *ngFor="let player of teamLeft"
+          [class.disabled]="match?.tournament"
+          [attr.data-player]="player"
+          [attr.draggable]="!match?.tournament"
+          (dragstart)="onDragStart($event, player)">
+          {{ player }}
+        </div>
+      </div>
+
+      <div class="team"
+           (dragover)="allowDrop($event)"
+           (drop)="onDrop($event, 'right')"
+           [class.disabled]="match?.tournament">
+        <h3>Equipo B</h3>
+        <div
+          class="player"
+          *ngFor="let player of teamRight"
+          [class.disabled]="match?.tournament"
+          [attr.data-player]="player"
+          [attr.draggable]="!match?.tournament"
+          (dragstart)="onDragStart($event, player)">
+          {{ player }}
+        </div>
+      </div>
     </div>
   </div>
 </main>
-
-<ng-template #loadingOrError>
-  <div *ngIf="loading">Cargando partido...</div>
-  <div *ngIf="error">{{ error }}</div>
-</ng-template>

@@ -89,6 +89,8 @@ export class CreateMatchComponent implements OnInit {
         this.match.participants_num = Number(this.match.participants_num) * 2;
       }
 
+      this.match.participants = [this.match.organizer];
+
       try {
         const createdMatch = await this.fbMatchService.create(this.match);
         this.router.navigate(['/match-view/' + createdMatch.id]);
