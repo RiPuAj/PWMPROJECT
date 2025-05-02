@@ -28,6 +28,7 @@ export class CreateMatchComponent implements OnInit {
     image: '',
     tournament: '',
     participants: [],
+    estadoPartido: ["Sin Jugar", 0, 0],
   };
 
   tournamentId: string = '';

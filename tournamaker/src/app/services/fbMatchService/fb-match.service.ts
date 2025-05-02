@@ -1,4 +1,5 @@
 import { inject, Injectable } from '@angular/core';
+import { updateDoc } from '@angular/fire/firestore';
 import {
   addDoc,
   collection,
@@ -24,7 +25,8 @@ export interface Match {
   place: string;
   prize_pool?: string;
   tournament?: string;
-  participants: string[]
+  participants: string[];
+  estadoPartido: [string, number, number]; // [estado, marcadorA, marcadorB]
 }
 
 @Injectable({
@@ -51,5 +53,10 @@ export class FbMatchService {
   async create(match: Match): Promise<Match> {
     const docRef = await addDoc(this.matchesRef, match);
     return { ...match, id: docRef.id };
+  }
+
+  async update(id: string, data: Partial<Match>): Promise<void> {
+    const matchDoc = doc(this.firestore, `matches/${id}`);
+    await updateDoc(matchDoc, data);
   }
 }

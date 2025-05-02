@@ -11,4 +11,7 @@ export interface Match {
   prize_pool: string;
   participants: string[];
   hour: string;
+  estadoPartido: string[];
+  teams: string[];
+  tournament?: string;
 }

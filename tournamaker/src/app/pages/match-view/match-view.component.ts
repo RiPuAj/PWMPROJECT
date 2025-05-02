@@ -2,11 +2,12 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FbMatchService, Match } from '../../services/fbMatchService/fb-match.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-match-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './match-view.component.html',
   styleUrls: ['./match-view.component.css']
 })
@@ -15,6 +16,7 @@ export class MatchViewComponent implements OnInit {
   match?: Match;
   loading: boolean = true;
   error: string = '';
+  esOrganizador: boolean = false;
 
   teamLeft: string[] = [];
   teamRight: string[] = [];
@@ -36,6 +38,8 @@ export class MatchViewComponent implements OnInit {
       this.matchService.getById(this.matchId).subscribe({
         next: (match) => {
           this.match = match;
+          this.esOrganizador = match.organizer === localStorage.getItem('uid'); // o como guardes el id del usuario actual
+          this.verificarEstadoAutomaticamente(match);
           this.loading = false;
 
           if (match.participants) {
@@ -50,6 +54,36 @@ export class MatchViewComponent implements OnInit {
         }
       });
     });
+  }
+
+  verificarEstadoAutomaticamente(match: Match) {
+    const hoy = new Date();
+    const fechaPartido = new Date(`${match.date}T${match.hour}`);
+    if (hoy > fechaPartido && match.estadoPartido[0] === 'Sin Jugar') {
+      match.estadoPartido[0] = 'Cancelado';
+      this.matchService.update(match.id!, {estadoPartido: match.estadoPartido});
+    }
+  }
+
+  guardarMarcador() {
+    if (this.match && this.match.estadoPartido[0] === 'Jugando') {
+      this.matchService.update(this.match.id!, {
+        estadoPartido: this.match.estadoPartido
+      }).then(() => alert('Marcador actualizado.'));
+    }
+  }
+
+  cambiarEstado(nuevoEstado: string) {
+    if (this.match) {
+      this.match.estadoPartido[0] = nuevoEstado;
+      if (nuevoEstado === 'Sin Jugar' || nuevoEstado === 'Cancelado') {
+        this.match.estadoPartido[1] = 0;
+        this.match.estadoPartido[2] = 0;
+      }
+      this.matchService.update(this.match.id!, {
+        estadoPartido: this.match.estadoPartido
+      }).then(() => alert(`Estado cambiado a ${nuevoEstado}.`));
+    }
   }
 
   allowDrop(event: DragEvent) {
@@ -77,6 +111,4 @@ export class MatchViewComponent implements OnInit {
       this.teamRight.push(player);
     }
   }
-
 }
-

@@ -14,20 +14,45 @@
     </div>
 
     <h2>Participantes</h2>
-    <div class="teams">
+
+    <div class="teams-container">
       <div class="team"
            (dragover)="allowDrop($event)"
            (drop)="onDrop($event, 'left')"
            [class.disabled]="match?.tournament">
         <h3>Equipo A</h3>
-        <div
-          class="player"
-          *ngFor="let player of teamLeft"
-          [class.disabled]="match?.tournament"
-          [attr.data-player]="player"
-          [attr.draggable]="!match?.tournament"
-          (dragstart)="onDragStart($event, player)">
+        <div class="player"
+             *ngFor="let player of teamLeft"
+             [class.disabled]="match?.tournament"
+             [attr.data-player]="player"
+             [attr.draggable]="!match?.tournament"
+             (dragstart)="onDragStart($event, player)">
           {{ player }}
+        </div>
+      </div>
+
+      <div class="match-status-container" *ngIf="match && match?.estadoPartido">
+        <div><strong>Estado:</strong>
+          <select [(ngModel)]="match.estadoPartido[0]" (change)="cambiarEstado(match.estadoPartido[0])">
+            <option value="Sin Jugar">Sin Jugar</option>
+            <option value="Jugando">Jugando</option>
+            <option value="Finalizado">Finalizado</option>
+            <option value="Cancelado">Cancelado</option>
+          </select>
+        </div>
+
+        <div *ngIf="match.estadoPartido[0] === 'Jugando'" class="match-score">
+          <label> A:
+            <input type="number" [(ngModel)]="match.estadoPartido[1]" min="0"/>
+          </label>
+          <label> B:
+            <input type="number" [(ngModel)]="match.estadoPartido[2]" min="0"/>
+          </label>
+          <button (click)="guardarMarcador()">Guardar marcador</button>
+        </div>
+
+        <div *ngIf="match.estadoPartido[0] !== 'Jugando'">
+          <strong>Marcador:</strong> {{ match.estadoPartido[1] }} - {{ match.estadoPartido[2] }}
         </div>
       </div>
 
@@ -36,13 +61,12 @@
            (drop)="onDrop($event, 'right')"
            [class.disabled]="match?.tournament">
         <h3>Equipo B</h3>
-        <div
-          class="player"
-          *ngFor="let player of teamRight"
-          [class.disabled]="match?.tournament"
-          [attr.data-player]="player"
-          [attr.draggable]="!match?.tournament"
-          (dragstart)="onDragStart($event, player)">
+        <div class="player"
+             *ngFor="let player of teamRight"
+             [class.disabled]="match?.tournament"
+             [attr.data-player]="player"
+             [attr.draggable]="!match?.tournament"
+             (dragstart)="onDragStart($event, player)">
           {{ player }}
         </div>
       </div>

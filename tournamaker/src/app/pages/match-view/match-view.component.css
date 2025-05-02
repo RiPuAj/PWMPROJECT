@@ -102,3 +102,72 @@ h1 {
     width: 100%;
   }
 }
+
+.teams-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.match-status-container {
+  background-color: #00C02C;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.match-status-container select {
+  font-size: 1.2rem;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.match-score {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.match-score label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.match-score input {
+  width: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  border: 2px solid #00C02C;
+}
+
+.match-status-container button {
+  background-color: #00C02C;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.match-status-container button:hover {
+  background-color: #008C1E;
+}
+
