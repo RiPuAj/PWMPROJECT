@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FbMatchService, Match } from '../../services/fbMatchService/fb-match.service';
+import { FbTeamService} from '../../services/fbTeamService/fb-team.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -23,6 +24,7 @@ export class MatchViewComponent implements OnInit {
 
   private route = inject(ActivatedRoute);
   private matchService = inject(FbMatchService);
+  private teamService = inject(FbTeamService);
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -38,14 +40,24 @@ export class MatchViewComponent implements OnInit {
       this.matchService.getById(this.matchId).subscribe({
         next: (match) => {
           this.match = match;
-          this.esOrganizador = match.organizer === localStorage.getItem('uid'); // o como guardes el id del usuario actual
           this.verificarEstadoAutomaticamente(match);
           this.loading = false;
 
-          if (match.participants) {
-            const mitad = Math.ceil(match.participants.length / 2);
-            this.teamLeft = match.participants.slice(0, mitad);
-            this.teamRight = match.participants.slice(mitad);
+          if (this.match.tournament){
+            this.teamService.getParticipantsByTeamId(this.match.teams[0]).forEach(
+              p => {
+                this.teamLeft = p;
+              });
+            this.teamService.getParticipantsByTeamId(this.match.teams[1]).forEach(
+              p => {
+                this.teamRight = p;
+              });
+          } else {
+            if (match.participants) {
+              const mitad = Math.ceil(match.participants.length / 2);
+              this.teamLeft = match.participants.slice(0, mitad);
+              this.teamRight = match.participants.slice(mitad);
+            }
           }
         },
         error: () => {

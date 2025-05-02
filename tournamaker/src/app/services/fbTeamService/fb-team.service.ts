@@ -1,4 +1,6 @@
 import { inject, Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+
 import {
   addDoc,
   collection,
@@ -42,4 +44,11 @@ export class FbTeamService {
     const docRef = await addDoc(this.teamsRef, team);
     return { ...team, id: docRef.id };
   }
+
+  getParticipantsByTeamId(id: string): Observable<string[]> {
+    return this.getById(id).pipe(
+      map((team) => team.participants)
+    );
+  }
+
 }
