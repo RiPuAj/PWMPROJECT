@@ -1,45 +1,51 @@
-<div class="container">
+<div class="container" *ngIf="!loading">
   <div class="card">
     <div class="card-header text-white text-center border">
       <div class="row">
         <div class="col">
-          <img id="image" class="img-fluid rounded" src="../../resources/images/default-featured-image.jpg" alt="">
+          <img id="image" class="img-fluid rounded"
+               [src]="match?.image || tournament?.image || '../../resources/images/default-featured-image.jpg'"
+               alt="">
         </div>
         <div class="col d-flex flex-column justify-content-center align-items-center">
           <div class="row">
-            <p id="date"><strong>Fecha:</strong> --/--/----</p>
+            <p id="date"><strong>Fecha:</strong> {{ match?.date || tournament?.date || '--/--/----' }}</p>
           </div>
           <div class="row">
-            <p id="hour"><strong>Hora:</strong> 00:00</p>
+            <p id="hour"><strong>Hora:</strong> {{ match?.hour || '00:00' }}</p>
           </div>
           <div class="row">
-            <p><strong id="place">Lugar:</strong></p>
+            <p><strong id="place">Lugar:</strong> {{ match?.place || tournament?.place || '' }}</p>
           </div>
         </div>
         <div class="col d-flex flex-column justify-content-center align-items-center">
           <div class="row">
-            <p id="num-players"> 0/0</p>
+            <p id="num-players">
+              {{ match ? (match.participants.length || 0) + '/' + (match.participants_num || 0) : (tournament?.teams?.length || 0) + '/' + (tournament?.teams_num || 0) }}
+            </p>
           </div>
           <div class="row">
-            <p id="entry-tax"> 0€</p>
+            <p id="entry-tax"> {{ match?.entry_tax || tournament?.entry_tax || '0' }}€</p>
           </div>
           <div class="row">
-            <p id="prize-pool"> 0€</p>
+            <p id="prize-pool"> {{ match?.prize_pool || tournament?.prize_pool || '0' }}€</p>
           </div>
         </div>
       </div>
     </div>
     <div class="card-body">
       <h5 class="card-title"><strong>Más info:</strong></h5>
-      <p id="description" class="card-text"></p>
+      <p id="description" class="card-text">{{ match?.description || tournament?.description || '' }}</p>
     </div>
 
     <div class="card-footer text-center">
       <div class="col">
-        <p id="organizer" ><i class="fa fa-user"></i> Username</p>
+        <p id="organizer"><i class="fa fa-user"></i> {{ match?.organizer || tournament?.organizer || 'Desconocido' }}</p>
       </div>
-      <div class="col">
-        <button class="btn btn-primary">Solicitar unirme</button>
+      <div class="col" *ngIf="match">
+        <button class="btn btn-primary" [disabled]="isAlreadyParticipant" (click)="joinMatch()">
+          {{ isAlreadyParticipant ? 'Ya estás unido' : 'Solicitar unirme' }}
+        </button>
       </div>
     </div>
   </div>
