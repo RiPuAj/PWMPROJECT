@@ -84,11 +84,6 @@ export class TournamentViewComponent implements OnInit {
     return team?.name || 'Equipo desconocido';
   }
 
-  getTeamPlayers(teamId: string): string[] {
-    const team = this.getTeamById(teamId);
-    return team?.participants || [];
-  }
-
   goToMatch(id: string): void {
     this.router.navigate(['/match-view', id]);
   }

@@ -1,38 +1,105 @@
-.card-container-bottom{
-  margin-bottom: 3rem;
+.card-container {
+  margin: 2rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-.tournament-cards, .matches-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 15px 0;
+.card-container-bottom {
+  margin-bottom: 3rem;
 }
 
 .card-container-title {
   display: flex;
-  background-color: #00C02C;
-  color: white;
   justify-content: space-between;
   align-items: center;
+  background-color: #00C02C;
+  color: white;
+  padding: 0.8em 1.5em;
 }
 
-.card-container-title-left{
-  margin-left: 1.5em;
+.card-container-title-left {
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .card-container-title-right {
-  margin-right: 1.5em;
   font-size: 1em;
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .card-container-title-right:hover {
   color: #7FFF7F;
   cursor: pointer;
+}
+
+.tournament-cards,
+.matches-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 1.5rem;
+}
+
+.card {
+  min-width: 260px;
+  max-width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.card-body h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card-body p {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.4;
+}
+
+.btn-info {
+  margin-top: auto;
+  padding: 0.5em;
+  background-color: #00C02C;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #00a827;
 }

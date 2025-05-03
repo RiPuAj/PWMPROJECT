@@ -2,19 +2,34 @@
   <div class="card-container">
     <div class="card-container-title">
       <span class="card-container-title-left">Torneos disponibles</span>
-      <a class="card-container-title-right" routerLink="/all-tournaments">Ver todos</a>
+      <button class="btn-info" (click)="goToAllTournaments()">Ver Todos</button>
     </div>
     <div class="tournament-cards">
+      <div class="card" *ngFor="let tournament of tournaments">
+        <img [src]="tournament.image || 'assets/default-tournament.jpg'" alt="Imagen del torneo">
+        <div class="card-body">
+          <h3>{{ tournament.name }}</h3>
+          <p>{{ tournament.description?.slice(0, 100) }}...</p>
+          <button class="btn-info" (click)="goToMatch(tournament.id!)">Más información</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="card-container card-container-bottom">
     <div class="card-container-title">
       <span class="card-container-title-left">Partidos disponibles</span>
-      <a class="card-container-title-right" routerLink="/all-matches">Ver todos</a>
+      <button class="btn-info" (click)="goToAllMatches()">Ver Todos</button>
     </div>
     <div class="matches-cards">
-
+      <div class="card" *ngFor="let match of matches">
+        <img [src]="match.image || 'assets/default-match.jpg'" alt="Imagen del partido">
+        <div class="card-body">
+          <h3>{{ match.name }}</h3>
+          <p>{{ match.description?.slice(0, 100) }}...</p>
+          <button class="btn-info" (click)="goToMatch(match.id!)">Más información</button>
+        </div>
+      </div>
     </div>
   </div>
 </main>
