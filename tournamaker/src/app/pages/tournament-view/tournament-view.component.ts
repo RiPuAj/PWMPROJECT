@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FbTeamService } from '../../services/fbTeamService/fb-team.service';
 import { FbMatchService } from '../../services/fbMatchService/fb-match.service';
 import { FbTournamentService } from '../../services/fbTournamentService/fb-tournament.service';
+import { AuthService } from '../../services/authService/auth.service';
 
 @Component({
   selector: 'app-tournament-view',
@@ -26,7 +27,8 @@ export class TournamentViewComponent implements OnInit {
     private fbMatchService: FbMatchService,
     private fbTournamentService: FbTournamentService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private AuthService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +47,10 @@ export class TournamentViewComponent implements OnInit {
       this.matches = (matches || []).filter(m => m.tournament === this.currentTournamentId);
       this.procesarDatos();
     });
+  }
+
+  isOrganizer(): boolean {
+    return this.AuthService.getUser()?.name === this.currentTournament?.organizer;
   }
 
   procesarDatos(): void {

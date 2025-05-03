@@ -3,6 +3,7 @@ import {FormsModule, NgForm} from '@angular/forms';
 import { FbTournamentService, Tournament } from '../../../services/fbTournamentService/fb-tournament.service';
 import { Router } from '@angular/router';
 import {CommonModule, NgIf} from '@angular/common';
+import { AuthService } from '../../../services/authService/auth.service';
 
 @Component({
   selector: 'app-create-torneo',
@@ -26,7 +27,7 @@ export class CreateTournamentPageComponent {
     teams: [],
   };
 
-  constructor(private tournamentService: FbTournamentService, private router: Router) {}
+  constructor(private tournamentService: FbTournamentService, private router: Router, private AuthService: AuthService) {}
 
   cancel() {
     this.router.navigate(['/']);
@@ -61,6 +62,13 @@ export class CreateTournamentPageComponent {
         if (this.tournament.entry_tax !== undefined && this.tournament.entry_tax !== '') {
           const entryTaxNumber = parseFloat(this.tournament.entry_tax.toString());        //Formato tasa de ingreso: €X,xx
           this.tournament.entry_tax = this.formatEntryTax(entryTaxNumber);
+        }
+
+        const user = this.AuthService.getUser();
+        if (user && user.name){
+          this.tournament.organizer = user.name;
+        } else{
+          this.router.navigate(['/login']);
         }
 
         const createdTournament = await this.tournamentService.create(this.tournament);

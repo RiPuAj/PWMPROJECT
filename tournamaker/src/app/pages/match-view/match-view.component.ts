@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { FbMatchService, Match } from '../../services/fbMatchService/fb-match.service';
 import { FbTeamService} from '../../services/fbTeamService/fb-team.service';
+import { AuthService } from '../../services/authService/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -17,14 +18,16 @@ export class MatchViewComponent implements OnInit {
   match?: Match;
   loading: boolean = true;
   error: string = '';
-  esOrganizador: boolean = false;
 
   teamLeft: string[] = [];
   teamRight: string[] = [];
 
-  private route = inject(ActivatedRoute);
-  private matchService = inject(FbMatchService);
-  private teamService = inject(FbTeamService);
+  constructor(
+    private fbTeamService: FbTeamService,
+    private fbMatchService: FbMatchService,
+    private route: ActivatedRoute,
+    private AuthService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -37,18 +40,18 @@ export class MatchViewComponent implements OnInit {
 
       this.matchId = idParam;
 
-      this.matchService.getById(this.matchId).subscribe({
+      this.fbMatchService.getById(this.matchId).subscribe({
         next: (match) => {
           this.match = match;
           this.verificarEstadoAutomaticamente(match);
           this.loading = false;
 
           if (this.match.tournament){
-            this.teamService.getParticipantsByTeamId(this.match.teams[0]).forEach(
+            this.fbTeamService.getParticipantsByTeamId(this.match.teams[0]).forEach(
               p => {
                 this.teamLeft = p;
               });
-            this.teamService.getParticipantsByTeamId(this.match.teams[1]).forEach(
+            this.fbTeamService.getParticipantsByTeamId(this.match.teams[1]).forEach(
               p => {
                 this.teamRight = p;
               });
@@ -68,18 +71,22 @@ export class MatchViewComponent implements OnInit {
     });
   }
 
+  isOrganizer(): boolean {
+    return this.AuthService.getUser()?.name === this.match?.organizer;
+  }
+
   verificarEstadoAutomaticamente(match: Match) {
     const hoy = new Date();
     const fechaPartido = new Date(`${match.date}T${match.hour}`);
     if (hoy > fechaPartido && match.estadoPartido[0] === 'Sin Jugar') {
       match.estadoPartido[0] = 'Cancelado';
-      this.matchService.update(match.id!, {estadoPartido: match.estadoPartido});
+      this.fbMatchService.update(match.id!, {estadoPartido: match.estadoPartido});
     }
   }
 
   guardarMarcador() {
     if (this.match && this.match.estadoPartido[0] === 'Jugando') {
-      this.matchService.update(this.match.id!, {
+      this.fbMatchService.update(this.match.id!, {
         estadoPartido: this.match.estadoPartido
       }).then(() => alert('Marcador actualizado.'));
     }
@@ -92,18 +99,20 @@ export class MatchViewComponent implements OnInit {
         this.match.estadoPartido[1] = 0;
         this.match.estadoPartido[2] = 0;
       }
-      this.matchService.update(this.match.id!, {
+      this.fbMatchService.update(this.match.id!, {
         estadoPartido: this.match.estadoPartido
       }).then(() => alert(`Estado cambiado a ${nuevoEstado}.`));
     }
   }
 
   allowDrop(event: DragEvent) {
-    event.preventDefault();
+    if (this.isOrganizer()) {
+      event.preventDefault();
+    }
   }
 
   onDragStart(event: DragEvent, player: string) {
-    event.dataTransfer?.setData('text/plain', player);
+      event.dataTransfer?.setData('text/plain', player);
   }
 
   onDrop(event: DragEvent, side: 'left' | 'right') {

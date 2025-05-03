@@ -19,11 +19,11 @@
       <div class="team"
            (dragover)="allowDrop($event)"
            (drop)="onDrop($event, 'left')"
-           [class.disabled]="match?.tournament">
+           [class.disabled]="match?.tournament || !isOrganizer()">
         <h3>Equipo A</h3>
         <div class="player"
              *ngFor="let player of teamLeft"
-             [class.disabled]="match?.tournament"
+             [class.disabled]="match?.tournament || !isOrganizer()"
              [attr.data-player]="player"
              [attr.draggable]="!match?.tournament"
              (dragstart)="onDragStart($event, player)">
@@ -33,23 +33,34 @@
 
       <div class="match-status-container" *ngIf="match && match?.estadoPartido">
         <div><strong>Estado:</strong>
-          <select [(ngModel)]="match.estadoPartido[0]" (change)="cambiarEstado(match.estadoPartido[0])">
-            <option value="Sin Jugar">Sin Jugar</option>
-            <option value="Jugando">Jugando</option>
-            <option value="Finalizado">Finalizado</option>
-            <option value="Cancelado">Cancelado</option>
-          </select>
+          <ng-container *ngIf="isOrganizer(); else estadoTexto">
+            <select [(ngModel)]="match.estadoPartido[0]" (change)="cambiarEstado(match.estadoPartido[0])">
+              <option value="Sin Jugar">Sin Jugar</option>
+              <option value="Jugando">Jugando</option>
+              <option value="Finalizado">Finalizado</option>
+              <option value="Cancelado">Cancelado</option>
+            </select>
+          </ng-container>
+          <ng-template #estadoTexto>
+            {{ match.estadoPartido[0] }}
+          </ng-template>
         </div>
 
         <div *ngIf="match.estadoPartido[0] === 'Jugando'" class="match-score">
-          <label> A:
-            <input type="number" [(ngModel)]="match.estadoPartido[1]" min="0"/>
-          </label>
-          <label> B:
-            <input type="number" [(ngModel)]="match.estadoPartido[2]" min="0"/>
-          </label>
-          <button (click)="guardarMarcador()">Guardar marcador</button>
+          <ng-container *ngIf="isOrganizer(); else marcadorSoloTexto">
+            <label> A:
+              <input type="number" [(ngModel)]="match.estadoPartido[1]" min="0"/>
+            </label>
+            <label> B:
+              <input type="number" [(ngModel)]="match.estadoPartido[2]" min="0"/>
+            </label>
+            <button (click)="guardarMarcador()">Guardar marcador</button>
+          </ng-container>
+          <ng-template #marcadorSoloTexto>
+            <strong>Marcador:</strong> {{ match.estadoPartido[1] }} - {{ match.estadoPartido[2] }}
+          </ng-template>
         </div>
+
 
         <div *ngIf="match.estadoPartido[0] !== 'Jugando'">
           <strong>Marcador:</strong> {{ match.estadoPartido[1] }} - {{ match.estadoPartido[2] }}
@@ -59,11 +70,11 @@
       <div class="team"
            (dragover)="allowDrop($event)"
            (drop)="onDrop($event, 'right')"
-           [class.disabled]="match?.tournament">
+           [class.disabled]="match?.tournament || !isOrganizer()">
         <h3>Equipo B</h3>
         <div class="player"
              *ngFor="let player of teamRight"
-             [class.disabled]="match?.tournament"
+             [class.disabled]="match?.tournament || !isOrganizer()"
              [attr.data-player]="player"
              [attr.draggable]="!match?.tournament"
              (dragstart)="onDragStart($event, player)">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FbMatchService, Match } from '../../../services/fbMatchService/fb-match.service';
+import { AuthService } from '../../../services/authService/auth.service';
 import { CommonModule } from '@angular/common';
 import { FbTeamService } from '../../../services/fbTeamService/fb-team.service';
 import { FbTournamentService, Tournament } from '../../../services/fbTournamentService/fb-tournament.service';
@@ -40,7 +41,8 @@ export class CreateMatchComponent implements OnInit {
     private fbTeamService: FbTeamService,
     private fbTournamentService: FbTournamentService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private authService: AuthService,
   ) {}
 
   ngOnInit(): void {
@@ -90,6 +92,12 @@ export class CreateMatchComponent implements OnInit {
         this.match.participants_num = Number(this.match.participants_num) * 2;
       }
 
+      const user = this.authService.getUser();
+      if (user && user.name){
+        this.match.organizer = user.name;
+      } else{
+        this.router.navigate(['/login']);
+      }
       this.match.participants = [this.match.organizer];
 
       try {
