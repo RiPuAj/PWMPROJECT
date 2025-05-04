@@ -49,7 +49,7 @@ export class CreateMatchComponent implements OnInit {
     this.tournamentId = this.route.snapshot.paramMap.get('tournamentId') || '';
     if (this.tournamentId) {
       this.match.tournament = this.tournamentId;
-      this.fbTournamentService.getTournamentById(this.tournamentId).subscribe((tournament: Tournament) => {
+      this.fbTournamentService.getById(this.tournamentId).subscribe((tournament: Tournament) => {
         const teamIds = tournament.teams;
         if (teamIds) {
           this.loadTeams(teamIds);

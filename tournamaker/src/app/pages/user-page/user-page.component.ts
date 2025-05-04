@@ -3,19 +3,28 @@ import {AuthService} from '../../services/authService/auth.service';
 import {Router} from '@angular/router';
 import {FbUserService, User} from '../../services/fbUserService/fb-user.service';
 import {FormsModule, NgForm} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgForOf, NgIf} from '@angular/common';
+import {FbMatchService, Match} from '../../services/fbMatchService/fb-match.service';
+import {FbTournamentService, Tournament} from '../../services/fbTournamentService/fb-tournament.service';
+import {FbTeamService, Team} from '../../services/fbTeamService/fb-team.service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-user-page',
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule, NgIf, NgForOf],
   templateUrl: './user-page.component.html',
-  styleUrl: './user-page.component.css'
+  styleUrls: ['./user-page.component.css']
 })
 
 
 
 export class UserPageComponent {
 
+  activePanel: string = 'data';
+  teams: Team[] = [];
+  tournaments: any[] = [];
+  matches: Match[] = [];
 
   originalUser: User | null = null;
   user: User = {
@@ -29,13 +38,27 @@ export class UserPageComponent {
   constructor(
     private userService: FbUserService,
     private authService: AuthService,
-    private router: Router) {}
+    private matchService: FbMatchService,
+    private tournamentService: FbTournamentService,
+    private teamService: FbTeamService,
+    private router: Router,
+    private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnInit() {
     const currentUser = this.authService.getUser();
     if (currentUser) {
       this.user = { ...currentUser };          // Carga al formulario
       this.originalUser = { ...currentUser };  // Guarda copia para comparar
+
+      if (currentUser.id) {
+        this.teamService.getTeamsByUser(currentUser.username).subscribe(teams => {
+          this.teams = teams;
+          this.loadUserTournamentsFromTeams(teams, currentUser);
+          this.loadUserMatches(currentUser);
+          this.changeDetectorRef.detectChanges();
+        });
+      }
+
     }
   }
 
@@ -108,6 +131,61 @@ export class UserPageComponent {
       alert('❌ Error al actualizar los datos.');
     }
 
+  }
+
+  setActivePanel(panel: string) {
+    this.activePanel = panel;
+  }
+
+  isActive(panel: string): boolean {
+    return this.activePanel === panel;
+  }
+
+goToCreateTeam() {
+    this.router.navigate(['/create-team']);
+  }
+
+  private loadUserTournamentsFromTeams(teams: Team[], user: User) {
+    const tournamentIds = new Set<string>();
+    this.tournaments = []; // Limpiar antes de rellenar
+
+    teams.forEach(team => {
+      team.torneos.forEach(tournamentId => {
+        tournamentIds.add(tournamentId);
+      });
+    });
+
+    tournamentIds.forEach(id => {
+      this.tournamentService.getById(id).subscribe(tournament => {
+        if (tournament) {
+          this.tournaments.push(tournament);
+          this.changeDetectorRef.detectChanges();
+        }
+      });
+    });
+
+    this.tournamentService.list().subscribe(allTournaments => {
+      const organizedTournaments = allTournaments.filter(t => t.organizer === user.name);
+
+      organizedTournaments.forEach(t => {
+        if (!this.tournaments.some(existing => existing.id === t.id)) {
+          this.tournaments.push(t);
+        }
+      });
+
+      this.changeDetectorRef.detectChanges(); // actualizar vista
+    });
+
+  }
+
+  private loadUserMatches(user: User) {
+    this.matchService.list().subscribe(allMatches => {
+      this.matches = allMatches.filter(match =>
+        match.organizer === user.name ||
+        (Array.isArray(match.participants) && match.participants.includes(user.username))
+      );
+      this.changeDetectorRef.detectChanges();
+    });
   }
 
 }

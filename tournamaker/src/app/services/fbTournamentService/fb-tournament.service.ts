@@ -6,7 +6,7 @@ import {
   deleteDoc,
   doc,
   docData,
-  Firestore,
+  Firestore, updateDoc,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -51,8 +51,9 @@ export class FbTournamentService {
     return { ...tournament, id: docRef.id };
   }
 
-  getTournamentById(id: string): Observable<Tournament> {
+  async update(id: string, changes: Partial<Tournament>): Promise<void> {
     const tournamentDoc = doc(this.firestore, `tournaments/${id}`);
-    return docData(tournamentDoc, { idField: 'id' }) as Observable<Tournament>;
+    return updateDoc(tournamentDoc, changes);
   }
+
 }

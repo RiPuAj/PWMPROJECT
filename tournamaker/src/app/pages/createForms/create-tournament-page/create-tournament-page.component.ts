@@ -45,11 +45,6 @@ export class CreateTournamentPageComponent {
   async onFormSubmit(form: NgForm) {
     if (form.valid) {
       try {
-        if (typeof this.tournament.teams === 'string') {
-          this.tournament.teams = (this.tournament.teams as unknown as string)      //Equipos participantes
-            .split(',')
-            .map(participant => participant.trim());
-        }
         const rawDate = this.tournament.date;
 
         if (rawDate) {

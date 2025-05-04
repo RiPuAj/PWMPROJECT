@@ -44,9 +44,28 @@
       </div>
       <div class="col" *ngIf="match">
         <button class="btn btn-primary" [disabled]="isAlreadyParticipant" (click)="joinMatch()">
-          {{ isAlreadyParticipant ? 'Ya estás unido' : 'Solicitar unirme' }}
+          {{ isAlreadyParticipant ? 'Ya estás unido' : 'Unirme' }}
         </button>
       </div>
+
+      <div class="col" *ngIf="tournament && !teams">
+        <button class="btn btn-primary" (click)="loadUserTeams()">
+          Ver mis equipos
+        </button>
+      </div>
+
+      <div class="col" *ngIf="teams">
+        <h5>Selecciona un equipo para unirte:</h5>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let team of teams">
+            {{ team.name }}
+            <button class="btn btn-sm btn-success" (click)="joinTournament(team)">Unirme</button>
+          </li>
+        </ul>
+        <p *ngIf="teams.length === 0" class="text-muted mt-2">No tienes equipos creados.</p>
+      </div>
+
+
     </div>
   </div>
 </div>

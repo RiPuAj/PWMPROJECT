@@ -3,4 +3,6 @@ export interface Team {
   name: string;
   image: string;
   participants: string[];
+  creador: string;
+  torneos: string[];
 }

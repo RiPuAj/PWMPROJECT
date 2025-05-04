@@ -8,7 +8,7 @@ import {
   deleteDoc,
   doc,
   docData,
-  Firestore,
+  Firestore, query, updateDoc, where,
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
@@ -17,6 +17,8 @@ export interface Team {
   name: string;
   image: string;
   participants: string[];
+  creador: string;
+  torneos: string[];
 }
 
 @Injectable({
@@ -45,10 +47,37 @@ export class FbTeamService {
     return { ...team, id: docRef.id };
   }
 
+  async update(id: string, team: Partial<Team>): Promise<void> {
+    const teamDoc = doc(this.firestore, `teams/${id}`);
+    return updateDoc(teamDoc, team);
+  }
+
   getParticipantsByTeamId(id: string): Observable<string[]> {
     return this.getById(id).pipe(
       map((team) => team.participants)
     );
   }
+
+  getAllTeams(): Observable<Team[]> {
+    return collectionData(this.teamsRef, { idField: 'id' }) as Observable<Team[]>;
+  }
+
+  getTeamsByUser(userName: string): Observable<Team[]> {
+    if (userName !== undefined && userName !== '') {
+      return this.getAllTeams().pipe(
+        map((teams: Team[]) => teams.filter(team => team.participants.includes(userName))),
+      );
+    } else {
+      return this.getAllTeams();
+    }
+  }
+
+  getTeamsByCreator(userId: string): Observable<Team[]> {
+    const teamsRef = collection(this.firestore, 'teams');
+    const q = query(teamsRef, where('creador', '==', userId));
+    return collectionData(q, { idField: 'id' }) as Observable<Team[]>;
+  }
+
+
 
 }

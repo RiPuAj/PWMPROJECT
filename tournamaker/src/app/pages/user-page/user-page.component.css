@@ -8,6 +8,7 @@
   border: 2px solid black;
   overflow: hidden;
   background-color: #00C02C;
+  margin-top: 20px;
 }
 
 
@@ -150,7 +151,7 @@ a:hover{
   padding: 10px;
   width: 100%;
   max-width: 100%;
-  min-height: 320px;
+  min-height: 100px;
 }
 
 .team-cards {
@@ -161,7 +162,6 @@ a:hover{
   overflow-x: auto !important;
   padding: 15px 0 !important;
   align-items: center !important;
-  margin-top: 7rem;
 }
 
 
@@ -191,7 +191,68 @@ a:hover{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 15px;
   text-align: center;
+  margin-bottom: 20px;
 }
+.card h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tournament-cards,
+.matches-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+}
+
+.team-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 15px 0;
+  align-items: center;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  width: 5rem;
+  height: 10rem;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  margin-bottom: 15px;
+  height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #00C02C;
+  color: white;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+}
+
 
 .card-title{
   overflow: hidden;
@@ -220,5 +281,18 @@ a:hover{
   font-size: 16px;
   white-space: nowrap;
 }
+.create-team-btn{
+  text-align: right;
+  bottom: 0;
+}
 
+#teams-panel, #stats-panel, #tournaments-panel, #matches-panel {
+  display: none;
+}
 
+#teams-panel.active,
+#stats-panel.active,
+#tournaments-panel.active,
+#matches-panel.active {
+  display: block;
+}

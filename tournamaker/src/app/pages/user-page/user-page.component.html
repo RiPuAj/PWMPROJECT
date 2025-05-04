@@ -7,17 +7,16 @@
   <div class="main">
     <div class="sidebar">
       <ul>
-        <a id="my-data" class="active sidebar-button"><li>Datos personales</li></a>
-        <a id="my-teams" class="sidebar-button"><li>Mis equipos</li></a>
-        <a id="my-statistics" class="sidebar-button"><li>Mis Estadísticas</li></a>
-        <a id="my-tournaments" class="sidebar-button"><li>Torneos</li></a>
-        <a id="my-matches" class="sidebar-button"><li>Partidos</li></a>
+        <li><a (click)="setActivePanel('data')" [ngClass]="{ 'active': isActive('data') }" class="sidebar-button">Datos personales</a></li>
+        <li><a (click)="setActivePanel('teams')" [ngClass]="{ 'active': isActive('teams') }" class="sidebar-button">Mis equipos</a></li>
+        <li><a (click)="setActivePanel('tournaments')" [ngClass]="{ 'active': isActive('tournaments') }" class="sidebar-button">Torneos</a></li>
+        <li><a (click)="setActivePanel('matches')" [ngClass]="{ 'active': isActive('matches') }" class="sidebar-button">Partidos</a></li>
       </ul>
     </div>
 
     <div class="content">
       <h2 id="panel-name"></h2>
-      <div id="user-info-panel">
+      <div id="user-info-panel" *ngIf="isActive('data')">
         <form #updateForm="ngForm" (ngSubmit)="onFormSubmit(updateForm)">
           <div class = "field">
             <p> Nombre de usuario</p>
@@ -46,47 +45,43 @@
           </div>
         </form>
       </div>
-      <div id="teams-panel">
+      <div id="teams-panel" [ngClass]="{ 'active': isActive('teams') }">
         <h1>Mis Equipos</h1>
-        <div class="team-cards"></div>
+        <div class="team-cards">
+          <div *ngFor="let team of teams" class="card team-card">
+            <h4>{{ team.name }}</h4>
+            <img [src]=team.image width="50" height="50" />
+          </div>
+        </div>
+        <button
+          class="create-team-btn"
+          (click)="goToCreateTeam()">
+          Crear Equipo
+        </button>
       </div>
-      <div id="stats-panel">
-        <h1>Mis estadísticas</h1>
-        <table class="table table-striped table-dark stats-table">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Partidos</th>
-            <th scope="col">Goles</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th scope="row">Torneo 1</th>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <th scope="row">Torneo 2</th>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <th scope="row">Torneo 3</th>
-            <td >-</td>
-            <td >-</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="tournaments-panel">
+
+      <div id="tournaments-panel" [ngClass]="{ 'active': isActive('tournaments') }">
         <h1>Mis Torneos</h1>
-        <div class="tournament-cards"></div>
+        <div class="tournament-cards">
+          <div *ngFor="let tournament of tournaments" class="card tournament-card">
+            <h4>{{ tournament.name }}</h4>
+            <img [src]=tournament.image width="50" height="50" />
+          </div>
+        </div>
       </div>
-      <div id="matches-panel">
+
+      <div id="matches-panel" [ngClass]="{ 'active': isActive('matches') }">
         <h1>Mis Partidos</h1>
-        <div class="matches-cards"></div>
+        <div class="match-cards">
+          <div *ngFor="let match of matches" class="card match-card">
+            <h4>{{ match.name }}</h4>
+            <p><strong>Fecha:</strong> {{ match.date | date }}</p>
+            <p><strong>Estado:</strong> {{ match.estadoPartido[0] }}  {{ match.estadoPartido[1] }} - {{ match.estadoPartido[2] }}</p>
+            <img [src]=match.image width="50" height="50" />
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
