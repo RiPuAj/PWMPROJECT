@@ -25,6 +25,7 @@ export class UserPageComponent {
     password: "",
     avatar: ""
   }
+  userPhoto: string | null = null;
 
   constructor(
     private userService: FbUserService,
@@ -37,6 +38,7 @@ export class UserPageComponent {
       this.user = { ...currentUser };          // Carga al formulario
       this.originalUser = { ...currentUser };  // Guarda copia para comparar
     }
+    this.userPhoto = currentUser?.avatar ?? null;
   }
 
   logOut(){
