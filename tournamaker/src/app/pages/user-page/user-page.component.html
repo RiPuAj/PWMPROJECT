@@ -63,7 +63,7 @@
       <div id="tournaments-panel" [ngClass]="{ 'active': isActive('tournaments') }">
         <h1>Mis Torneos</h1>
         <div class="tournament-cards">
-          <div *ngFor="let tournament of tournaments" class="card tournament-card">
+          <div *ngFor="let tournament of tournaments" class="card tournament-card" (click)="goToTournament(tournament.id)">
             <h4>{{ tournament.name }}</h4>
             <img [src]=tournament.image width="50" height="50" />
           </div>
@@ -73,7 +73,7 @@
       <div id="matches-panel" [ngClass]="{ 'active': isActive('matches') }">
         <h1>Mis Partidos</h1>
         <div class="match-cards">
-          <div *ngFor="let match of matches" class="card match-card">
+          <div *ngFor="let match of matches" class="card match-card" (click)="goToMatch(match.id)">
             <h4>{{ match.name }}</h4>
             <p><strong>Fecha:</strong> {{ match.date | date }}</p>
             <p><strong>Estado:</strong> {{ match.estadoPartido[0] }}  {{ match.estadoPartido[1] }} - {{ match.estadoPartido[2] }}</p>

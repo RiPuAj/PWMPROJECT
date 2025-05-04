@@ -190,4 +190,12 @@ goToCreateTeam() {
     });
   }
 
+  goToTournament(tournamentId: string) {
+    this.router.navigate(['/tournament-view', tournamentId]);
+  }
+
+  goToMatch(matchId: string | undefined) {
+    this.router.navigate(['/match-view', matchId]);
+  }
+
 }
