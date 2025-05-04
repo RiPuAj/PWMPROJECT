@@ -34,6 +34,7 @@ export class UserPageComponent {
     password: "",
     avatar: ""
   }
+  userPhoto: string | null = null;
 
   constructor(
     private userService: FbUserService,
@@ -60,6 +61,7 @@ export class UserPageComponent {
       }
 
     }
+    this.userPhoto = currentUser?.avatar ?? null;
   }
 
   logOut(){
